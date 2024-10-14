@@ -6,9 +6,9 @@ public:
     using Key = typename Vec::Key;
     using Value = typename Vec::Value;
     using BasisVector = typename Vec::BasisVector;
+    using iterator = typename Vec::iterator;
     
 private:
-    using BV = BasisVector;
     Vec* _v[2];
     std::size_t _size;
     int _data_position;
@@ -40,7 +40,7 @@ public:
         return *this;
     }
 
-    VectorPair& operator+=(const BV& b) {
+    VectorPair& operator+=(const BasisVector& b) {
         *get() += b;
         return *this;
     }
@@ -55,7 +55,7 @@ public:
         return *this;
     }
 
-    void add_if(BV b, bool cond) {
+    void add_if(BasisVector b, bool cond) {
         get()->add_if(b, cond);
     }
 
@@ -69,7 +69,7 @@ public:
         }
     }
 
-    void clear() { get()->clear(); }
+    void clear() { get()->clear(); getempty()->clear(); }
 
     LargeFloat inner_product(Vec& v) {
         return get()->inner_product(v);
@@ -85,6 +85,20 @@ public:
 
     void factorise_norm() {
         get()->factorise_norm();
+    }
+
+    void normalise() {
+        get()->normalise();
+    }
+
+    iterator begin()
+    {
+        return get()->begin();
+    }
+
+    iterator end()
+    {
+        return get()->end();
     }
 };
 

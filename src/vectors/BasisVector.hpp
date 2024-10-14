@@ -6,6 +6,7 @@ public:
     Key key;
     Value value;
 
+    BasisVector() : key(), value() {}
     BasisVector(Key k, Value v) : key(k), value(v) {}
     BasisVector(const BasisVector& other) : key(other.key), value(other.value) {}
     BasisVector(std::pair<Key, Value> v) : key(v.first), value(v.second) {}

@@ -4,8 +4,8 @@ using namespace transfer_matrices;
 
 using K = int8_key_t<4>;
 using V = double;
-using BV = BasisVector<K, V>;
-using Vec = Vector<BV, KeyHash<K>>;
+using BasisVector = BasisVector<K, V>;
+using Vec = Vector<BasVector, KeyHash<K>>;
 using R = RMatrix<Vec>;
 
 // identity r matrix
