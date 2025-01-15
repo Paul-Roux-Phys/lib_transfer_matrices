@@ -1,0 +1,50 @@
+\doxysection{Basis\+Vector\texorpdfstring{$<$}{<} K, V \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_basis_vector}{}\label{class_basis_vector}\index{BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}}
+
+
+{\ttfamily \#include $<$Basis\+Vector.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_basis_vector_a89d0c6c318703491fe5a6fb699e1f436}\label{class_basis_vector_a89d0c6c318703491fe5a6fb699e1f436} 
+using {\bfseries Key} = K
+\item 
+\Hypertarget{class_basis_vector_ab98e59b27cc93f2a1ed58b9e8c8f5243}\label{class_basis_vector_ab98e59b27cc93f2a1ed58b9e8c8f5243} 
+using {\bfseries Value} = V
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_basis_vector_ae81bed2dd99103a39cd88d9e3c4250f7}\label{class_basis_vector_ae81bed2dd99103a39cd88d9e3c4250f7} 
+{\bfseries Basis\+Vector} (Key k, Value v)
+\item 
+\Hypertarget{class_basis_vector_a4de24e745a3d40f8c0ea9de7d72cd835}\label{class_basis_vector_a4de24e745a3d40f8c0ea9de7d72cd835} 
+{\bfseries Basis\+Vector} (const \mbox{\hyperlink{class_basis_vector}{Basis\+Vector}} \&other)
+\item 
+\Hypertarget{class_basis_vector_af0d548e4b6318fd83f52e669535996cf}\label{class_basis_vector_af0d548e4b6318fd83f52e669535996cf} 
+{\bfseries Basis\+Vector} (std\+::pair$<$ Key, Value $>$ v)
+\item 
+\Hypertarget{class_basis_vector_a953af005c4683dee9e19a1c6837deba4}\label{class_basis_vector_a953af005c4683dee9e19a1c6837deba4} 
+void {\bfseries print} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_basis_vector_a45c4c39f4691f622e105f7607825ee72}\label{class_basis_vector_a45c4c39f4691f622e105f7607825ee72} 
+Key {\bfseries key}
+\item 
+\Hypertarget{class_basis_vector_a1e14b17a441b9ec344b54c5b7f0153f7}\label{class_basis_vector_a1e14b17a441b9ec344b54c5b7f0153f7} 
+Value {\bfseries value}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename K, typename V$>$\newline
+class Basis\+Vector$<$ K, V $>$}
+class representing a vector of the chosen basis. A basis vector is nothing but a (key, value) pair, which can be printed with .print() 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/paulroux/\+Documents/\+Recherche/projet\+\_\+these/code/transfer\+\_\+matrices/\+Transfer\+Matrices\+Cpp/cpp\+\_\+libs/libtransfermatrices/src/vectors.\+hpp\item 
+/\+Users/paulroux/\+Documents/\+Recherche/projet\+\_\+these/code/transfer\+\_\+matrices/\+Transfer\+Matrices\+Cpp/cpp\+\_\+libs/libtransfermatrices/src/vectors/Basis\+Vector.\+hpp\end{DoxyCompactItemize}

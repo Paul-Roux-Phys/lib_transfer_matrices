@@ -1,0 +1,196 @@
+\doxysection{Vector\texorpdfstring{$<$}{<} B, Key\+Hash \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_vector}{}\label{class_vector}\index{Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}}
+Inheritance diagram for Vector\texorpdfstring{$<$}{<} B, Key\+Hash \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_vector}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_vector_a48ca4ec1f0475c8c7939a0f4899d9bc8}\label{class_vector_a48ca4ec1f0475c8c7939a0f4899d9bc8} 
+using {\bfseries Basis\+Vector} = B
+\item 
+\Hypertarget{class_vector_afd94d2e5dc1cb590e75b231ac12ac8a7}\label{class_vector_afd94d2e5dc1cb590e75b231ac12ac8a7} 
+using {\bfseries Key} = typename Basis\+Vector\+::\+Key
+\item 
+\Hypertarget{class_vector_a55c3fa25bfa550dd0a074ebf238682da}\label{class_vector_a55c3fa25bfa550dd0a074ebf238682da} 
+using {\bfseries Value} = typename Basis\+Vector\+::\+Value
+\item 
+\Hypertarget{class_vector_a08fe20c135044d221ec6af76927afa0d}\label{class_vector_a08fe20c135044d221ec6af76927afa0d} 
+using {\bfseries iterator} = typename std\+::unordered\+\_\+map$<$Key, Value, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}}$>$\+::iterator
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vector_a0faa99acaf54dafcf479d15b16b3b522}{Vector}} (std\+::size\+\_\+t size=10000)
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector_a0124be0e6143a73ebe65847601a5e5d9}{Vector}} (\mbox{\hyperlink{class_vector}{Vector}} \&v, std\+::size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector}{Vector}} \& \mbox{\hyperlink{class_vector_a076976e16cf9eecd151c91ccd0089647}{operator+=}} (const std\+::pair$<$ Key, Value $>$ \&v)
+\begin{DoxyCompactList}\small\item\em Insertion operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector}{Vector}} \& \mbox{\hyperlink{class_vector_a8e26a662fa4ee7e2a564e7dfed305862}{operator+=}} (const \mbox{\hyperlink{class_basis_vector}{Basis\+Vector}} \&v)
+\begin{DoxyCompactList}\small\item\em Insertion operator. \end{DoxyCompactList}\item 
+\Hypertarget{class_vector_ab0f0ede3b30b39b94c2bc63f95b1c779}\label{class_vector_ab0f0ede3b30b39b94c2bc63f95b1c779} 
+\mbox{\hyperlink{class_vector}{Vector}} \& {\bfseries operator+=} (const \mbox{\hyperlink{class_vector}{Vector}} \&v)
+\begin{DoxyCompactList}\small\item\em add two vectors together \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector}{Vector}} \& \mbox{\hyperlink{class_vector_a903df963261abd0429144d5c24cfb56c}{operator/=}} (const Value v)
+\begin{DoxyCompactList}\small\item\em divide the vector by a scalar \end{DoxyCompactList}\item 
+\Hypertarget{class_vector_ae3af7aec95e0b7550799cdd35559201b}\label{class_vector_ae3af7aec95e0b7550799cdd35559201b} 
+void {\bfseries add\+\_\+if} (const \mbox{\hyperlink{class_basis_vector}{Basis\+Vector}} \&b, bool cond)
+\item 
+\Hypertarget{class_vector_a8fe7c81eb0e3c128bb455e3b1730a06e}\label{class_vector_a8fe7c81eb0e3c128bb455e3b1730a06e} 
+void {\bfseries print} () const
+\begin{DoxyCompactList}\small\item\em print a vector to stdout \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}}$<$ \mbox{\hyperlink{class_vector}{Vector}} $>$ \mbox{\hyperlink{class_vector_a491ba237bca7f3ecf65c56c7b7f94f7b}{draining\+\_\+begin}} ()
+\begin{DoxyCompactList}\small\item\em Draining iterator. \end{DoxyCompactList}\item 
+\Hypertarget{class_vector_ad8cb66b8655c28c48ea0ed1abf409f4f}\label{class_vector_ad8cb66b8655c28c48ea0ed1abf409f4f} 
+\mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}}$<$ \mbox{\hyperlink{class_vector}{Vector}} $>$ {\bfseries draining\+\_\+end} ()
+\item 
+\Hypertarget{class_vector_a94cad4cdc823f62224aefdd44b079a7f}\label{class_vector_a94cad4cdc823f62224aefdd44b079a7f} 
+Large\+Float {\bfseries inner\+\_\+product} (const \mbox{\hyperlink{class_vector}{Vector}} \&v)
+\item 
+Large\+Float \mbox{\hyperlink{class_vector_afe68b3d520c9b67b296822cd6209394d}{get\+\_\+norm\+\_\+sq}} () const
+\item 
+Large\+Float \mbox{\hyperlink{class_vector_ac86119ba1e335db2d95eb9c87fd92c82}{get\+\_\+norm}} () const
+\item 
+void \mbox{\hyperlink{class_vector_ad34348ce72d9ff2ad6d934ecf96d9672}{factorise\+\_\+norm}} ()
+\item 
+void \mbox{\hyperlink{class_vector_ad0ade9790cea3940a9d10b7a8ea572f4}{set\+\_\+norm\+\_\+sq}} (const Large\+Float \&other)
+\item 
+void \mbox{\hyperlink{class_vector_afd1eda033d5a0324949ee991ecc862f9}{normalise}} ()
+\item 
+\Hypertarget{class_vector_a2f8eb722519302232407e5b9576c86b6}\label{class_vector_a2f8eb722519302232407e5b9576c86b6} 
+void {\bfseries set\+\_\+size} ()
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_vector_aeb66df91301154c98540481e3a0f4c2f}{get\+\_\+size}} ()
+\item 
+void \mbox{\hyperlink{class_vector_ac9d0fa459069e3672c3151995b3c2368}{clear}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_vector_a0faa99acaf54dafcf479d15b16b3b522}\index{Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_vector_a0faa99acaf54dafcf479d15b16b3b522} 
+template$<$typename B , typename \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ B, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$\mbox{\hyperlink{class_vector}{\+::\+Vector}} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{size}{ = {\ttfamily 10000}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+default constructor 
+
+Initializes a new {\ttfamily \doxylink{class_vector}{Vector}}. For optimization it is better to choose the size parameter to be close to the expected number of non-\/zero components the vector will need to store. \Hypertarget{class_vector_a0124be0e6143a73ebe65847601a5e5d9}\index{Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_vector_a0124be0e6143a73ebe65847601a5e5d9} 
+template$<$typename B , typename \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ B, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$\mbox{\hyperlink{class_vector}{\+::\+Vector}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector}}$<$ B, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$ \&}]{v}{, }\item[{std\+::size\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+Initializes a new {\ttfamily \doxylink{class_vector}{Vector}} which has the same components as {\ttfamily v} and size {\ttfamily size}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_vector_ac9d0fa459069e3672c3151995b3c2368}\index{Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}!clear@{clear}}
+\index{clear@{clear}!Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_vector_ac9d0fa459069e3672c3151995b3c2368} 
+template$<$typename B , typename \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$ \\
+void \mbox{\hyperlink{class_vector}{Vector}}$<$ B, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Remove all components of the vector. \Hypertarget{class_vector_a491ba237bca7f3ecf65c56c7b7f94f7b}\index{Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}!draining\_begin@{draining\_begin}}
+\index{draining\_begin@{draining\_begin}!Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}}
+\doxysubsubsection{\texorpdfstring{draining\_begin()}{draining\_begin()}}
+{\footnotesize\ttfamily \label{class_vector_a491ba237bca7f3ecf65c56c7b7f94f7b} 
+template$<$typename B , typename \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$ \\
+\mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}}$<$ \mbox{\hyperlink{class_vector}{Vector}} $>$ \mbox{\hyperlink{class_vector}{Vector}}$<$ B, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$\+::draining\+\_\+begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draining iterator. 
+
+Iterate over the components of the vector, removing them from the vector along the way. \Hypertarget{class_vector_ad34348ce72d9ff2ad6d934ecf96d9672}\index{Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}!factorise\_norm@{factorise\_norm}}
+\index{factorise\_norm@{factorise\_norm}!Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}}
+\doxysubsubsection{\texorpdfstring{factorise\_norm()}{factorise\_norm()}}
+{\footnotesize\ttfamily \label{class_vector_ad34348ce72d9ff2ad6d934ecf96d9672} 
+template$<$typename B , typename \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$ \\
+void \mbox{\hyperlink{class_vector}{Vector}}$<$ B, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$\+::factorise\+\_\+norm (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Factorises the norm of the vector, i.\+e. performs ( v \textbackslash{}to \texorpdfstring{$\vert$}{|}v\texorpdfstring{$\vert$}{|} \textbackslash{}frac\{v\}\{\texorpdfstring{$\vert$}{|}v\texorpdfstring{$\vert$}{|}\} ). Since the overall norm is stored in a float type which cannot overflow, this prevents overflow of the components of the vector when using a standard float type for the values. \Hypertarget{class_vector_ac86119ba1e335db2d95eb9c87fd92c82}\index{Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}!get\_norm@{get\_norm}}
+\index{get\_norm@{get\_norm}!Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}}
+\doxysubsubsection{\texorpdfstring{get\_norm()}{get\_norm()}}
+{\footnotesize\ttfamily \label{class_vector_ac86119ba1e335db2d95eb9c87fd92c82} 
+template$<$typename B , typename \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$ \\
+Large\+Float \mbox{\hyperlink{class_vector}{Vector}}$<$ B, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$\+::get\+\_\+norm (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the norm of the vector \Hypertarget{class_vector_afe68b3d520c9b67b296822cd6209394d}\index{Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}!get\_norm\_sq@{get\_norm\_sq}}
+\index{get\_norm\_sq@{get\_norm\_sq}!Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}}
+\doxysubsubsection{\texorpdfstring{get\_norm\_sq()}{get\_norm\_sq()}}
+{\footnotesize\ttfamily \label{class_vector_afe68b3d520c9b67b296822cd6209394d} 
+template$<$typename B , typename \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$ \\
+Large\+Float \mbox{\hyperlink{class_vector}{Vector}}$<$ B, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$\+::get\+\_\+norm\+\_\+sq (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the squared norm of the vector \Hypertarget{class_vector_aeb66df91301154c98540481e3a0f4c2f}\index{Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}!get\_size@{get\_size}}
+\index{get\_size@{get\_size}!Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}}
+\doxysubsubsection{\texorpdfstring{get\_size()}{get\_size()}}
+{\footnotesize\ttfamily \label{class_vector_aeb66df91301154c98540481e3a0f4c2f} 
+template$<$typename B , typename \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{class_vector}{Vector}}$<$ B, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$\+::get\+\_\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the number of components of the vector. \Hypertarget{class_vector_afd1eda033d5a0324949ee991ecc862f9}\index{Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}!normalise@{normalise}}
+\index{normalise@{normalise}!Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}}
+\doxysubsubsection{\texorpdfstring{normalise()}{normalise()}}
+{\footnotesize\ttfamily \label{class_vector_afd1eda033d5a0324949ee991ecc862f9} 
+template$<$typename B , typename \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$ \\
+void \mbox{\hyperlink{class_vector}{Vector}}$<$ B, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$\+::normalise (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Normalise the vector \Hypertarget{class_vector_a8e26a662fa4ee7e2a564e7dfed305862}\index{Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_vector_a8e26a662fa4ee7e2a564e7dfed305862} 
+template$<$typename B , typename \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}} \& \mbox{\hyperlink{class_vector}{Vector}}$<$ B, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basis_vector}{Basis\+Vector}}$<$ B, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$ \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insertion operator. 
+
+Adds the basis vector {\ttfamily v} to the {\ttfamily \doxylink{class_vector}{Vector}} object. \Hypertarget{class_vector_a076976e16cf9eecd151c91ccd0089647}\index{Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_vector_a076976e16cf9eecd151c91ccd0089647} 
+template$<$typename B , typename \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}} \& \mbox{\hyperlink{class_vector}{Vector}}$<$ B, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ Key, Value $>$ \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insertion operator. 
+
+Adds the basis vector {\ttfamily v} given as a (key, value) pair to the {\ttfamily \doxylink{class_vector}{Vector}} object. \Hypertarget{class_vector_a903df963261abd0429144d5c24cfb56c}\index{Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily \label{class_vector_a903df963261abd0429144d5c24cfb56c} 
+template$<$typename B , typename \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$ \\
+\mbox{\hyperlink{class_vector}{Vector}} \& \mbox{\hyperlink{class_vector}{Vector}}$<$ B, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const Value}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+divide the vector by a scalar 
+
+Divides the vector by a scalar. The scalar needs to be of the same type as the values stored in the vector. \Hypertarget{class_vector_ad0ade9790cea3940a9d10b7a8ea572f4}\index{Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}!set\_norm\_sq@{set\_norm\_sq}}
+\index{set\_norm\_sq@{set\_norm\_sq}!Vector$<$ B, KeyHash $>$@{Vector$<$ B, KeyHash $>$}}
+\doxysubsubsection{\texorpdfstring{set\_norm\_sq()}{set\_norm\_sq()}}
+{\footnotesize\ttfamily \label{class_vector_ad0ade9790cea3940a9d10b7a8ea572f4} 
+template$<$typename B , typename \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$ \\
+void \mbox{\hyperlink{class_vector}{Vector}}$<$ B, \mbox{\hyperlink{struct_key_hash}{Key\+Hash}} $>$\+::set\+\_\+norm\+\_\+sq (\begin{DoxyParamCaption}\item[{const Large\+Float \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Manually set the norm squared of the vector 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/paulroux/\+Documents/\+Recherche/projet\+\_\+these/code/transfer\+\_\+matrices/\+Transfer\+Matrices\+Cpp/cpp\+\_\+libs/libtransfermatrices/src/vectors/Vector.\+hpp\end{DoxyCompactItemize}

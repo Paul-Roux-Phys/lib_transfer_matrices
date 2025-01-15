@@ -5,6 +5,11 @@ public:
     using Value = std::pair<const typename Vector::Key, typename Vector::Value>;
     using BasisVector = typename Vector::BasisVector;
 
+private:
+    iterator current;
+    Vector* vec;
+
+public:
     DrainingIterator(iterator it, Vector* vec) : current(it), vec(vec) {}
 
     Value& operator*() {
@@ -38,8 +43,4 @@ public:
     bool operator!=(const DrainingIterator& other) const {
         return !(*this == other);
     }
-
-private:
-    iterator current;
-    Vector* vec;
 };

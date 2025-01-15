@@ -1,0 +1,58 @@
+\doxysection{Matrix\texorpdfstring{$<$}{<} Vector\+Pair \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_matrix}{}\label{class_matrix}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_matrix_a0754dd5f9f2b0b05308cc95f2396a912}\label{class_matrix_a0754dd5f9f2b0b05308cc95f2396a912} 
+using {\bfseries Value} = typename Vector\+Pair\+::\+Value
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_matrix_a73437329eadc4107cc56e95e05d55a3d}\label{class_matrix_a73437329eadc4107cc56e95e05d55a3d} 
+{\bfseries Matrix} (\mbox{\hyperlink{class_vector_pair}{VP}} \texorpdfstring{$\ast$}{*}v, int nev=2, const char \texorpdfstring{$\ast$}{*}which="{}LM"{})
+\item 
+\Hypertarget{class_matrix_a7a4cc30287150f92522061ee26966b8e}\label{class_matrix_a7a4cc30287150f92522061ee26966b8e} 
+int {\bfseries size} ()
+\item 
+\Hypertarget{class_matrix_a0021f873489a8a55e043737d22b2550b}\label{class_matrix_a0021f873489a8a55e043737d22b2550b} 
+void {\bfseries Mult\+Mx} (Value \texorpdfstring{$\ast$}{*}x, Value \texorpdfstring{$\ast$}{*}y)
+\item 
+\Hypertarget{class_matrix_aea18ae153885e0e81216bc7878d4120e}\label{class_matrix_aea18ae153885e0e81216bc7878d4120e} 
+void {\bfseries make\+\_\+state\+\_\+table} ()
+\item 
+\Hypertarget{class_matrix_a5ed436cd0e9e02f0f2b27f09b28c8949}\label{class_matrix_a5ed436cd0e9e02f0f2b27f09b28c8949} 
+void {\bfseries print\+\_\+state\+\_\+table} ()
+\item 
+\Hypertarget{class_matrix_ad9b6cdcf31c1e228443031bebe1a9e31}\label{class_matrix_ad9b6cdcf31c1e228443031bebe1a9e31} 
+Value {\bfseries operator()} (int i, int j)
+\item 
+\Hypertarget{class_matrix_af500ee7b14a3dbbf6281802b3ea1e3ce}\label{class_matrix_af500ee7b14a3dbbf6281802b3ea1e3ce} 
+void {\bfseries print} (int column\+\_\+width=10)
+\item 
+\Hypertarget{class_matrix_a03d9eef84b585df808d4e0eb5d28d217}\label{class_matrix_a03d9eef84b585df808d4e0eb5d28d217} 
+bool {\bfseries isapprox} (Value a, Value b, Value eps)
+\item 
+\Hypertarget{class_matrix_a73cacd5a271c7d63772d8c8d48f84bfd}\label{class_matrix_a73cacd5a271c7d63772d8c8d48f84bfd} 
+void {\bfseries remove\+\_\+duplicate\+\_\+eigvals} (Value eps=1e-\/10)
+\item 
+\Hypertarget{class_matrix_a88407ae0c939cc77aec762c7a98471e8}\label{class_matrix_a88407ae0c939cc77aec762c7a98471e8} 
+void {\bfseries find\+\_\+eigenvalues} (bool no\+\_\+mult=false, Value eps=1e-\/10)
+\item 
+\Hypertarget{class_matrix_afb998538886ce9e5d1e91c2da4cc4173}\label{class_matrix_afb998538886ce9e5d1e91c2da4cc4173} 
+std\+::pair$<$ double \texorpdfstring{$\ast$}{*}, double \texorpdfstring{$\ast$}{*} $>$ {\bfseries get\+\_\+eigenvalues} ()
+\item 
+\Hypertarget{class_matrix_a4ede10292b5f626663033f11f6882f8b}\label{class_matrix_a4ede10292b5f626663033f11f6882f8b} 
+std\+::string {\bfseries sprint\+\_\+eigenvalues} (int nev=0, int width\+\_\+real\+\_\+part=20, int width\+\_\+imag\+\_\+part=10)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_matrix_a621269fd0c657cf14307c0c26abeceb5}\label{class_matrix_a621269fd0c657cf14307c0c26abeceb5} 
+Key \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+state\+\_\+table}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/paulroux/\+Documents/\+Recherche/projet\+\_\+these/code/transfer\+\_\+matrices/\+Transfer\+Matrices\+Cpp/cpp\+\_\+libs/libtransfermatrices/src/eigensolver.\+hpp\end{DoxyCompactItemize}

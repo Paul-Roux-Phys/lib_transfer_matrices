@@ -1,64 +1,38 @@
-constexpr uint64_t mask = 7;
-template<std::size_t size>
+template <unsigned int bits_per_site>
 class key_64_bit_t {
 private:
+    static constexpr uint64_t MASK = (1ULL << bits_per_site) - 1;
     uint64_t bits;
 
 public:
     key_64_bit_t (uint64_t a = 0) : bits(a) {}
-    key_64_bit_t (std::initializer_list<int> a) {
+    key_64_bit_t (std::initializer_list<int> a) : bits(0) {
         int i = 0;
-        for (auto el : a) set(i++, el);
+        for (int el : a) set(i++, el); 
     }
 
     int operator[](int i) const {
-        uint64_t m = mask << 3*i;
-        return ((bits & m) >> 3*i);
+        return (bits >> bits_per_site*i) & MASK;
     }
 
     void clear(int i) {
-        uint64_t m = ~(mask << 3*i);
-        bits &= m;
+        bits &= ~(MASK << bits_per_site*i);
     }
 
     void set(int i, int value) {
-        uint64_t v = static_cast<uint64_t>(value);
         clear(i);
-        bits |= (v << 3*i);
+        bits |= (static_cast<uint64_t>(value) << bits_per_site*i);
     }
 
     bool operator==(const key_64_bit_t& other) const {
-        for (int i = 0; i < size; i++) {
-            if ((*this)[i] != other[i]) return false;
-        }
-        return true;
-    }
-
-    void shift_right() {
-        int tmp = (*this)[size-1];
-        for (int i = size - 2; i >= 0; i--) {
-            set(i+1, (*this)[i]);
-        }
-        set(0, tmp);
+        return bits == other.bits;
     }
     
-    friend std::ostream& operator<<(std::ostream& os, key_64_bit_t k) {
-        os << "(";
-        for (int i = 0; i < size; i++) {
-            os << std::setw(3) << k[i];
+    void print(size_t size) const {
+        std::cout << " (";
+        for (size_t i = 0; i < size; i++) {
+            std::cout << std::setw(3) << operator[](i);
         }
-        os << "  )";
-        return os;
-    }
-};
-
-template <std::size_t size>
-struct key_64_bit_hash_t {
-    std::size_t operator()(const key_64_bit_t<size>& k) const {
-        std::size_t hash = 5381;
-        for (int i = 0; i < size; i++) {
-            hash = ((hash << 5) + hash) + static_cast<unsigned char>(k[i]); // hash * 33 + c
-        }
-        return hash;
+        std::cout << "  )";
     }
 };

@@ -1,0 +1,44 @@
+\doxysection{64bit.\+hpp}
+\hypertarget{64bit_8hpp_source}{}\label{64bit_8hpp_source}\index{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/key\_types/64bit.hpp@{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/key\_types/64bit.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ bits\_per\_site>}
+\DoxyCodeLine{00002\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classkey__64__bit__t}{key\_64\_bit\_t}}\ \{}
+\DoxyCodeLine{00003\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint64\_t\ MASK\ =\ (1ULL\ <<\ bits\_per\_site)\ -\/\ 1;}
+\DoxyCodeLine{00005\ \ \ \ \ uint64\_t\ bits;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{classkey__64__bit__t}{key\_64\_bit\_t}}\ (uint64\_t\ a\ =\ 0)\ :\ bits(a)\ \{\}}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{classkey__64__bit__t}{key\_64\_bit\_t}}\ (std::initializer\_list<int>\ a)\ :\ bits(0)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ el\ :\ a)\ set(i++,\ el);\ }
+\DoxyCodeLine{00012\ \ \ \ \ \}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ operator[](\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (bits\ >>\ bits\_per\_site*i)\ \&\ MASK;}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ clear(\textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ bits\ \&=\ \string~(MASK\ <<\ bits\_per\_site*i);}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ set(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ clear(i);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ bits\ |=\ (\textcolor{keyword}{static\_cast<}uint64\_t\textcolor{keyword}{>}(value)\ <<\ bits\_per\_site*i);}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classkey__64__bit__t}{key\_64\_bit\_t}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bits\ ==\ other.bits;}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ print(\textcolor{keywordtype}{size\_t}\ size)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ ("{}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setw(3)\ <<\ operator[](i);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ )"{}};}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \};}
+
+\end{DoxyCode}

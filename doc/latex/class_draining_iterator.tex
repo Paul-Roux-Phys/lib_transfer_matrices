@@ -1,0 +1,43 @@
+\doxysection{Draining\+Iterator\texorpdfstring{$<$}{<} Vector \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_draining_iterator}{}\label{class_draining_iterator}\index{DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_draining_iterator_a7bacb4843f308cf9f290308dd8fda010}\label{class_draining_iterator_a7bacb4843f308cf9f290308dd8fda010} 
+using {\bfseries iterator} = typename Vector\+::iterator
+\item 
+\Hypertarget{class_draining_iterator_ad1b3c0f194a94553a4bff8cd6e8c4b42}\label{class_draining_iterator_ad1b3c0f194a94553a4bff8cd6e8c4b42} 
+using {\bfseries Value} = std\+::pair$<$const typename Vector\+::\+Key, typename Vector\+::\+Value$>$
+\item 
+\Hypertarget{class_draining_iterator_ab72a57d178433c81b1260822f9f936c9}\label{class_draining_iterator_ab72a57d178433c81b1260822f9f936c9} 
+using {\bfseries Basis\+Vector} = typename Vector\+::\+Basis\+Vector
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_draining_iterator_a6b73accd4ab44ad763b22733b254cb46}\label{class_draining_iterator_a6b73accd4ab44ad763b22733b254cb46} 
+{\bfseries Draining\+Iterator} (iterator it, \mbox{\hyperlink{class_vector}{Vector}} \texorpdfstring{$\ast$}{*}vec)
+\item 
+\Hypertarget{class_draining_iterator_ae7de91a678d98d2c72bc3d028948b785}\label{class_draining_iterator_ae7de91a678d98d2c72bc3d028948b785} 
+Value \& {\bfseries operator\texorpdfstring{$\ast$}{*}} ()
+\item 
+\Hypertarget{class_draining_iterator_a7662987b26cd662342cb23379b004e9b}\label{class_draining_iterator_a7662987b26cd662342cb23379b004e9b} 
+Value \texorpdfstring{$\ast$}{*} {\bfseries operator-\/$>$} ()
+\item 
+\Hypertarget{class_draining_iterator_a0accf0867a1f67da8a4a79771ff934ed}\label{class_draining_iterator_a0accf0867a1f67da8a4a79771ff934ed} 
+\mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}} \& {\bfseries operator++} ()
+\item 
+\Hypertarget{class_draining_iterator_a8b439030f4f6deda2dc74aa6ee0b9e1d}\label{class_draining_iterator_a8b439030f4f6deda2dc74aa6ee0b9e1d} 
+\mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}} {\bfseries operator++} (int)
+\item 
+\Hypertarget{class_draining_iterator_a16963164005ddc693eda7a2cb795ea58}\label{class_draining_iterator_a16963164005ddc693eda7a2cb795ea58} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}} \&other) const
+\item 
+\Hypertarget{class_draining_iterator_a46f54bd59caae54c16f75328474dfbdd}\label{class_draining_iterator_a46f54bd59caae54c16f75328474dfbdd} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}} \&other) const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/paulroux/\+Documents/\+Recherche/projet\+\_\+these/code/transfer\+\_\+matrices/\+Transfer\+Matrices\+Cpp/cpp\+\_\+libs/libtransfermatrices/src/vectors/draining\+\_\+iterator.\+hpp\end{DoxyCompactItemize}

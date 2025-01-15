@@ -1,0 +1,186 @@
+\doxysection{eigensolver.\+hpp}
+\hypertarget{src_2eigensolver_8hpp_source}{}\label{src_2eigensolver_8hpp_source}\index{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/eigensolver.hpp@{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/eigensolver.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}arsnsym.h"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}arscomp.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ VectorPair>}
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_matrix}{Matrix}}\ \{}
+\DoxyCodeLine{00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{using\ }Value\ =\ \textcolor{keyword}{typename}\ VectorPair::Value;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{using\ }Key\ =\ \textcolor{keyword}{typename}\ VectorPair::Key;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_basis_vector}{BasisVector}}\ =\ \textcolor{keyword}{typename}\ VectorPair::BasisVector;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_vector_pair}{VP}}\ =\ \mbox{\hyperlink{class_vector_pair}{VectorPair}};}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_vector_pair}{VP}}*\ \_v;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \_size;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Key*\ \_state\_table;}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \_nev;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \_nconv;}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \ \ \ \#if\ (MATRIX\_TYPE\ ==\ REAL)}}
+\DoxyCodeLine{00019\ \ \ \ \ ARNonSymStdEig<Value,\ Matrix>\ \_eig\_prob;}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00021\ \ \ \ \ ARCompStdEig<Value,\ Matrix>\ \_eig\_prob;}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00023\ \ \ \ \ Value\ *\_eig\_r,\ *\_eig\_i;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ Key*\ \_state\_table;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_matrix}{Matrix}}(\mbox{\hyperlink{class_vector_pair}{VP}}*\ v,\ \textcolor{keywordtype}{int}\ nev=2,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ which=\textcolor{stringliteral}{"{}LM"{}})\ :\ \_nev(nev)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ v-\/>generate\_space();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \_v\ =\ v;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \_size\ =\ v-\/>size();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ make\_state\_table();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \_v-\/>clear();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \_eig\_prob.DefineParameters(size(),\ nev,\ \textcolor{keyword}{this},\ \&Matrix::MultMx,\ which);}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_matrix}{\string~Matrix}}()\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \_state\_table;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ size()\ \{\ \textcolor{keywordflow}{return}\ \_size;\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ MultMx(Value*\ x,\ Value*\ y)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ place\ x\ in\ the\ hash\ table}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i\ <\ \_size;\ i++)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ (*\_v-\/>getempty())[\_state\_table[i]]\ =\ x[i];}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \_v-\/>swap\_data\_position();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ multiply\ by\ the\ transfer\ matrix}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \_v-\/>transfer();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ put\ the\ result\ back\ into\ y}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i\ <\ \_size;\ i++)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ y[i]\ =\ (*\_v)[\_state\_table[i]];}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \_v-\/>clear();}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ make\_state\_table()\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \_state\_table\ =\ \textcolor{keyword}{new}\ Key[\_size];}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i=0;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \_v-\/>get()-\/>draining\_begin();\ it\ !=\ \_v-\/>get()-\/>draining\_end();\ it++)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\ b(*it);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \_state\_table[i]\ =\ b.key;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ print\_state\_table()\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i\ <\ \_size;\ i++)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ std::setw(3)\ <<\ i+1\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ \_state\_table[i]\ <<\ endl;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ Value\ operator()(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ Value*\ x\ =\ \textcolor{keyword}{new}\ Value[\_size];}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ Value*\ y\ =\ \textcolor{keyword}{new}\ Value[\_size];}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k=0;\ k\ <\ \_size;\ k++)\ \{\ x[k]\ =\ 0;\ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ x[i]\ =\ 1;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ MultMx(x,\ y);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ Value\ res\ =\ y[j];}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ x;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ y;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ print(\textcolor{keywordtype}{int}\ column\_width\ =\ 10)\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Matrix\ of\ dimension\ "{}}\ <<\ \_size\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ endl;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}["{}}\ <<\ endl;;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i\ <\ \_size;\ i++)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ std::setw(4)\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=0;\ j\ <\ \_size;\ j++)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ std::left\ <<\ std::setw(column\_width)\ <<\ (*this)(i,\ j);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ \_size-\/1)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{};"{}}\ <<\ endl;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ cout\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}]"{}}\ <<\ endl;}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ isapprox(Value\ a,\ Value\ b,\ Value\ eps)\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (abs(a\ -\/\ b)\ <\ eps\ ||\ abs(1-\/a/b)\ <\ eps);}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ remove\_duplicate\_eigvals(Value\ eps=1e-\/10)\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ Value*\ tmp\_r\ =\ \textcolor{keyword}{new}\ Value[\_nconv];}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ Value*\ tmp\_i\ =\ \textcolor{keyword}{new}\ Value[\_nconv];}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j=0;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \_nconv-\/1;\ i++)\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isapprox(\_eig\_r[i],\ \_eig\_r[i+1],\ eps)\ \(\backslash\)}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ !isapprox(\_eig\_i[i],\ \_eig\_i[i+1],\ i+1))\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp\_r[j]\ =\ \_eig\_r[i];}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp\_i[j]\ =\ \_eig\_i[i];}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ tmp\_r[j]\ =\ \_eig\_r[\_nconv-\/1];}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ tmp\_i[j]\ =\ \_eig\_i[\_nconv-\/1];}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \_eig\_r;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \_eig\_i;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \_nconv\ =\ j;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \_eig\_r\ =\ \textcolor{keyword}{new}\ Value[\_nconv];}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \_eig\_i\ =\ \textcolor{keyword}{new}\ Value[\_nconv];}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ j;\ i++)\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \_eig\_r[i]\ =\ tmp\_r[i];}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \_eig\_i[i]\ =\ tmp\_i[i];}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ tmp\_r;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ tmp\_i;}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ find\_eigenvalues(\textcolor{keywordtype}{bool}\ no\_mult=\textcolor{keyword}{false},\ Value\ eps\ =\ 1e-\/10)\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \_nconv\ =\ \_eig\_prob.FindEigenvalues();}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \_eig\_r\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[\_nconv];}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \_eig\_i\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{double}[\_nconv];}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \_eig\_prob.Eigenvalues(\_eig\_r,\ \_eig\_i);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (no\_mult)}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ remove\_duplicate\_eigvals(eps);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ std::pair<double*,\ double*>\ get\_eigenvalues()\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_pair(\_eig\_r,\ \_eig\_i);}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{comment}{//\ Print\ the\ eigenvalues\ to\ a\ string.\ If\ nev\ is\ set\ to\ zero,\ then\ all\ computed\ eigenvalues\ are\ printed.}}
+\DoxyCodeLine{00161\ \ \ \ \ std::string\ sprint\_eigenvalues(\textcolor{keywordtype}{int}\ nev=0,\ \textcolor{keywordtype}{int}\ width\_real\_part=20,\ \textcolor{keywordtype}{int}\ width\_imag\_part=10)\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ std::ostringstream\ oss;}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nev\ ==\ 0)\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ nev\ =\ \_nconv;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nev\ >\ \_nconv)\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ nev\ =\ \_nconv;}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ oss\ <<\ std::setprecision(std::numeric\_limits<Value>::max\_digits10);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \_nconv-\/1;\ i\ >=\ \_nconv-\/nev;\ i-\/-\/)\ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ oss\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ std::left\ <<\ std::setw(width\_real\_part)\ <<\ \_eig\_r[i]\ <<\ \textcolor{stringliteral}{"{},\ "{}}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::setw(width\_imag\_part)\ <<\ \_eig\_i[i]\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ endl;}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ oss.str();}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \};}
+
+\end{DoxyCode}

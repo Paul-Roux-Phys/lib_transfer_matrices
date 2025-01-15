@@ -1,0 +1,21 @@
+\doxysection{r\+\_\+matrices.\+hpp}
+\hypertarget{src_2r__matrices_8hpp_source}{}\label{src_2r__matrices_8hpp_source}\index{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/r\_matrices.hpp@{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/r\_matrices.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ \mbox{\hyperlink{class_vector}{Vector}},\ \textcolor{keyword}{typename}...\ Params>}
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ }RMatrix\ =\ std::function<void(\mbox{\hyperlink{class_vector}{Vector}}*,\ \textcolor{keyword}{typename}\ Vector::BasisVector,\ Params...)>;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ \mbox{\hyperlink{class_vector}{Vector}},\ \textcolor{keyword}{typename}...\ Params>}
+\DoxyCodeLine{00009\ \textcolor{keywordtype}{void}\ multiply(\mbox{\hyperlink{class_vector}{Vector}}*\ v1,\ RMatrix<Vector,\ Params...>\ r,\ \mbox{\hyperlink{class_vector}{Vector}}*\ v2,\ Params...\ params)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ v2-\/>\mbox{\hyperlink{class_vector_a491ba237bca7f3ecf65c56c7b7f94f7b}{draining\_begin}}();\ it\ !=\ v2-\/>draining\_end();\ ++it)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ Vector::BasisVector\ b(*it);}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ r(v1,\ b,\ params...);}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ \ \ \ \ v1-\/>\mbox{\hyperlink{class_vector_ad0ade9790cea3940a9d10b7a8ea572f4}{set\_norm\_sq}}(v2-\/>\mbox{\hyperlink{class_vector_afe68b3d520c9b67b296822cd6209394d}{get\_norm\_sq}}());}
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}

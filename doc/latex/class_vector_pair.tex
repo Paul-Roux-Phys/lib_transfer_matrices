@@ -1,0 +1,97 @@
+\doxysection{Vector\+Pair\texorpdfstring{$<$}{<} Vec \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_vector_pair}{}\label{class_vector_pair}\index{VectorPair$<$ Vec $>$@{VectorPair$<$ Vec $>$}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_vector_pair_a6ca88cc644d650805159d1775b5df21b}\label{class_vector_pair_a6ca88cc644d650805159d1775b5df21b} 
+using {\bfseries Key} = typename Vec\+::\+Key
+\item 
+\Hypertarget{class_vector_pair_a2f32261ceb502f92592a08db7197b260}\label{class_vector_pair_a2f32261ceb502f92592a08db7197b260} 
+using {\bfseries Value} = typename Vec\+::\+Value
+\item 
+\Hypertarget{class_vector_pair_a8db31694aaecc5dd75d894842fcc96db}\label{class_vector_pair_a8db31694aaecc5dd75d894842fcc96db} 
+using {\bfseries Basis\+Vector} = typename Vec\+::\+Basis\+Vector
+\item 
+\Hypertarget{class_vector_pair_aaff83ae49b75ff368c02a360031c58ea}\label{class_vector_pair_aaff83ae49b75ff368c02a360031c58ea} 
+using {\bfseries iterator} = typename Vec\+::iterator
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_vector_pair_a64d0a7347cd2b9171e62ad7c34579792}\label{class_vector_pair_a64d0a7347cd2b9171e62ad7c34579792} 
+{\bfseries Vector\+Pair} (Vec \texorpdfstring{$\ast$}{*}v1, Vec \texorpdfstring{$\ast$}{*}v2)
+\item 
+\Hypertarget{class_vector_pair_ae8b581e4f5043f29f4968be5bcf2ce16}\label{class_vector_pair_ae8b581e4f5043f29f4968be5bcf2ce16} 
+Vec \texorpdfstring{$\ast$}{*} {\bfseries get} () const
+\item 
+\Hypertarget{class_vector_pair_ad6cdcc7ba0b41221e1a1ceffb4ee65d4}\label{class_vector_pair_ad6cdcc7ba0b41221e1a1ceffb4ee65d4} 
+Vec \texorpdfstring{$\ast$}{*} {\bfseries getempty} () const
+\item 
+\Hypertarget{class_vector_pair_a43402717b6b0a1a668d9eea15ab36c6c}\label{class_vector_pair_a43402717b6b0a1a668d9eea15ab36c6c} 
+void {\bfseries print} () const
+\item 
+\Hypertarget{class_vector_pair_a11f6f6c0c2dd8ad7d9756a75fcaed14c}\label{class_vector_pair_a11f6f6c0c2dd8ad7d9756a75fcaed14c} 
+void {\bfseries set\+\_\+size} ()
+\item 
+\Hypertarget{class_vector_pair_aa52e929ee8904118b3f38f4363e79028}\label{class_vector_pair_aa52e929ee8904118b3f38f4363e79028} 
+std\+::size\+\_\+t {\bfseries size} ()
+\item 
+\Hypertarget{class_vector_pair_a76d996975905e1fc8bc5614264a8439d}\label{class_vector_pair_a76d996975905e1fc8bc5614264a8439d} 
+void {\bfseries swap\+\_\+data\+\_\+position} ()
+\item 
+\Hypertarget{class_vector_pair_a44cce2f0c21f67b2f93c8dd079db1a8d}\label{class_vector_pair_a44cce2f0c21f67b2f93c8dd079db1a8d} 
+{\footnotesize template$<$typename... Params$>$ }\\void {\bfseries mul} (RMatrix$<$ Vec, Params... $>$ r, Params... params)
+\item 
+\Hypertarget{class_vector_pair_a2e05a481aeee22c46f7f1bc90a5c610c}\label{class_vector_pair_a2e05a481aeee22c46f7f1bc90a5c610c} 
+void {\bfseries transfer} ()
+\item 
+\Hypertarget{class_vector_pair_ae8a5da5b752357b0a8d9d36efa7ffe01}\label{class_vector_pair_ae8a5da5b752357b0a8d9d36efa7ffe01} 
+Value {\bfseries operator\mbox{[}$\,$\mbox{]}} (Key k) const
+\item 
+\Hypertarget{class_vector_pair_abadd56bc24c32a808090894ae61e4827}\label{class_vector_pair_abadd56bc24c32a808090894ae61e4827} 
+\mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} \& {\bfseries operator+=} (const std\+::pair$<$ Key, Value $>$ \&p)
+\item 
+\Hypertarget{class_vector_pair_ab64788b036e5f2c920c9f4d1f47e2354}\label{class_vector_pair_ab64788b036e5f2c920c9f4d1f47e2354} 
+\mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} \& {\bfseries operator+=} (const \mbox{\hyperlink{class_basis_vector}{Basis\+Vector}} \&b)
+\item 
+\Hypertarget{class_vector_pair_a4cd8e7aa7ac346b56bb83e4c564c6bbd}\label{class_vector_pair_a4cd8e7aa7ac346b56bb83e4c564c6bbd} 
+\mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} \& {\bfseries operator+=} (const Vec \&v)
+\item 
+\Hypertarget{class_vector_pair_a46cc1e4e70495c2522cfc0d48235a834}\label{class_vector_pair_a46cc1e4e70495c2522cfc0d48235a834} 
+\mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} \& {\bfseries operator/=} (const double d)
+\item 
+\Hypertarget{class_vector_pair_a5dbd2d505feb24c5d6f7b0db6e6387c7}\label{class_vector_pair_a5dbd2d505feb24c5d6f7b0db6e6387c7} 
+void {\bfseries add\+\_\+if} (\mbox{\hyperlink{class_basis_vector}{Basis\+Vector}} b, bool cond)
+\item 
+\Hypertarget{class_vector_pair_a6f95ac6a140fc65fa6824f97ceeb2bcc}\label{class_vector_pair_a6f95ac6a140fc65fa6824f97ceeb2bcc} 
+void {\bfseries generate\+\_\+space} ()
+\item 
+\Hypertarget{class_vector_pair_aa403c390fcce22fd88cbc4fa2f763421}\label{class_vector_pair_aa403c390fcce22fd88cbc4fa2f763421} 
+void {\bfseries clear} ()
+\item 
+\Hypertarget{class_vector_pair_a8a79cbbe30d11cd489c29291d687ba86}\label{class_vector_pair_a8a79cbbe30d11cd489c29291d687ba86} 
+Large\+Float {\bfseries inner\+\_\+product} (Vec \&v)
+\item 
+\Hypertarget{class_vector_pair_ac841edbe6c9d48aa775d4631c7892905}\label{class_vector_pair_ac841edbe6c9d48aa775d4631c7892905} 
+Large\+Float {\bfseries inner\+\_\+product} (\mbox{\hyperlink{class_vector_pair}{Vector\+Pair}}$<$ Vec $>$ \&v)
+\item 
+\Hypertarget{class_vector_pair_a9afe356f2d772c30786a82cc76910996}\label{class_vector_pair_a9afe356f2d772c30786a82cc76910996} 
+Large\+Float {\bfseries get\+\_\+norm} ()
+\item 
+\Hypertarget{class_vector_pair_a148ba9f3774ee2690a5859a436aba4fd}\label{class_vector_pair_a148ba9f3774ee2690a5859a436aba4fd} 
+void {\bfseries factorise\+\_\+norm} ()
+\item 
+\Hypertarget{class_vector_pair_a9ed76c1e816e88c542a8ab5bd7272e1c}\label{class_vector_pair_a9ed76c1e816e88c542a8ab5bd7272e1c} 
+void {\bfseries normalise} ()
+\item 
+\Hypertarget{class_vector_pair_a122197ade6315abd9b728e13d424c929}\label{class_vector_pair_a122197ade6315abd9b728e13d424c929} 
+iterator {\bfseries begin} ()
+\item 
+\Hypertarget{class_vector_pair_a68cdbe0b945bbdff65cd3fd94c3abd64}\label{class_vector_pair_a68cdbe0b945bbdff65cd3fd94c3abd64} 
+iterator {\bfseries end} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/paulroux/\+Documents/\+Recherche/projet\+\_\+these/code/transfer\+\_\+matrices/\+Transfer\+Matrices\+Cpp/cpp\+\_\+libs/libtransfermatrices/src/vector\+\_\+pairs.\+hpp\end{DoxyCompactItemize}

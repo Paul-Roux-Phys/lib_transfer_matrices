@@ -1,0 +1,52 @@
+\doxysection{draining\+\_\+iterator.\+hpp}
+\hypertarget{draining__iterator_8hpp_source}{}\label{draining__iterator_8hpp_source}\index{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/vectors/draining\_iterator.hpp@{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/vectors/draining\_iterator.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Vector>}
+\DoxyCodeLine{00002\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_draining_iterator}{DrainingIterator}}\ \{}
+\DoxyCodeLine{00003\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keyword}{using\ }iterator\ =\ \textcolor{keyword}{typename}\ Vector::iterator;}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keyword}{using\ }Value\ =\ std::pair<const\ typename\ Vector::Key,\ typename\ Vector::Value>;}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_basis_vector}{BasisVector}}\ =\ \textcolor{keyword}{typename}\ Vector::BasisVector;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ iterator\ current;}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_vector}{Vector}}*\ vec;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_draining_iterator}{DrainingIterator}}(iterator\ it,\ \mbox{\hyperlink{class_vector}{Vector}}*\ vec)\ :\ current(it),\ vec(vec)\ \{\}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ Value\&\ operator*()\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *current;}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ Value*\ operator-\/>()\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&(*current);\ \textcolor{comment}{//\ Return\ pointer\ to\ the\ underlying\ pair}}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_draining_iterator}{DrainingIterator}}\&\ operator++()\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current\ !=\ vec-\/>end())\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ next\ =\ std::next(current);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ vec-\/>erase(current);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ current\ =\ next;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_draining_iterator}{DrainingIterator}}\ operator++(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_draining_iterator}{DrainingIterator}}\ temp\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ ++(*this);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ temp;}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Comparison\ operators}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_draining_iterator}{DrainingIterator}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ current\ ==\ other.current;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_draining_iterator}{DrainingIterator}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ ==\ other);}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \};}
+
+\end{DoxyCode}
