@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Transfer Matrices
+   <div id="projectname">Transfer Matrices<span id="projectnumber">&#160;0.0.0DEV</span>
    </div>
    <div id="projectbrief">C++ library for transfer matrix computations</div>
   </td>
@@ -118,16 +125,19 @@ $(function(){initNavTree('class_vector.html',''); initResizable(true); });
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>iterator</b> typedef (defined in <a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a>)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Key</b> typedef (defined in <a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a>)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_vector.html#afd1eda033d5a0324949ee991ecc862f9">normalise</a>()</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_vector.html#a076976e16cf9eecd151c91ccd0089647">operator+=</a>(const std::pair&lt; Key, Value &gt; &amp;v)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_vector.html#a8e26a662fa4ee7e2a564e7dfed305862">operator+=</a>(const BasisVector &amp;v)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_vector.html#ab0f0ede3b30b39b94c2bc63f95b1c779">operator+=</a>(const Vector &amp;v)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_vector.html#a903df963261abd0429144d5c24cfb56c">operator/=</a>(const Value v)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_vector.html#a8fe7c81eb0e3c128bb455e3b1730a06e">print</a>() const</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_vector.html#ad0ade9790cea3940a9d10b7a8ea572f4">set_norm_sq</a>(const LargeFloat &amp;other)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>set_size</b>() (defined in <a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a>)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Value</b> typedef (defined in <a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a>)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_vector.html#a0faa99acaf54dafcf479d15b16b3b522">Vector</a>(std::size_t size=10000)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_vector.html#a0124be0e6143a73ebe65847601a5e5d9">Vector</a>(Vector &amp;v, std::size_t size)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_vector.html#a4b68f8005281a02764696c969eb31a54">operator*=</a>(const Value v)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_vector.html#a076976e16cf9eecd151c91ccd0089647">operator+=</a>(const std::pair&lt; Key, Value &gt; &amp;v)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_vector.html#a8e26a662fa4ee7e2a564e7dfed305862">operator+=</a>(const BasisVector &amp;v)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_vector.html#ab0f0ede3b30b39b94c2bc63f95b1c779">operator+=</a>(const Vector &amp;v)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_vector.html#a903df963261abd0429144d5c24cfb56c">operator/=</a>(const Value v)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_vector.html#a8fe7c81eb0e3c128bb455e3b1730a06e">print</a>() const</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_vector.html#ad0ade9790cea3940a9d10b7a8ea572f4">set_norm_sq</a>(const LargeFloat &amp;other)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>set_size</b>() (defined in <a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a>)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Value</b> typedef (defined in <a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a>)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_vector.html#a0faa99acaf54dafcf479d15b16b3b522">Vector</a>(std::size_t size=10000)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Vector</b>(BasisVector &amp;b, std::size_t size=10000) (defined in <a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a>)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Vector</b>(Key k, Value v, std::size_t size=10000) (defined in <a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a>)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_vector.html#a0124be0e6143a73ebe65847601a5e5d9">Vector</a>(Vector &amp;v, std::size_t size)</td><td class="entry"><a class="el" href="class_vector.html">Vector&lt; B, KeyHash &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

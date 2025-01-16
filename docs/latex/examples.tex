@@ -1,0 +1,211 @@
+\chapter{Examples}
+\hypertarget{examples}{}\label{examples}\index{Examples@{Examples}}
+Full examples can be found in the folder \href{../examples/ising/}{\texttt{ examples/ising}}. The code below is taken from these files\+:
+
+
+\begin{DoxyItemize}
+\item Makefile
+\end{DoxyItemize}
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{INCLUDES\ :=\ -\/I../../../include\ \#\ replace\ with\ the\ path\ to\ the\ header\ TransferMatrices.hpp}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ in\ your\ own\ system.}
+\DoxyCodeLine{}
+\DoxyCodeLine{all:}
+\DoxyCodeLine{\ \ \ \ g++\ -\/std=c++20\ -\/o\ bin/ising\ ising.cpp\ \$(INCLUDES)}
+
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyItemize}
+\item ising.\+hpp
+\end{DoxyItemize}
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef\ ISING\_HPP}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ ISING\_HPP}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <boost/multiprecision/cpp\_complex.hpp>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <boost/multiprecision/cpp\_dec\_float.hpp>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}TransferMatrices.hpp"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Lattice\ size}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ SIZE\ =\ 3;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Hash\ table\ size}}
+\DoxyCodeLine{\textcolor{keywordtype}{size\_t}\ HASH\_SIZE\ =\ (2\ <<\ SIZE);\ \ \textcolor{comment}{//\ 2\string^\{L+1\}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Store\ keys\ on\ 64\ bit\ integers.\ Store\ each\ site\ value\ on\ 3\ bits.}}
+\DoxyCodeLine{\textcolor{comment}{//\ key[i]\ accesses\ the\ i-\/th\ element,\ and\ key.set(i)\ sets\ the\ i-\/th\ element.}}
+\DoxyCodeLine{\textcolor{comment}{//\ key\_64\_bit\_t\ is\ provided\ by\ the\ library.}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ bits\_per\_site\ 3}}
+\DoxyCodeLine{\textcolor{keyword}{class\ }Key\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classkey__64__bit__t}{key\_64\_bit\_t}}<bits\_per\_site>\ \{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\textcolor{keyword}{using\ }\mbox{\hyperlink{classkey__64__bit__t}{key\_64\_bit\_t}}<bits\_per\_site>\mbox{\hyperlink{classkey__64__bit__t}{::key\_64\_bit\_t}};}
+\DoxyCodeLine{\textcolor{comment}{//\ we\ must\ specify\ how\ our\ keys\ should\ be\ printed}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ print\ ()\textcolor{keyword}{\ const\ }\{\ \mbox{\hyperlink{classkey__64__bit__t}{key\_64\_bit\_t<bits\_per\_site>::print}}\ (SIZE);\ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ shift\_right\ ()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ last\ =\ (*this)[SIZE-\/1];}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ SIZE-\/2;\ i\ >=\ 0;\ i-\/-\/)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ set\ (i\ +\ 1,\ (*\textcolor{keyword}{this})[i]);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ set\ (0,\ last);}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ test\_key()\ \{}
+\DoxyCodeLine{Key\ k\ (\{1,\ 0,\ 1,\ 0\});}
+\DoxyCodeLine{k.print\ ();\ \textcolor{comment}{//\ output:\ (\ \ 1,\ 0,\ 1,\ 0\ \ )\ }}
+\DoxyCodeLine{printf\ (\textcolor{stringliteral}{"{}k[2]\ =\ \%d\(\backslash\)n"{}},\ k[2]);\ \textcolor{comment}{//\ output:\ 1}}
+\DoxyCodeLine{\ k.set\ (4,\ 1);\ \textcolor{comment}{//\ set\ key[4]\ to\ 1.}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{using\ }Hash\ =\ \mbox{\hyperlink{struct_key_hash}{KeyHash<Key>}};}
+\DoxyCodeLine{\textcolor{comment}{//\ Complex\ numbers\ with\ 100\ digits}}
+\DoxyCodeLine{\textcolor{keyword}{class\ }IsingPM;}
+\DoxyCodeLine{\textcolor{keyword}{class\ }IsingState;}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{using\ }Weight\ =\ double;}
+\DoxyCodeLine{\textcolor{keyword}{class\ }IsingPM\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_basis_vector}{BasisVector}}<Key,\ Weight>\ \{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\textcolor{keyword}{using\ }\mbox{\hyperlink{class_basis_vector}{BasisVector}}<Key,\ Weight>\mbox{\hyperlink{class_basis_vector}{::BasisVector}};\ \ \textcolor{comment}{//\ use\ the\ base\ constructors}}
+\DoxyCodeLine{IsingPM\ (Key\ k,\ Weight\ v)\ :\ \mbox{\hyperlink{class_basis_vector}{BasisVector}}<Key,\ Weight>\ (k,\ v)\ \{\}}
+\DoxyCodeLine{IsingPM\ (Key\ k)\ :\ \mbox{\hyperlink{class_basis_vector}{BasisVector}}<Key,\ Weight>\ (k,\ Weight\ (1))\ \{\}}
+\DoxyCodeLine{\textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\textcolor{comment}{//\ in\ class\ IsingPM\ \{}}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ add\_vertical\_edge(IsingState\&\ v,\ \textcolor{keywordtype}{int}\ pos);}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ add\_horizontal\_edge(IsingState\&\ v,\ \textcolor{keywordtype}{int}\ pos1,\ \textcolor{keywordtype}{int}\ pos2);}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ r\_matrix(IsingState\&\ v,\ \textcolor{keywordtype}{int}\ pos);}
+\DoxyCodeLine{\};\ \textcolor{comment}{//\ end\ of\ class\ IsingPM}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Weight\ J\ =\ log(1+sqrt(2))/2;}
+\DoxyCodeLine{Weight\ expJ\ \ =\ exp(J);}
+\DoxyCodeLine{Weight\ expmJ\ =\ exp(-\/J);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }IsingState\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_vector}{Vector}}<IsingPM,\ Hash>\ \{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_vector}{Vector}}<IsingPM,\ Hash>\mbox{\hyperlink{class_vector_a0faa99acaf54dafcf479d15b16b3b522}{::Vector}};\ \textcolor{comment}{//\ inherit\ base\ constructors}}
+\DoxyCodeLine{\textcolor{keyword}{using\ }\mbox{\hyperlink{class_vector}{Vector}}<IsingPM,\ Hash>::operator+=;}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_a8fe7c81eb0e3c128bb455e3b1730a06e}{print}}\ ()\textcolor{keyword}{\ const\ }\{\ \mbox{\hyperlink{class_vector_a8fe7c81eb0e3c128bb455e3b1730a06e}{Vector<IsingPM,\ Hash>::print}}\ ();\ \}}
+\DoxyCodeLine{\textcolor{comment}{//\ ...}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ in\ class\ IsingState\ \{}}
+\DoxyCodeLine{\textcolor{keyword}{public}:\ }
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ r\_matrix(IsingState\&\ tmp,\ \textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ draining\_begin\ ();\ it\ !=\ draining\_end\ ();\ it++)}
+\DoxyCodeLine{\ \ \ \ IsingPM\ (*it).r\_matrix\ (tmp,\ i);}
+\DoxyCodeLine{\textcolor{comment}{//\ here\ tmp\ =\ R\_i\ *\ v}}
+\DoxyCodeLine{swap\ (tmp);\ \textcolor{comment}{//\ pull\ the\ result\ back\ in\ v.}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ in\ class\ IsingState\ \{}}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ transfer(IsingState\&\ tmp)\ \{}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ pos\ =\ 0;\ pos\ <\ SIZE;\ pos++)}
+\DoxyCodeLine{\ \ \ \ r\_matrix(tmp,\ 2*pos);}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ pos\ =\ 0;\ pos\ <\ SIZE;\ pos++)}
+\DoxyCodeLine{\ \ \ \ r\_matrix(tmp,\ 2*pos+1);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\};\ \textcolor{comment}{//\ end\ of\ class\ IsingState}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ test\_vector()\ \{}
+\DoxyCodeLine{\ \ IsingState\ v\ =\ IsingState(10);\ \textcolor{comment}{//\ initialises\ a\ vector\ with\ a\ hash\ table\ with\ 10\ slots}}
+\DoxyCodeLine{\ \ v\ *=\ 100.0;\ \textcolor{comment}{//\ multiplies\ the\ norm\ of\ v\ by\ 100}}
+\DoxyCodeLine{\ \ v.factorise\_norm();\ \textcolor{comment}{//\ rewrites\ v\ as\ |v|\ *\ v'\ where\ v'\ has\ norm\ 1.}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ test\_multiplication\ ()\ \{}
+\DoxyCodeLine{\ \ IsingState\ v,\ tmp;}
+\DoxyCodeLine{\ \ v\ +=\ IsingPM(\{1,\ 0,\ 1\},\ 2.0);\ \textcolor{comment}{//\ v\ =\ 2\ *\ |+-\/+>}}
+\DoxyCodeLine{\ \ v.transfer(tmp);\ \textcolor{comment}{//\ v\ -\/>\ T*v}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ISING\_HPP}}
+
+\end{DoxyCodeInclude}
+
+
+
+\begin{DoxyItemize}
+\item ising.\+cpp
+\end{DoxyItemize}
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}ising.hpp"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ IsingPM::add\_vertical\_edge(IsingState\&\ v,\ \textcolor{keywordtype}{int}\ pos)\ \{}
+\DoxyCodeLine{\ \ IsingPM\ b2\ =\ *\textcolor{keyword}{this};\ \textcolor{comment}{//\ copy\ *this}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ value\ *=\ expJ;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ b2.key.set(pos,\ 1-\/key[pos]);\ \textcolor{comment}{//\ turns\ 0\ to\ 1\ and\ vice-\/versa}}
+\DoxyCodeLine{\ \ b2.value\ *=\ expmJ;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ v\ +=\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ v\ +=\ b2;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ IsingPM::add\_horizontal\_edge(IsingState\&\ v,\ \textcolor{keywordtype}{int}\ pos1,\ \textcolor{keywordtype}{int}\ pos2)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (key[pos1]\ ==\ key[pos2])}
+\DoxyCodeLine{\ \ \ \ value\ *=\ expJ;}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{\ \ \ \ value\ *=\ expmJ;}
+\DoxyCodeLine{\ \ v\ +=\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ IsingPM::r\_matrix(IsingState\&\ v,\ \textcolor{keywordtype}{int}\ pos)\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (pos\%2\ ==\ 0)}
+\DoxyCodeLine{\ \ \ \ add\_vertical\_edge\ (v,\ pos/2);}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\ \ \ \ add\_horizontal\_edge\ (v,\ pos/2,\ (pos/2+1)\%SIZE);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ test\_matrix()\ \{}
+\DoxyCodeLine{\ \ IsingPM\ ini(\{1,\ 0,\ 1\},\ 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ IsingState\ s(ini),\ tmp;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{class_matrix}{Matrix}}\ T(\&s,\ \&tmp,\ \&IsingState::transfer);}
+\DoxyCodeLine{\ \ T.print();}
+\DoxyCodeLine{\ \ \textcolor{comment}{/*\ outputs}}
+\DoxyCodeLine{\textcolor{comment}{\ \ Matrix\ of\ dimension\ 8:}}
+\DoxyCodeLine{\textcolor{comment}{\ \ [}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 14.0711\ \ \ 1\ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ 0.414214\ \ 1\ \ \ \ \ \ \ \ \ 0.414214\ \ 0.414214\ \ 1\ \ \ \ \ \ \ \ \ ;}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 5.82843\ \ \ 2.41421\ \ \ 0.414214\ \ 1\ \ \ \ \ \ \ \ \ 0.414214\ \ 1\ \ \ \ \ \ \ \ \ 0.171573\ \ 2.41421\ \ \ ;}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 5.82843\ \ \ 0.414214\ \ 2.41421\ \ \ 1\ \ \ \ \ \ \ \ \ 0.414214\ \ 0.171573\ \ 1\ \ \ \ \ \ \ \ \ 2.41421\ \ \ ;}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 2.41421\ \ \ 1\ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ 2.41421\ \ \ 0.171573\ \ 0.414214\ \ 0.414214\ \ 5.82843\ \ \ ;}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 5.82843\ \ \ 0.414214\ \ 0.414214\ \ 0.171573\ \ 2.41421\ \ \ 1\ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ 2.41421\ \ \ ;}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 2.41421\ \ \ 1\ \ \ \ \ \ \ \ \ 0.171573\ \ 0.414214\ \ 1\ \ \ \ \ \ \ \ \ 2.41421\ \ \ 0.414214\ \ 5.82843\ \ \ ;}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 2.41421\ \ \ 0.171573\ \ 1\ \ \ \ \ \ \ \ \ 0.414214\ \ 1\ \ \ \ \ \ \ \ \ 0.414214\ \ 2.41421\ \ \ 5.82843\ \ \ ;}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ 0.414214\ \ 0.414214\ \ 1\ \ \ \ \ \ \ \ \ 0.414214\ \ 1\ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ 14.0711\ \ \ }}
+\DoxyCodeLine{\textcolor{comment}{\ \ ]}}
+\DoxyCodeLine{\textcolor{comment}{*/}}
+\DoxyCodeLine{\ \ T.print\_state\_table();}
+\DoxyCodeLine{\ \ \textcolor{comment}{/*\ outputs:}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 0\ \ :\ \ (1\ \ 1\ \ 1\ \ \ \ )}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 1\ \ :\ \ (1\ \ 1\ \ 0\ \ \ \ )}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 2\ \ :\ \ (1\ \ 0\ \ 1\ \ \ \ )}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 3\ \ :\ \ (1\ \ 0\ \ 0\ \ \ \ )}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 4\ \ :\ \ (0\ \ 1\ \ 1\ \ \ \ )}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 5\ \ :\ \ (0\ \ 1\ \ 0\ \ \ \ )}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 6\ \ :\ \ (0\ \ 0\ \ 1\ \ \ \ )}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ 7\ \ :\ \ (0\ \ 0\ \ 0\ \ \ \ )}}
+\DoxyCodeLine{\textcolor{comment}{\ \ */}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ test\_matrix();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

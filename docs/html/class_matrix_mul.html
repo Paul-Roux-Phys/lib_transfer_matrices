@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Transfer Matrices
+   <div id="projectname">Transfer Matrices<span id="projectnumber">&#160;0.0.0DEV</span>
    </div>
    <div id="projectbrief">C++ library for transfer matrix computations</div>
   </td>
@@ -109,33 +116,223 @@ $(function(){initNavTree('class_matrix_mul.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:adf0dc126bb89a392bb82d81600c6f96f" id="r_adf0dc126bb89a392bb82d81600c6f96f"><td class="memItemLeft" align="right" valign="top"><a id="adf0dc126bb89a392bb82d81600c6f96f" name="adf0dc126bb89a392bb82d81600c6f96f"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Key</b> = typename Vector::Key</td></tr>
+<tr class="memitem:adf0dc126bb89a392bb82d81600c6f96f" id="r_adf0dc126bb89a392bb82d81600c6f96f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf0dc126bb89a392bb82d81600c6f96f">Key</a> = typename Vector::Key</td></tr>
 <tr class="separator:adf0dc126bb89a392bb82d81600c6f96f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe9cfcdb83d07275e3612aa1a016edd1" id="r_afe9cfcdb83d07275e3612aa1a016edd1"><td class="memItemLeft" align="right" valign="top"><a id="afe9cfcdb83d07275e3612aa1a016edd1" name="afe9cfcdb83d07275e3612aa1a016edd1"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Value</b> = typename Vector::Value</td></tr>
+<tr class="memitem:afe9cfcdb83d07275e3612aa1a016edd1" id="r_afe9cfcdb83d07275e3612aa1a016edd1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe9cfcdb83d07275e3612aa1a016edd1">Value</a> = typename Vector::Value</td></tr>
 <tr class="separator:afe9cfcdb83d07275e3612aa1a016edd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2bff8a28aa677de6821476edb2e90219" id="r_a2bff8a28aa677de6821476edb2e90219"><td class="memItemLeft" align="right" valign="top"><a id="a2bff8a28aa677de6821476edb2e90219" name="a2bff8a28aa677de6821476edb2e90219"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MatrixMul</b> (<a class="el" href="class_vector.html">Vector</a> *v1, <a class="el" href="class_vector.html">Vector</a> *v2, TransferMatrix&lt; <a class="el" href="class_vector.html">Vector</a> &gt; t)</td></tr>
+<tr class="memitem:a2bff8a28aa677de6821476edb2e90219" id="r_a2bff8a28aa677de6821476edb2e90219"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bff8a28aa677de6821476edb2e90219">MatrixMul</a> (<a class="el" href="class_vector.html">Vector</a> *v1, <a class="el" href="class_vector.html">Vector</a> *v2, TransferMatrix&lt; <a class="el" href="class_vector.html">Vector</a> &gt; t)</td></tr>
 <tr class="separator:a2bff8a28aa677de6821476edb2e90219"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a228bda997f3540686f42d8b34d078edf" id="r_a228bda997f3540686f42d8b34d078edf"><td class="memItemLeft" align="right" valign="top"><a id="a228bda997f3540686f42d8b34d078edf" name="a228bda997f3540686f42d8b34d078edf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>generate_space</b> ()</td></tr>
+<tr class="memitem:a228bda997f3540686f42d8b34d078edf" id="r_a228bda997f3540686f42d8b34d078edf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a228bda997f3540686f42d8b34d078edf">generate_space</a> ()</td></tr>
 <tr class="separator:a228bda997f3540686f42d8b34d078edf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a528cc7e589ce13407a90cd2c2d4c05e4" id="r_a528cc7e589ce13407a90cd2c2d4c05e4"><td class="memItemLeft" align="right" valign="top"><a id="a528cc7e589ce13407a90cd2c2d4c05e4" name="a528cc7e589ce13407a90cd2c2d4c05e4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_size</b> ()</td></tr>
+<tr class="memitem:a528cc7e589ce13407a90cd2c2d4c05e4" id="r_a528cc7e589ce13407a90cd2c2d4c05e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a528cc7e589ce13407a90cd2c2d4c05e4">set_size</a> ()</td></tr>
 <tr class="separator:a528cc7e589ce13407a90cd2c2d4c05e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83b5ff7c2a63f4c08d8807c9759ac90b" id="r_a83b5ff7c2a63f4c08d8807c9759ac90b"><td class="memItemLeft" align="right" valign="top"><a id="a83b5ff7c2a63f4c08d8807c9759ac90b" name="a83b5ff7c2a63f4c08d8807c9759ac90b"></a>
-std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_size</b> ()</td></tr>
+<tr class="memitem:a83b5ff7c2a63f4c08d8807c9759ac90b" id="r_a83b5ff7c2a63f4c08d8807c9759ac90b"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83b5ff7c2a63f4c08d8807c9759ac90b">get_size</a> ()</td></tr>
 <tr class="separator:a83b5ff7c2a63f4c08d8807c9759ac90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6721928e6a1ed245ca86ad772c73817c" id="r_a6721928e6a1ed245ca86ad772c73817c"><td class="memItemLeft" align="right" valign="top"><a id="a6721928e6a1ed245ca86ad772c73817c" name="a6721928e6a1ed245ca86ad772c73817c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>transfer</b> ()</td></tr>
+<tr class="memitem:a6721928e6a1ed245ca86ad772c73817c" id="r_a6721928e6a1ed245ca86ad772c73817c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6721928e6a1ed245ca86ad772c73817c">transfer</a> ()</td></tr>
 <tr class="separator:a6721928e6a1ed245ca86ad772c73817c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="class_vector.html">Vector</a>, typename Real&gt;<br />
+class MatrixMul&lt; Vector, Real &gt;</div>
+<p class="definition">Definition at line <a class="el" href="src_2matrices_8hpp_source.html#l00007">7</a> of file <a class="el" href="src_2matrices_8hpp_source.html">src/matrices.hpp</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="adf0dc126bb89a392bb82d81600c6f96f" name="adf0dc126bb89a392bb82d81600c6f96f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf0dc126bb89a392bb82d81600c6f96f">&#9670;&#160;</a></span>Key</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> , typename Real &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_matrix_mul.html">MatrixMul</a>&lt; <a class="el" href="class_vector.html">Vector</a>, Real &gt;::Key = typename Vector::Key</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2matrices_8hpp_source.html#l00009">9</a> of file <a class="el" href="src_2matrices_8hpp_source.html">src/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="afe9cfcdb83d07275e3612aa1a016edd1" name="afe9cfcdb83d07275e3612aa1a016edd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe9cfcdb83d07275e3612aa1a016edd1">&#9670;&#160;</a></span>Value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> , typename Real &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_matrix_mul.html">MatrixMul</a>&lt; <a class="el" href="class_vector.html">Vector</a>, Real &gt;::Value = typename Vector::Value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2matrices_8hpp_source.html#l00010">10</a> of file <a class="el" href="src_2matrices_8hpp_source.html">src/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2bff8a28aa677de6821476edb2e90219" name="a2bff8a28aa677de6821476edb2e90219"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bff8a28aa677de6821476edb2e90219">&#9670;&#160;</a></span>MatrixMul()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> , typename Real &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix_mul.html">MatrixMul</a>&lt; <a class="el" href="class_vector.html">Vector</a>, Real &gt;<a class="el" href="class_matrix_mul.html">::MatrixMul</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a> *</td>          <td class="paramname"><span class="paramname"><em>v1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a> *</td>          <td class="paramname"><span class="paramname"><em>v2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TransferMatrix&lt; <a class="el" href="class_vector.html">Vector</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>t</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2matrices_8hpp_source.html#l00020">20</a> of file <a class="el" href="src_2matrices_8hpp_source.html">src/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a228bda997f3540686f42d8b34d078edf" name="a228bda997f3540686f42d8b34d078edf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a228bda997f3540686f42d8b34d078edf">&#9670;&#160;</a></span>generate_space()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> , typename Real &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix_mul.html">MatrixMul</a>&lt; <a class="el" href="class_vector.html">Vector</a>, Real &gt;::generate_space </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2matrices_8hpp_source.html#l00038">38</a> of file <a class="el" href="src_2matrices_8hpp_source.html">src/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a83b5ff7c2a63f4c08d8807c9759ac90b" name="a83b5ff7c2a63f4c08d8807c9759ac90b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83b5ff7c2a63f4c08d8807c9759ac90b">&#9670;&#160;</a></span>get_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> , typename Real &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="class_matrix_mul.html">MatrixMul</a>&lt; <a class="el" href="class_vector.html">Vector</a>, Real &gt;::get_size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2matrices_8hpp_source.html#l00047">47</a> of file <a class="el" href="src_2matrices_8hpp_source.html">src/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a528cc7e589ce13407a90cd2c2d4c05e4" name="a528cc7e589ce13407a90cd2c2d4c05e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a528cc7e589ce13407a90cd2c2d4c05e4">&#9670;&#160;</a></span>set_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> , typename Real &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix_mul.html">MatrixMul</a>&lt; <a class="el" href="class_vector.html">Vector</a>, Real &gt;::set_size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2matrices_8hpp_source.html#l00042">42</a> of file <a class="el" href="src_2matrices_8hpp_source.html">src/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6721928e6a1ed245ca86ad772c73817c" name="a6721928e6a1ed245ca86ad772c73817c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6721928e6a1ed245ca86ad772c73817c">&#9670;&#160;</a></span>transfer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> , typename Real &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix_mul.html">MatrixMul</a>&lt; <a class="el" href="class_vector.html">Vector</a>, Real &gt;::transfer </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2matrices_8hpp_source.html#l00051">51</a> of file <a class="el" href="src_2matrices_8hpp_source.html">src/matrices.hpp</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/paulroux/Documents/Recherche/projet_these/code/transfer_matrices/TransferMatricesCpp/cpp_libs/libtransfermatrices/src/<a class="el" href="src_2matrices_8hpp_source.html">matrices.hpp</a></li>
+<li><a class="el" href="src_2matrices_8hpp_source.html">src/matrices.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

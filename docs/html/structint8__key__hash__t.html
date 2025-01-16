@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Transfer Matrices
+   <div id="projectname">Transfer Matrices<span id="projectnumber">&#160;0.0.0DEV</span>
    </div>
    <div id="projectbrief">C++ library for transfer matrix computations</div>
   </td>
@@ -108,12 +115,45 @@ $(function(){initNavTree('structint8__key__hash__t.html',''); initResizable(true
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a62b9700c668397b5104b4ef612a2b206" id="r_a62b9700c668397b5104b4ef612a2b206"><td class="memItemLeft" align="right" valign="top"><a id="a62b9700c668397b5104b4ef612a2b206" name="a62b9700c668397b5104b4ef612a2b206"></a>
-std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const <a class="el" href="classint8__key__t.html">int8_key_t</a>&lt; size &gt; &amp;k) const</td></tr>
+<tr class="memitem:a62b9700c668397b5104b4ef612a2b206" id="r_a62b9700c668397b5104b4ef612a2b206"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62b9700c668397b5104b4ef612a2b206">operator()</a> (const <a class="el" href="classint8__key__t.html">int8_key_t</a>&lt; size &gt; &amp;k) const</td></tr>
 <tr class="separator:a62b9700c668397b5104b4ef612a2b206"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;std::size_t size&gt;<br />
+struct int8_key_hash_t&lt; size &gt;</div>
+<p class="definition">Definition at line <a class="el" href="int8array_8hpp_source.html#l00023">23</a> of file <a class="el" href="int8array_8hpp_source.html">int8array.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a62b9700c668397b5104b4ef612a2b206" name="a62b9700c668397b5104b4ef612a2b206"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62b9700c668397b5104b4ef612a2b206">&#9670;&#160;</a></span>operator()()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="structint8__key__hash__t.html">int8_key_hash_t</a>&lt; size &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classint8__key__t.html">int8_key_t</a>&lt; size &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>k</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="int8array_8hpp_source.html#l00024">24</a> of file <a class="el" href="int8array_8hpp_source.html">int8array.hpp</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/Users/paulroux/Documents/Recherche/projet_these/code/transfer_matrices/TransferMatricesCpp/cpp_libs/libtransfermatrices/src/key_types/<a class="el" href="int8array_8hpp_source.html">int8array.hpp</a></li>
+<li><a class="el" href="int8array_8hpp_source.html">int8array.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

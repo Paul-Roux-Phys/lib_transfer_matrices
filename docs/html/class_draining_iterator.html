@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Transfer Matrices
+   <div id="projectname">Transfer Matrices<span id="projectnumber">&#160;0.0.0DEV</span>
    </div>
    <div id="projectbrief">C++ library for transfer matrix computations</div>
   </td>
@@ -109,42 +116,300 @@ $(function(){initNavTree('class_draining_iterator.html',''); initResizable(true)
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a7bacb4843f308cf9f290308dd8fda010" id="r_a7bacb4843f308cf9f290308dd8fda010"><td class="memItemLeft" align="right" valign="top"><a id="a7bacb4843f308cf9f290308dd8fda010" name="a7bacb4843f308cf9f290308dd8fda010"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>iterator</b> = typename Vector::iterator</td></tr>
+<tr class="memitem:a7bacb4843f308cf9f290308dd8fda010" id="r_a7bacb4843f308cf9f290308dd8fda010"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bacb4843f308cf9f290308dd8fda010">iterator</a> = typename Vector::iterator</td></tr>
 <tr class="separator:a7bacb4843f308cf9f290308dd8fda010"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1b3c0f194a94553a4bff8cd6e8c4b42" id="r_ad1b3c0f194a94553a4bff8cd6e8c4b42"><td class="memItemLeft" align="right" valign="top"><a id="ad1b3c0f194a94553a4bff8cd6e8c4b42" name="ad1b3c0f194a94553a4bff8cd6e8c4b42"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Value</b> = std::pair&lt;const typename Vector::Key, typename Vector::Value&gt;</td></tr>
+<tr class="memitem:ad1b3c0f194a94553a4bff8cd6e8c4b42" id="r_ad1b3c0f194a94553a4bff8cd6e8c4b42"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1b3c0f194a94553a4bff8cd6e8c4b42">Value</a> = std::pair&lt;const typename Vector::Key, typename Vector::Value&gt;</td></tr>
 <tr class="separator:ad1b3c0f194a94553a4bff8cd6e8c4b42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab72a57d178433c81b1260822f9f936c9" id="r_ab72a57d178433c81b1260822f9f936c9"><td class="memItemLeft" align="right" valign="top"><a id="ab72a57d178433c81b1260822f9f936c9" name="ab72a57d178433c81b1260822f9f936c9"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>BasisVector</b> = typename Vector::BasisVector</td></tr>
+<tr class="memitem:ab72a57d178433c81b1260822f9f936c9" id="r_ab72a57d178433c81b1260822f9f936c9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab72a57d178433c81b1260822f9f936c9">BasisVector</a> = typename Vector::BasisVector</td></tr>
 <tr class="separator:ab72a57d178433c81b1260822f9f936c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6b73accd4ab44ad763b22733b254cb46" id="r_a6b73accd4ab44ad763b22733b254cb46"><td class="memItemLeft" align="right" valign="top"><a id="a6b73accd4ab44ad763b22733b254cb46" name="a6b73accd4ab44ad763b22733b254cb46"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DrainingIterator</b> (iterator it, <a class="el" href="class_vector.html">Vector</a> *vec)</td></tr>
+<tr class="memitem:a6b73accd4ab44ad763b22733b254cb46" id="r_a6b73accd4ab44ad763b22733b254cb46"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b73accd4ab44ad763b22733b254cb46">DrainingIterator</a> (iterator it, <a class="el" href="class_vector.html">Vector</a> *vec)</td></tr>
 <tr class="separator:a6b73accd4ab44ad763b22733b254cb46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7de91a678d98d2c72bc3d028948b785" id="r_ae7de91a678d98d2c72bc3d028948b785"><td class="memItemLeft" align="right" valign="top"><a id="ae7de91a678d98d2c72bc3d028948b785" name="ae7de91a678d98d2c72bc3d028948b785"></a>
-Value &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> ()</td></tr>
+<tr class="memitem:ae7de91a678d98d2c72bc3d028948b785" id="r_ae7de91a678d98d2c72bc3d028948b785"><td class="memItemLeft" align="right" valign="top">Value &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7de91a678d98d2c72bc3d028948b785">operator*</a> ()</td></tr>
 <tr class="separator:ae7de91a678d98d2c72bc3d028948b785"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7662987b26cd662342cb23379b004e9b" id="r_a7662987b26cd662342cb23379b004e9b"><td class="memItemLeft" align="right" valign="top"><a id="a7662987b26cd662342cb23379b004e9b" name="a7662987b26cd662342cb23379b004e9b"></a>
-Value *&#160;</td><td class="memItemRight" valign="bottom"><b>operator-&gt;</b> ()</td></tr>
+<tr class="memitem:a7662987b26cd662342cb23379b004e9b" id="r_a7662987b26cd662342cb23379b004e9b"><td class="memItemLeft" align="right" valign="top">Value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7662987b26cd662342cb23379b004e9b">operator-&gt;</a> ()</td></tr>
 <tr class="separator:a7662987b26cd662342cb23379b004e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0accf0867a1f67da8a4a79771ff934ed" id="r_a0accf0867a1f67da8a4a79771ff934ed"><td class="memItemLeft" align="right" valign="top"><a id="a0accf0867a1f67da8a4a79771ff934ed" name="a0accf0867a1f67da8a4a79771ff934ed"></a>
-<a class="el" href="class_draining_iterator.html">DrainingIterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> ()</td></tr>
+<tr class="memitem:a0accf0867a1f67da8a4a79771ff934ed" id="r_a0accf0867a1f67da8a4a79771ff934ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_draining_iterator.html">DrainingIterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0accf0867a1f67da8a4a79771ff934ed">operator++</a> ()</td></tr>
 <tr class="separator:a0accf0867a1f67da8a4a79771ff934ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b439030f4f6deda2dc74aa6ee0b9e1d" id="r_a8b439030f4f6deda2dc74aa6ee0b9e1d"><td class="memItemLeft" align="right" valign="top"><a id="a8b439030f4f6deda2dc74aa6ee0b9e1d" name="a8b439030f4f6deda2dc74aa6ee0b9e1d"></a>
-<a class="el" href="class_draining_iterator.html">DrainingIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> (int)</td></tr>
+<tr class="memitem:a8b439030f4f6deda2dc74aa6ee0b9e1d" id="r_a8b439030f4f6deda2dc74aa6ee0b9e1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_draining_iterator.html">DrainingIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b439030f4f6deda2dc74aa6ee0b9e1d">operator++</a> (int)</td></tr>
 <tr class="separator:a8b439030f4f6deda2dc74aa6ee0b9e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16963164005ddc693eda7a2cb795ea58" id="r_a16963164005ddc693eda7a2cb795ea58"><td class="memItemLeft" align="right" valign="top"><a id="a16963164005ddc693eda7a2cb795ea58" name="a16963164005ddc693eda7a2cb795ea58"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="class_draining_iterator.html">DrainingIterator</a> &amp;other) const</td></tr>
+<tr class="memitem:a16963164005ddc693eda7a2cb795ea58" id="r_a16963164005ddc693eda7a2cb795ea58"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16963164005ddc693eda7a2cb795ea58">operator==</a> (const <a class="el" href="class_draining_iterator.html">DrainingIterator</a> &amp;other) const</td></tr>
 <tr class="separator:a16963164005ddc693eda7a2cb795ea58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46f54bd59caae54c16f75328474dfbdd" id="r_a46f54bd59caae54c16f75328474dfbdd"><td class="memItemLeft" align="right" valign="top"><a id="a46f54bd59caae54c16f75328474dfbdd" name="a46f54bd59caae54c16f75328474dfbdd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="class_draining_iterator.html">DrainingIterator</a> &amp;other) const</td></tr>
+<tr class="memitem:a46f54bd59caae54c16f75328474dfbdd" id="r_a46f54bd59caae54c16f75328474dfbdd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46f54bd59caae54c16f75328474dfbdd">operator!=</a> (const <a class="el" href="class_draining_iterator.html">DrainingIterator</a> &amp;other) const</td></tr>
 <tr class="separator:a46f54bd59caae54c16f75328474dfbdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="class_vector.html">Vector</a>&gt;<br />
+class DrainingIterator&lt; Vector &gt;</div>
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00302">302</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ab72a57d178433c81b1260822f9f936c9" name="ab72a57d178433c81b1260822f9f936c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab72a57d178433c81b1260822f9f936c9">&#9670;&#160;</a></span>BasisVector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_draining_iterator.html">DrainingIterator</a>&lt; <a class="el" href="class_vector.html">Vector</a> &gt;<a class="el" href="class_basis_vector.html">::BasisVector</a> = typename Vector::BasisVector</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00306">306</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7bacb4843f308cf9f290308dd8fda010" name="a7bacb4843f308cf9f290308dd8fda010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bacb4843f308cf9f290308dd8fda010">&#9670;&#160;</a></span>iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_draining_iterator.html">DrainingIterator</a>&lt; <a class="el" href="class_vector.html">Vector</a> &gt;::iterator = typename Vector::iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00304">304</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad1b3c0f194a94553a4bff8cd6e8c4b42" name="ad1b3c0f194a94553a4bff8cd6e8c4b42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1b3c0f194a94553a4bff8cd6e8c4b42">&#9670;&#160;</a></span>Value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_draining_iterator.html">DrainingIterator</a>&lt; <a class="el" href="class_vector.html">Vector</a> &gt;::Value = std::pair&lt;const typename Vector::Key, typename Vector::Value&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00305">305</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6b73accd4ab44ad763b22733b254cb46" name="a6b73accd4ab44ad763b22733b254cb46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b73accd4ab44ad763b22733b254cb46">&#9670;&#160;</a></span>DrainingIterator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_draining_iterator.html">DrainingIterator</a>&lt; <a class="el" href="class_vector.html">Vector</a> &gt;<a class="el" href="class_draining_iterator.html">::DrainingIterator</a> </td>
+          <td>(</td>
+          <td class="paramtype">iterator</td>          <td class="paramname"><span class="paramname"><em>it</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a> *</td>          <td class="paramname"><span class="paramname"><em>vec</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00313">313</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a46f54bd59caae54c16f75328474dfbdd" name="a46f54bd59caae54c16f75328474dfbdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46f54bd59caae54c16f75328474dfbdd">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_draining_iterator.html">DrainingIterator</a>&lt; <a class="el" href="class_vector.html">Vector</a> &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_draining_iterator.html">DrainingIterator</a>&lt; <a class="el" href="class_vector.html">Vector</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00343">343</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae7de91a678d98d2c72bc3d028948b785" name="ae7de91a678d98d2c72bc3d028948b785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7de91a678d98d2c72bc3d028948b785">&#9670;&#160;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Value &amp; <a class="el" href="class_draining_iterator.html">DrainingIterator</a>&lt; <a class="el" href="class_vector.html">Vector</a> &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00315">315</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0accf0867a1f67da8a4a79771ff934ed" name="a0accf0867a1f67da8a4a79771ff934ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0accf0867a1f67da8a4a79771ff934ed">&#9670;&#160;</a></span>operator++() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_draining_iterator.html">DrainingIterator</a> &amp; <a class="el" href="class_draining_iterator.html">DrainingIterator</a>&lt; <a class="el" href="class_vector.html">Vector</a> &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00323">323</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8b439030f4f6deda2dc74aa6ee0b9e1d" name="a8b439030f4f6deda2dc74aa6ee0b9e1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b439030f4f6deda2dc74aa6ee0b9e1d">&#9670;&#160;</a></span>operator++() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_draining_iterator.html">DrainingIterator</a> <a class="el" href="class_draining_iterator.html">DrainingIterator</a>&lt; <a class="el" href="class_vector.html">Vector</a> &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00332">332</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7662987b26cd662342cb23379b004e9b" name="a7662987b26cd662342cb23379b004e9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7662987b26cd662342cb23379b004e9b">&#9670;&#160;</a></span>operator-&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Value * <a class="el" href="class_draining_iterator.html">DrainingIterator</a>&lt; <a class="el" href="class_vector.html">Vector</a> &gt;::operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00319">319</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a16963164005ddc693eda7a2cb795ea58" name="a16963164005ddc693eda7a2cb795ea58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16963164005ddc693eda7a2cb795ea58">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector.html">Vector</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_draining_iterator.html">DrainingIterator</a>&lt; <a class="el" href="class_vector.html">Vector</a> &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_draining_iterator.html">DrainingIterator</a>&lt; <a class="el" href="class_vector.html">Vector</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00339">339</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/paulroux/Documents/Recherche/projet_these/code/transfer_matrices/TransferMatricesCpp/cpp_libs/libtransfermatrices/src/vectors/<a class="el" href="draining__iterator_8hpp_source.html">draining_iterator.hpp</a></li>
+<li><a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,27 +1,98 @@
-\doxysection{keys.\+hpp}
-\hypertarget{src_2keys_8hpp_source}{}\label{src_2keys_8hpp_source}\index{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/keys.hpp@{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/keys.hpp}}
+\doxysection{src/keys.hpp}
+\hypertarget{src_2keys_8hpp_source}{}\label{src_2keys_8hpp_source}\index{keys.hpp@{keys.hpp}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <array>}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstddef>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iomanip>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}key\_types/64bit.hpp"{}}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}key\_types/int8array.hpp"{}}}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Key>}
-\DoxyCodeLine{00013\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_key_hash}{KeyHash}}\ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ operator()(\textcolor{keyword}{const}\ Key\&\ k)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ hash\ =\ 5381;}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \textcolor{keyword}{sizeof}(k);\ i++)\ \{}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ hash\ =\ ((hash\ <<\ 5)\ +\ hash)\ +\ static\_cast<unsigned\ char>(k[i]);\ \textcolor{comment}{//\ hash\ *\ 33\ +\ c}}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hash;}
-\DoxyCodeLine{00020\ \ \ \ \ \}}
-\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ KEY\_HPP}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ KEY\_HPP}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00010}00010\ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ bits\_per\_site>}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00011}\mbox{\hyperlink{classkey__64__bit__t}{00011}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classkey__64__bit__t}{key\_64\_bit\_t}}\ \{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00012}00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint64\_t\ MASK\ =\ (1ULL\ <<\ bits\_per\_site)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00014}00014\ \ \ \ \ uint64\_t\ bits;}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00016}00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{classkey__64__bit__t}{key\_64\_bit\_t}}\ (uint64\_t\ a\ =\ 0)\ :\ bits(a)\ \{\}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{classkey__64__bit__t}{key\_64\_bit\_t}}\ (std::initializer\_list<int>\ a)\ :\ bits(0)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ el\ :\ a)\ set(i++,\ el);\ }
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{int}\ operator[](\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (bits\ >>\ bits\_per\_site*i)\ \&\ MASK;}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ clear(\textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ bits\ \&=\ \string~(MASK\ <<\ bits\_per\_site*i);}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{void}\ set(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ clear(i);}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ bits\ |=\ (\textcolor{keyword}{static\_cast<}uint64\_t\textcolor{keyword}{>}(value)\ <<\ bits\_per\_site*i);}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classkey__64__bit__t}{key\_64\_bit\_t}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bits\ ==\ other.bits;}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00039}00039\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ print(\textcolor{keywordtype}{size\_t}\ size)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ ("{}};}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setw(3)\ <<\ operator[](i);}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ )"{}};}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00047}00047\ \};}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00049}00049\ \textcolor{keyword}{template}\ <std::\textcolor{keywordtype}{size\_t}\ size>}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00050}\mbox{\hyperlink{classkey__int8__t}{00050}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classkey__int8__t}{key\_int8\_t}}\ :\ \textcolor{keyword}{public}\ std::array<int8\_t,\ size>\ \{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00051}00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classkey__int8__t}{key\_int8\_t}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ size;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other[i]\ !=\ (*\textcolor{keyword}{this})[i])\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//\ Print\ keys}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classkey__int8__t}{key\_int8\_t}}\&\ k)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}("{}};}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ e\ :\ k)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ std::setw(3)\ <<\ static\_cast<int>(e);}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}\ \ )"{}};}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00068}00068\ \};}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00070}00070\ \textcolor{keyword}{template}\ <std::\textcolor{keywordtype}{size\_t}\ size>}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00071}\mbox{\hyperlink{structkey__int8__hash__t}{00071}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structkey__int8__hash__t}{key\_int8\_hash\_t}}\ \{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00072}00072\ \ \ \ \ std::size\_t\ operator()(\textcolor{keyword}{const}\ \mbox{\hyperlink{classkey__int8__t}{key\_int8\_t<size>}}\&\ k)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00073}00073\ \ \ \ \ \ \ \ \ std::size\_t\ hash\ =\ 5381;}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ c\ :\ k)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ hash\ =\ ((hash\ <<\ 5)\ +\ hash)\ +\ static\_cast<unsigned\ char>(c);\ \textcolor{comment}{//\ hash\ *\ 33\ +\ c}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hash;}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00079}00079\ \};}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00081}00081\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Key>}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00082}\mbox{\hyperlink{struct_key_hash}{00082}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_key_hash}{KeyHash}}\ \{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ operator()(\textcolor{keyword}{const}\ Key\&\ k)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ hash\ =\ 5381;}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \textcolor{keyword}{sizeof}(k);\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ hash\ =\ ((hash\ <<\ 5)\ +\ hash)\ +\ static\_cast<unsigned\ char>(k[i]);\ \textcolor{comment}{//\ hash\ *\ 33\ +\ c}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hash;}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00090}00090\ \};}
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{src_2keys_8hpp_source_l00092}00092\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ KEY\_HPP}}
 
 \end{DoxyCode}

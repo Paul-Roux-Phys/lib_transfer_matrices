@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['set_5fnorm_5fsq_0',['set_norm_sq',['../class_vector.html#ad0ade9790cea3940a9d10b7a8ea572f4',1,'Vector']]],
-  ['started_1',['Getting started',['../index.html#autotoc_md1',1,'']]]
+  ['of_20this_20library_0',['Purpose of this library',['../index.html#autotoc_md0',1,'']]],
+  ['operator_2a_3d_1',['operator*=',['../class_vector.html#a4b68f8005281a02764696c969eb31a54',1,'Vector']]],
+  ['operator_2b_3d_2',['operator+=',['../class_vector.html#a076976e16cf9eecd151c91ccd0089647',1,'Vector::operator+=(const std::pair&lt; Key, Value &gt; &amp;v)'],['../class_vector.html#a8e26a662fa4ee7e2a564e7dfed305862',1,'Vector::operator+=(const BasisVector &amp;v)'],['../class_vector.html#ab0f0ede3b30b39b94c2bc63f95b1c779',1,'Vector::operator+=(const Vector &amp;v)']]],
+  ['operator_2f_3d_3',['operator/=',['../class_vector.html#a903df963261abd0429144d5c24cfb56c',1,'Vector']]]
 ];

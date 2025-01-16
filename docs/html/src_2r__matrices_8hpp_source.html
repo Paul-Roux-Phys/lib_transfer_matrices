@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Transfer Matrices: /Users/paulroux/Documents/Recherche/projet_these/code/transfer_matrices/TransferMatricesCpp/cpp_libs/libtransfermatrices/src/r_matrices.hpp Source File</title>
+<title>Transfer Matrices: r_matrices.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Transfer Matrices
+   <div id="projectname">Transfer Matrices<span id="projectnumber">&#160;0.0.0DEV</span>
    </div>
    <div id="projectbrief">C++ library for transfer matrix computations</div>
   </td>
@@ -99,7 +106,7 @@ $(function(){initNavTree('src_2r__matrices_8hpp_source.html',''); initResizable(
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">r_matrices.hpp</div></div>
+  <div class="headertitle"><div class="title">src/r_matrices.hpp</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
@@ -117,10 +124,10 @@ $(function(){initNavTree('src_2r__matrices_8hpp_source.html',''); initResizable(
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    v1-&gt;<a class="code hl_function" href="class_vector.html#ad0ade9790cea3940a9d10b7a8ea572f4">set_norm_sq</a>(v2-&gt;<a class="code hl_function" href="class_vector.html#afe68b3d520c9b67b296822cd6209394d">get_norm_sq</a>());</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
-<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector</a></div><div class="ttdef"><b>Definition</b> Vector.hpp:16</div></div>
-<div class="ttc" id="aclass_vector_html_a491ba237bca7f3ecf65c56c7b7f94f7b"><div class="ttname"><a href="class_vector.html#a491ba237bca7f3ecf65c56c7b7f94f7b">Vector::draining_begin</a></div><div class="ttdeci">DrainingIterator&lt; Vector &gt; draining_begin()</div><div class="ttdoc">Draining iterator.</div><div class="ttdef"><b>Definition</b> Vector.hpp:140</div></div>
-<div class="ttc" id="aclass_vector_html_ad0ade9790cea3940a9d10b7a8ea572f4"><div class="ttname"><a href="class_vector.html#ad0ade9790cea3940a9d10b7a8ea572f4">Vector::set_norm_sq</a></div><div class="ttdeci">void set_norm_sq(const LargeFloat &amp;other)</div><div class="ttdef"><b>Definition</b> Vector.hpp:199</div></div>
-<div class="ttc" id="aclass_vector_html_afe68b3d520c9b67b296822cd6209394d"><div class="ttname"><a href="class_vector.html#afe68b3d520c9b67b296822cd6209394d">Vector::get_norm_sq</a></div><div class="ttdeci">LargeFloat get_norm_sq() const</div><div class="ttdef"><b>Definition</b> Vector.hpp:168</div></div>
+<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector</a></div><div class="ttdef"><b>Definition</b> <a href="_vector_8hpp_source.html#l00016">Vector.hpp:16</a></div></div>
+<div class="ttc" id="aclass_vector_html_a491ba237bca7f3ecf65c56c7b7f94f7b"><div class="ttname"><a href="class_vector.html#a491ba237bca7f3ecf65c56c7b7f94f7b">Vector::draining_begin</a></div><div class="ttdeci">DrainingIterator&lt; Vector &gt; draining_begin()</div><div class="ttdoc">Draining iterator.</div><div class="ttdef"><b>Definition</b> <a href="_vector_8hpp_source.html#l00140">Vector.hpp:140</a></div></div>
+<div class="ttc" id="aclass_vector_html_ad0ade9790cea3940a9d10b7a8ea572f4"><div class="ttname"><a href="class_vector.html#ad0ade9790cea3940a9d10b7a8ea572f4">Vector::set_norm_sq</a></div><div class="ttdeci">void set_norm_sq(const LargeFloat &amp;other)</div><div class="ttdef"><b>Definition</b> <a href="_vector_8hpp_source.html#l00199">Vector.hpp:199</a></div></div>
+<div class="ttc" id="aclass_vector_html_afe68b3d520c9b67b296822cd6209394d"><div class="ttname"><a href="class_vector.html#afe68b3d520c9b67b296822cd6209394d">Vector::get_norm_sq</a></div><div class="ttdeci">LargeFloat get_norm_sq() const</div><div class="ttdef"><b>Definition</b> <a href="_vector_8hpp_source.html#l00168">Vector.hpp:168</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

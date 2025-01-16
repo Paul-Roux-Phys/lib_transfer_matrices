@@ -3,56 +3,396 @@
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_matrix_a0754dd5f9f2b0b05308cc95f2396a912}\label{class_matrix_a0754dd5f9f2b0b05308cc95f2396a912} 
-using {\bfseries Value} = typename Vector\+Pair\+::\+Value
+using \mbox{\hyperlink{class_matrix_a0754dd5f9f2b0b05308cc95f2396a912}{Value}} = typename Vector\+Pair\+::\+Value
+\item 
+using \mbox{\hyperlink{class_matrix_af0377876912fd075c236e7a4089742be}{Key}} = typename Vector\+::\+Key
+\item 
+using \mbox{\hyperlink{class_matrix_a2b5d238e2ab19e6646a5d320f751b1dc}{Value}} = typename Vector\+::\+Value
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_matrix_a73437329eadc4107cc56e95e05d55a3d}\label{class_matrix_a73437329eadc4107cc56e95e05d55a3d} 
-{\bfseries Matrix} (\mbox{\hyperlink{class_vector_pair}{VP}} \texorpdfstring{$\ast$}{*}v, int nev=2, const char \texorpdfstring{$\ast$}{*}which="{}LM"{})
+\mbox{\hyperlink{class_matrix_a73437329eadc4107cc56e95e05d55a3d}{Matrix}} (\mbox{\hyperlink{class_vector_pair}{VP}} \texorpdfstring{$\ast$}{*}v, int nev=2, const char \texorpdfstring{$\ast$}{*}which="{}LM"{})
 \item 
-\Hypertarget{class_matrix_a7a4cc30287150f92522061ee26966b8e}\label{class_matrix_a7a4cc30287150f92522061ee26966b8e} 
-int {\bfseries size} ()
+int \mbox{\hyperlink{class_matrix_a7a4cc30287150f92522061ee26966b8e}{size}} ()
 \item 
-\Hypertarget{class_matrix_a0021f873489a8a55e043737d22b2550b}\label{class_matrix_a0021f873489a8a55e043737d22b2550b} 
-void {\bfseries Mult\+Mx} (Value \texorpdfstring{$\ast$}{*}x, Value \texorpdfstring{$\ast$}{*}y)
+void \mbox{\hyperlink{class_matrix_a0021f873489a8a55e043737d22b2550b}{Mult\+Mx}} (Value \texorpdfstring{$\ast$}{*}x, Value \texorpdfstring{$\ast$}{*}y)
 \item 
-\Hypertarget{class_matrix_aea18ae153885e0e81216bc7878d4120e}\label{class_matrix_aea18ae153885e0e81216bc7878d4120e} 
-void {\bfseries make\+\_\+state\+\_\+table} ()
+void \mbox{\hyperlink{class_matrix_aea18ae153885e0e81216bc7878d4120e}{make\+\_\+state\+\_\+table}} ()
 \item 
-\Hypertarget{class_matrix_a5ed436cd0e9e02f0f2b27f09b28c8949}\label{class_matrix_a5ed436cd0e9e02f0f2b27f09b28c8949} 
-void {\bfseries print\+\_\+state\+\_\+table} ()
+void \mbox{\hyperlink{class_matrix_a5ed436cd0e9e02f0f2b27f09b28c8949}{print\+\_\+state\+\_\+table}} ()
 \item 
-\Hypertarget{class_matrix_ad9b6cdcf31c1e228443031bebe1a9e31}\label{class_matrix_ad9b6cdcf31c1e228443031bebe1a9e31} 
-Value {\bfseries operator()} (int i, int j)
+Value \mbox{\hyperlink{class_matrix_ad9b6cdcf31c1e228443031bebe1a9e31}{operator()}} (int i, int j)
 \item 
-\Hypertarget{class_matrix_af500ee7b14a3dbbf6281802b3ea1e3ce}\label{class_matrix_af500ee7b14a3dbbf6281802b3ea1e3ce} 
-void {\bfseries print} (int column\+\_\+width=10)
+void \mbox{\hyperlink{class_matrix_af500ee7b14a3dbbf6281802b3ea1e3ce}{print}} (int column\+\_\+width=10)
 \item 
-\Hypertarget{class_matrix_a03d9eef84b585df808d4e0eb5d28d217}\label{class_matrix_a03d9eef84b585df808d4e0eb5d28d217} 
-bool {\bfseries isapprox} (Value a, Value b, Value eps)
+bool \mbox{\hyperlink{class_matrix_a03d9eef84b585df808d4e0eb5d28d217}{isapprox}} (Value a, Value b, Value eps)
 \item 
-\Hypertarget{class_matrix_a73cacd5a271c7d63772d8c8d48f84bfd}\label{class_matrix_a73cacd5a271c7d63772d8c8d48f84bfd} 
-void {\bfseries remove\+\_\+duplicate\+\_\+eigvals} (Value eps=1e-\/10)
+void \mbox{\hyperlink{class_matrix_a73cacd5a271c7d63772d8c8d48f84bfd}{remove\+\_\+duplicate\+\_\+eigvals}} (Value eps=1e-\/10)
 \item 
-\Hypertarget{class_matrix_a88407ae0c939cc77aec762c7a98471e8}\label{class_matrix_a88407ae0c939cc77aec762c7a98471e8} 
-void {\bfseries find\+\_\+eigenvalues} (bool no\+\_\+mult=false, Value eps=1e-\/10)
+void \mbox{\hyperlink{class_matrix_a88407ae0c939cc77aec762c7a98471e8}{find\+\_\+eigenvalues}} (bool no\+\_\+mult=false, Value eps=1e-\/10)
 \item 
-\Hypertarget{class_matrix_afb998538886ce9e5d1e91c2da4cc4173}\label{class_matrix_afb998538886ce9e5d1e91c2da4cc4173} 
-std\+::pair$<$ double \texorpdfstring{$\ast$}{*}, double \texorpdfstring{$\ast$}{*} $>$ {\bfseries get\+\_\+eigenvalues} ()
+std\+::pair$<$ double \texorpdfstring{$\ast$}{*}, double \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_matrix_afb998538886ce9e5d1e91c2da4cc4173}{get\+\_\+eigenvalues}} ()
 \item 
-\Hypertarget{class_matrix_a4ede10292b5f626663033f11f6882f8b}\label{class_matrix_a4ede10292b5f626663033f11f6882f8b} 
-std\+::string {\bfseries sprint\+\_\+eigenvalues} (int nev=0, int width\+\_\+real\+\_\+part=20, int width\+\_\+imag\+\_\+part=10)
+std\+::string \mbox{\hyperlink{class_matrix_a4ede10292b5f626663033f11f6882f8b}{sprint\+\_\+eigenvalues}} (int nev=0, int width\+\_\+real\+\_\+part=20, int width\+\_\+imag\+\_\+part=10)
+\item 
+\mbox{\hyperlink{class_matrix_a60ca410106bb6126ddf27a0fe36546a6}{Matrix}} (\mbox{\hyperlink{class_vector}{Vector}} \texorpdfstring{$\ast$}{*}v, \mbox{\hyperlink{class_vector}{Vector}} \texorpdfstring{$\ast$}{*}tmp, void(Vector\+::\texorpdfstring{$\ast$}{*}M)(\mbox{\hyperlink{class_vector}{Vector}} \&))
+\item 
+void \mbox{\hyperlink{class_matrix_aad881c70a40f227c0a8ec8e119325d1c}{multiply}} ()
+\item 
+void \mbox{\hyperlink{class_matrix_a5e57e03d109e87190b31270d3915e133}{generate\+\_\+space}} ()
+\item 
+void \mbox{\hyperlink{class_matrix_af37cd8079a4443dd65eeeca8ee6b0a9a}{set\+\_\+size}} ()
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_matrix_ace56c5d4787695301eee0654b2dbb89d}{get\+\_\+size}} ()
+\item 
+void \mbox{\hyperlink{class_matrix_a0021f873489a8a55e043737d22b2550b}{Mult\+Mx}} (Value \texorpdfstring{$\ast$}{*}x, Value \texorpdfstring{$\ast$}{*}y)
+\item 
+void \mbox{\hyperlink{class_matrix_aea18ae153885e0e81216bc7878d4120e}{make\+\_\+state\+\_\+table}} ()
+\item 
+void \mbox{\hyperlink{class_matrix_a5ed436cd0e9e02f0f2b27f09b28c8949}{print\+\_\+state\+\_\+table}} ()
+\item 
+Value \mbox{\hyperlink{class_matrix_ad9b6cdcf31c1e228443031bebe1a9e31}{operator()}} (int i, int j)
+\item 
+void \mbox{\hyperlink{class_matrix_af500ee7b14a3dbbf6281802b3ea1e3ce}{print}} (int column\+\_\+width=10)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_matrix_a621269fd0c657cf14307c0c26abeceb5}\label{class_matrix_a621269fd0c657cf14307c0c26abeceb5} 
-Key \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+state\+\_\+table}
+Key \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_matrix_a94d3810ebd5a46edcd896e79f94d0fdf}{\+\_\+state\+\_\+table}}
 \end{DoxyCompactItemize}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}}$>$\newline
+class Matrix$<$ Vector\+Pair $>$}
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00005}{5}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_matrix_af0377876912fd075c236e7a4089742be}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!Key@{Key}}
+\index{Key@{Key}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{Key}{Key}}
+{\footnotesize\ttfamily \label{class_matrix_af0377876912fd075c236e7a4089742be} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+using \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::\+Key = typename Vector\+::\+Key}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source_l00009}{9}} of file \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source}{include/\+Transfer\+Matrices/matrices.\+hpp}}.
+
+\Hypertarget{class_matrix_a2b5d238e2ab19e6646a5d320f751b1dc}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!Value@{Value}}
+\index{Value@{Value}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{Value}{Value}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_matrix_a2b5d238e2ab19e6646a5d320f751b1dc} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+using \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::\+Value = typename Vector\+::\+Value}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source_l00010}{10}} of file \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source}{include/\+Transfer\+Matrices/matrices.\+hpp}}.
+
+\Hypertarget{class_matrix_a0754dd5f9f2b0b05308cc95f2396a912}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!Value@{Value}}
+\index{Value@{Value}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{Value}{Value}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_matrix_a0754dd5f9f2b0b05308cc95f2396a912} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+using \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::\+Value = typename Vector\+Pair\+::\+Value}
+
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00007}{7}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_matrix_a73437329eadc4107cc56e95e05d55a3d}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_matrix_a73437329eadc4107cc56e95e05d55a3d} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+\mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\mbox{\hyperlink{class_matrix}{\+::\+Matrix}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector_pair}{VP}} \texorpdfstring{$\ast$}{*}}]{v}{, }\item[{int}]{nev}{ = {\ttfamily 2}, }\item[{const char \texorpdfstring{$\ast$}{*}}]{which}{ = {\ttfamily "{}LM"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+\Hypertarget{class_matrix_ad40a03429cd3977a291fe4d09dbd0100}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!````~Matrix@{\texorpdfstring{$\sim$}{\string~}Matrix}}
+\index{````~Matrix@{\texorpdfstring{$\sim$}{\string~}Matrix}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Matrix()}{\string~Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_matrix_ad40a03429cd3977a291fe4d09dbd0100} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+\mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_matrix}{Matrix}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+\Hypertarget{class_matrix_a60ca410106bb6126ddf27a0fe36546a6}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_matrix_a60ca410106bb6126ddf27a0fe36546a6} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+\mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\mbox{\hyperlink{class_matrix}{\+::\+Matrix}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector}} \texorpdfstring{$\ast$}{*}}]{v}{, }\item[{\mbox{\hyperlink{class_vector}{Vector}} \texorpdfstring{$\ast$}{*}}]{tmp}{, }\item[{void(Vector\+::\texorpdfstring{$\ast$}{*}}]{M~}{)(\mbox{\hyperlink{class_vector}{Vector}} \&)}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source}{include/\+Transfer\+Matrices/matrices.\+hpp}}.
+
+\Hypertarget{class_matrix_ad40a03429cd3977a291fe4d09dbd0100}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!````~Matrix@{\texorpdfstring{$\sim$}{\string~}Matrix}}
+\index{````~Matrix@{\texorpdfstring{$\sim$}{\string~}Matrix}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Matrix()}{\string~Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_matrix_ad40a03429cd3977a291fe4d09dbd0100} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+\mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_matrix}{Matrix}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source}{include/\+Transfer\+Matrices/matrices.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_matrix_a88407ae0c939cc77aec762c7a98471e8}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!find\_eigenvalues@{find\_eigenvalues}}
+\index{find\_eigenvalues@{find\_eigenvalues}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{find\_eigenvalues()}{find\_eigenvalues()}}
+{\footnotesize\ttfamily \label{class_matrix_a88407ae0c939cc77aec762c7a98471e8} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+void \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::find\+\_\+eigenvalues (\begin{DoxyParamCaption}\item[{bool}]{no\+\_\+mult}{ = {\ttfamily false}, }\item[{Value}]{eps}{ = {\ttfamily 1e-\/10}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00144}{144}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+\Hypertarget{class_matrix_a5e57e03d109e87190b31270d3915e133}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!generate\_space@{generate\_space}}
+\index{generate\_space@{generate\_space}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{generate\_space()}{generate\_space()}}
+{\footnotesize\ttfamily \label{class_matrix_a5e57e03d109e87190b31270d3915e133} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+void \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::generate\+\_\+space (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source}{include/\+Transfer\+Matrices/matrices.\+hpp}}.
+
+\Hypertarget{class_matrix_afb998538886ce9e5d1e91c2da4cc4173}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!get\_eigenvalues@{get\_eigenvalues}}
+\index{get\_eigenvalues@{get\_eigenvalues}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{get\_eigenvalues()}{get\_eigenvalues()}}
+{\footnotesize\ttfamily \label{class_matrix_afb998538886ce9e5d1e91c2da4cc4173} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+std\+::pair$<$ double \texorpdfstring{$\ast$}{*}, double \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::get\+\_\+eigenvalues (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00156}{156}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+\Hypertarget{class_matrix_ace56c5d4787695301eee0654b2dbb89d}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!get\_size@{get\_size}}
+\index{get\_size@{get\_size}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{get\_size()}{get\_size()}}
+{\footnotesize\ttfamily \label{class_matrix_ace56c5d4787695301eee0654b2dbb89d} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::get\+\_\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source}{include/\+Transfer\+Matrices/matrices.\+hpp}}.
+
+\Hypertarget{class_matrix_a03d9eef84b585df808d4e0eb5d28d217}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!isapprox@{isapprox}}
+\index{isapprox@{isapprox}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{isapprox()}{isapprox()}}
+{\footnotesize\ttfamily \label{class_matrix_a03d9eef84b585df808d4e0eb5d28d217} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+bool \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::isapprox (\begin{DoxyParamCaption}\item[{Value}]{a}{, }\item[{Value}]{b}{, }\item[{Value}]{eps}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00108}{108}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+\Hypertarget{class_matrix_aea18ae153885e0e81216bc7878d4120e}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!make\_state\_table@{make\_state\_table}}
+\index{make\_state\_table@{make\_state\_table}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{make\_state\_table()}{make\_state\_table()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_matrix_aea18ae153885e0e81216bc7878d4120e} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+void \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::make\+\_\+state\+\_\+table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source}{include/\+Transfer\+Matrices/matrices.\+hpp}}.
+
+\Hypertarget{class_matrix_aea18ae153885e0e81216bc7878d4120e}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!make\_state\_table@{make\_state\_table}}
+\index{make\_state\_table@{make\_state\_table}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{make\_state\_table()}{make\_state\_table()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_matrix_aea18ae153885e0e81216bc7878d4120e} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+void \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::make\+\_\+state\+\_\+table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00061}{61}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+\Hypertarget{class_matrix_aad881c70a40f227c0a8ec8e119325d1c}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!multiply@{multiply}}
+\index{multiply@{multiply}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{multiply()}{multiply()}}
+{\footnotesize\ttfamily \label{class_matrix_aad881c70a40f227c0a8ec8e119325d1c} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+void \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::multiply (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source}{include/\+Transfer\+Matrices/matrices.\+hpp}}.
+
+\Hypertarget{class_matrix_a0021f873489a8a55e043737d22b2550b}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!MultMx@{MultMx}}
+\index{MultMx@{MultMx}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{MultMx()}{MultMx()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_matrix_a0021f873489a8a55e043737d22b2550b} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+void \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::\+Mult\+Mx (\begin{DoxyParamCaption}\item[{Value \texorpdfstring{$\ast$}{*}}]{x}{, }\item[{Value \texorpdfstring{$\ast$}{*}}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source_l00055}{55}} of file \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source}{include/\+Transfer\+Matrices/matrices.\+hpp}}.
+
+\Hypertarget{class_matrix_a0021f873489a8a55e043737d22b2550b}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!MultMx@{MultMx}}
+\index{MultMx@{MultMx}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{MultMx()}{MultMx()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_matrix_a0021f873489a8a55e043737d22b2550b} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+void \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::\+Mult\+Mx (\begin{DoxyParamCaption}\item[{Value \texorpdfstring{$\ast$}{*}}]{x}{, }\item[{Value \texorpdfstring{$\ast$}{*}}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+\Hypertarget{class_matrix_ad9b6cdcf31c1e228443031bebe1a9e31}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_matrix_ad9b6cdcf31c1e228443031bebe1a9e31} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+Value \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i}{, }\item[{int}]{j}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source_l00085}{85}} of file \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source}{include/\+Transfer\+Matrices/matrices.\+hpp}}.
+
+\Hypertarget{class_matrix_ad9b6cdcf31c1e228443031bebe1a9e31}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_matrix_ad9b6cdcf31c1e228443031bebe1a9e31} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+Value \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i}{, }\item[{int}]{j}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+\Hypertarget{class_matrix_af500ee7b14a3dbbf6281802b3ea1e3ce}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!print@{print}}
+\index{print@{print}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_matrix_af500ee7b14a3dbbf6281802b3ea1e3ce} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+void \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::print (\begin{DoxyParamCaption}\item[{int}]{column\+\_\+width}{ = {\ttfamily 10}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source_l00101}{101}} of file \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source}{include/\+Transfer\+Matrices/matrices.\+hpp}}.
+
+\Hypertarget{class_matrix_af500ee7b14a3dbbf6281802b3ea1e3ce}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!print@{print}}
+\index{print@{print}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_matrix_af500ee7b14a3dbbf6281802b3ea1e3ce} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+void \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::print (\begin{DoxyParamCaption}\item[{int}]{column\+\_\+width}{ = {\ttfamily 10}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00093}{93}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+\Hypertarget{class_matrix_a5ed436cd0e9e02f0f2b27f09b28c8949}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!print\_state\_table@{print\_state\_table}}
+\index{print\_state\_table@{print\_state\_table}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{print\_state\_table()}{print\_state\_table()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_matrix_a5ed436cd0e9e02f0f2b27f09b28c8949} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+void \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::print\+\_\+state\+\_\+table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source_l00079}{79}} of file \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source}{include/\+Transfer\+Matrices/matrices.\+hpp}}.
+
+\Hypertarget{class_matrix_a5ed436cd0e9e02f0f2b27f09b28c8949}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!print\_state\_table@{print\_state\_table}}
+\index{print\_state\_table@{print\_state\_table}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{print\_state\_table()}{print\_state\_table()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_matrix_a5ed436cd0e9e02f0f2b27f09b28c8949} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+void \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::print\+\_\+state\+\_\+table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+\Hypertarget{class_matrix_a73cacd5a271c7d63772d8c8d48f84bfd}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!remove\_duplicate\_eigvals@{remove\_duplicate\_eigvals}}
+\index{remove\_duplicate\_eigvals@{remove\_duplicate\_eigvals}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{remove\_duplicate\_eigvals()}{remove\_duplicate\_eigvals()}}
+{\footnotesize\ttfamily \label{class_matrix_a73cacd5a271c7d63772d8c8d48f84bfd} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+void \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::remove\+\_\+duplicate\+\_\+eigvals (\begin{DoxyParamCaption}\item[{Value}]{eps}{ = {\ttfamily 1e-\/10}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00112}{112}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+\Hypertarget{class_matrix_af37cd8079a4443dd65eeeca8ee6b0a9a}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!set\_size@{set\_size}}
+\index{set\_size@{set\_size}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{set\_size()}{set\_size()}}
+{\footnotesize\ttfamily \label{class_matrix_af37cd8079a4443dd65eeeca8ee6b0a9a} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+void \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::set\+\_\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{include_2_transfer_matrices_2matrices_8hpp_source}{include/\+Transfer\+Matrices/matrices.\+hpp}}.
+
+\Hypertarget{class_matrix_a7a4cc30287150f92522061ee26966b8e}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!size@{size}}
+\index{size@{size}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{class_matrix_a7a4cc30287150f92522061ee26966b8e} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+int \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+\Hypertarget{class_matrix_a4ede10292b5f626663033f11f6882f8b}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!sprint\_eigenvalues@{sprint\_eigenvalues}}
+\index{sprint\_eigenvalues@{sprint\_eigenvalues}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{sprint\_eigenvalues()}{sprint\_eigenvalues()}}
+{\footnotesize\ttfamily \label{class_matrix_a4ede10292b5f626663033f11f6882f8b} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+std\+::string \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::sprint\+\_\+eigenvalues (\begin{DoxyParamCaption}\item[{int}]{nev}{ = {\ttfamily 0}, }\item[{int}]{width\+\_\+real\+\_\+part}{ = {\ttfamily 20}, }\item[{int}]{width\+\_\+imag\+\_\+part}{ = {\ttfamily 10}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00161}{161}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_matrix_a94d3810ebd5a46edcd896e79f94d0fdf}\index{Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}!\_state\_table@{\_state\_table}}
+\index{\_state\_table@{\_state\_table}!Matrix$<$ VectorPair $>$@{Matrix$<$ VectorPair $>$}}
+\doxysubsubsection{\texorpdfstring{\_state\_table}{\_state\_table}}
+{\footnotesize\ttfamily \label{class_matrix_a94d3810ebd5a46edcd896e79f94d0fdf} 
+template$<$typename \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$ \\
+Key \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_matrix}{Matrix}}$<$ \mbox{\hyperlink{class_vector_pair}{Vector\+Pair}} $>$\+::\+\_\+state\+\_\+table}
+
+
+
+Definition at line \mbox{\hyperlink{src_2eigensolver_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{src_2eigensolver_8hpp_source}{src/eigensolver.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/paulroux/\+Documents/\+Recherche/projet\+\_\+these/code/transfer\+\_\+matrices/\+Transfer\+Matrices\+Cpp/cpp\+\_\+libs/libtransfermatrices/src/eigensolver.\+hpp\end{DoxyCompactItemize}
+src/eigensolver.\+hpp\item 
+include/\+Transfer\+Matrices/matrices.\+hpp\end{DoxyCompactItemize}

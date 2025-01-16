@@ -2,40 +2,32 @@
 \hypertarget{class_basis_vector}{}\label{class_basis_vector}\index{BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}}
 
 
-{\ttfamily \#include $<$Basis\+Vector.\+hpp$>$}
+{\ttfamily \#include $<$vectors.\+hpp$>$}
 
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_basis_vector_a89d0c6c318703491fe5a6fb699e1f436}\label{class_basis_vector_a89d0c6c318703491fe5a6fb699e1f436} 
-using {\bfseries Key} = K
+using \mbox{\hyperlink{class_basis_vector_a89d0c6c318703491fe5a6fb699e1f436}{Key}} = K
 \item 
-\Hypertarget{class_basis_vector_ab98e59b27cc93f2a1ed58b9e8c8f5243}\label{class_basis_vector_ab98e59b27cc93f2a1ed58b9e8c8f5243} 
-using {\bfseries Value} = V
+using \mbox{\hyperlink{class_basis_vector_ab98e59b27cc93f2a1ed58b9e8c8f5243}{Value}} = V
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_basis_vector_ae81bed2dd99103a39cd88d9e3c4250f7}\label{class_basis_vector_ae81bed2dd99103a39cd88d9e3c4250f7} 
-{\bfseries Basis\+Vector} (Key k, Value v)
+\mbox{\hyperlink{class_basis_vector_ae81bed2dd99103a39cd88d9e3c4250f7}{Basis\+Vector}} (Key k, Value v)
 \item 
-\Hypertarget{class_basis_vector_a4de24e745a3d40f8c0ea9de7d72cd835}\label{class_basis_vector_a4de24e745a3d40f8c0ea9de7d72cd835} 
-{\bfseries Basis\+Vector} (const \mbox{\hyperlink{class_basis_vector}{Basis\+Vector}} \&other)
+\mbox{\hyperlink{class_basis_vector_a4de24e745a3d40f8c0ea9de7d72cd835}{Basis\+Vector}} (const \mbox{\hyperlink{class_basis_vector}{Basis\+Vector}} \&other)
 \item 
-\Hypertarget{class_basis_vector_af0d548e4b6318fd83f52e669535996cf}\label{class_basis_vector_af0d548e4b6318fd83f52e669535996cf} 
-{\bfseries Basis\+Vector} (std\+::pair$<$ Key, Value $>$ v)
+\mbox{\hyperlink{class_basis_vector_af0d548e4b6318fd83f52e669535996cf}{Basis\+Vector}} (std\+::pair$<$ Key, Value $>$ v)
 \item 
-\Hypertarget{class_basis_vector_a953af005c4683dee9e19a1c6837deba4}\label{class_basis_vector_a953af005c4683dee9e19a1c6837deba4} 
-void {\bfseries print} () const
+void \mbox{\hyperlink{class_basis_vector_a953af005c4683dee9e19a1c6837deba4}{print}} () const
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_basis_vector_a45c4c39f4691f622e105f7607825ee72}\label{class_basis_vector_a45c4c39f4691f622e105f7607825ee72} 
-Key {\bfseries key}
+Key \mbox{\hyperlink{class_basis_vector_a45c4c39f4691f622e105f7607825ee72}{key}}
 \item 
-\Hypertarget{class_basis_vector_a1e14b17a441b9ec344b54c5b7f0153f7}\label{class_basis_vector_a1e14b17a441b9ec344b54c5b7f0153f7} 
-Value {\bfseries value}
+Value \mbox{\hyperlink{class_basis_vector_a1e14b17a441b9ec344b54c5b7f0153f7}{value}}
 \end{DoxyCompactItemize}
 
 
@@ -44,7 +36,122 @@ Value {\bfseries value}
 class Basis\+Vector$<$ K, V $>$}
 class representing a vector of the chosen basis. A basis vector is nothing but a (key, value) pair, which can be printed with .print() 
 
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_basis_vector_a89d0c6c318703491fe5a6fb699e1f436}\index{BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}!Key@{Key}}
+\index{Key@{Key}!BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Key}{Key}}
+{\footnotesize\ttfamily \label{class_basis_vector_a89d0c6c318703491fe5a6fb699e1f436} 
+template$<$typename K , typename V $>$ \\
+using \mbox{\hyperlink{class_basis_vector}{Basis\+Vector}}$<$ K, V $>$\+::\+Key = K}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+\Hypertarget{class_basis_vector_ab98e59b27cc93f2a1ed58b9e8c8f5243}\index{BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}!Value@{Value}}
+\index{Value@{Value}!BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Value}{Value}}
+{\footnotesize\ttfamily \label{class_basis_vector_ab98e59b27cc93f2a1ed58b9e8c8f5243} 
+template$<$typename K , typename V $>$ \\
+using \mbox{\hyperlink{class_basis_vector}{Basis\+Vector}}$<$ K, V $>$\+::\+Value = V}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00027}{27}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_basis_vector_a6e78f4c4e6ef9a60a7fb3b4f69bba09f}\index{BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}!BasisVector@{BasisVector}}
+\index{BasisVector@{BasisVector}!BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{BasisVector()}{BasisVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_basis_vector_a6e78f4c4e6ef9a60a7fb3b4f69bba09f} 
+template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{class_basis_vector}{Basis\+Vector}}$<$ K, V $>$\mbox{\hyperlink{class_basis_vector}{\+::\+Basis\+Vector}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+\Hypertarget{class_basis_vector_ae81bed2dd99103a39cd88d9e3c4250f7}\index{BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}!BasisVector@{BasisVector}}
+\index{BasisVector@{BasisVector}!BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{BasisVector()}{BasisVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_basis_vector_ae81bed2dd99103a39cd88d9e3c4250f7} 
+template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{class_basis_vector}{Basis\+Vector}}$<$ K, V $>$\mbox{\hyperlink{class_basis_vector}{\+::\+Basis\+Vector}} (\begin{DoxyParamCaption}\item[{Key}]{k}{, }\item[{Value}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+\Hypertarget{class_basis_vector_a4de24e745a3d40f8c0ea9de7d72cd835}\index{BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}!BasisVector@{BasisVector}}
+\index{BasisVector@{BasisVector}!BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{BasisVector()}{BasisVector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_basis_vector_a4de24e745a3d40f8c0ea9de7d72cd835} 
+template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{class_basis_vector}{Basis\+Vector}}$<$ K, V $>$\mbox{\hyperlink{class_basis_vector}{\+::\+Basis\+Vector}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basis_vector}{Basis\+Vector}}$<$ K, V $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+\Hypertarget{class_basis_vector_af0d548e4b6318fd83f52e669535996cf}\index{BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}!BasisVector@{BasisVector}}
+\index{BasisVector@{BasisVector}!BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{BasisVector()}{BasisVector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_basis_vector_af0d548e4b6318fd83f52e669535996cf} 
+template$<$typename K , typename V $>$ \\
+\mbox{\hyperlink{class_basis_vector}{Basis\+Vector}}$<$ K, V $>$\mbox{\hyperlink{class_basis_vector}{\+::\+Basis\+Vector}} (\begin{DoxyParamCaption}\item[{std\+::pair$<$ Key, Value $>$}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_basis_vector_a953af005c4683dee9e19a1c6837deba4}\index{BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}!print@{print}}
+\index{print@{print}!BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily \label{class_basis_vector_a953af005c4683dee9e19a1c6837deba4} 
+template$<$typename K , typename V $>$ \\
+void \mbox{\hyperlink{class_basis_vector}{Basis\+Vector}}$<$ K, V $>$\+::print (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_basis_vector_a45c4c39f4691f622e105f7607825ee72}\index{BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}!key@{key}}
+\index{key@{key}!BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily \label{class_basis_vector_a45c4c39f4691f622e105f7607825ee72} 
+template$<$typename K , typename V $>$ \\
+Key \mbox{\hyperlink{class_basis_vector}{Basis\+Vector}}$<$ K, V $>$\+::key}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+\Hypertarget{class_basis_vector_a1e14b17a441b9ec344b54c5b7f0153f7}\index{BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}!value@{value}}
+\index{value@{value}!BasisVector$<$ K, V $>$@{BasisVector$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily \label{class_basis_vector_a1e14b17a441b9ec344b54c5b7f0153f7} 
+template$<$typename K , typename V $>$ \\
+Value \mbox{\hyperlink{class_basis_vector}{Basis\+Vector}}$<$ K, V $>$\+::value}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/paulroux/\+Documents/\+Recherche/projet\+\_\+these/code/transfer\+\_\+matrices/\+Transfer\+Matrices\+Cpp/cpp\+\_\+libs/libtransfermatrices/src/vectors.\+hpp\item 
-/\+Users/paulroux/\+Documents/\+Recherche/projet\+\_\+these/code/transfer\+\_\+matrices/\+Transfer\+Matrices\+Cpp/cpp\+\_\+libs/libtransfermatrices/src/vectors/Basis\+Vector.\+hpp\end{DoxyCompactItemize}
+src/vectors.\+hpp\item 
+include/\+Transfer\+Matrices/vectors.\+hpp\end{DoxyCompactItemize}

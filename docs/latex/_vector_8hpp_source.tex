@@ -1,151 +1,151 @@
 \doxysection{Vector.\+hpp}
-\hypertarget{_vector_8hpp_source}{}\label{_vector_8hpp_source}\index{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/vectors/Vector.hpp@{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/vectors/Vector.hpp}}
+\hypertarget{_vector_8hpp_source}{}\label{_vector_8hpp_source}\index{Vector.hpp@{Vector.hpp}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <boost/multiprecision/cpp\_complex.hpp>}}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{using\ }LargeFloat\ =\ boost::multiprecision::cpp\_complex\_100;}
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00015\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ B,\ \textcolor{keyword}{typename}\ KeyHash>}
-\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vector}{Vector}}\ :\ \textcolor{keyword}{public}\ std::unordered\_map<typename\ B::Key,\ typename\ B::Value,\ KeyHash>\ \{}
-\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00023\ \ \ \ \ LargeFloat\ \_norm\_sq;\ \textcolor{comment}{//\ norm\_squared\ in\ the\ form\ (mantissa,\ exponent)}}
-\DoxyCodeLine{00029\ \ \ \ \ std::size\_t\ \_size;}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_basis_vector}{BasisVector}}\ =\ B;}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{using\ }Key\ =\ \textcolor{keyword}{typename}\ BasisVector::Key;}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{using\ }Value\ =\ \textcolor{keyword}{typename}\ BasisVector::Value;}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Using\ base\ class\ constructors}}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{using\ }std::unordered\_map<Key,\ Value,\ \mbox{\hyperlink{struct_key_hash}{KeyHash}}>::unordered\_map;}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{using\ }iterator\ =\ \textcolor{keyword}{typename}\ std::unordered\_map<Key,\ Value,\ KeyHash>::iterator;}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_vector_a0faa99acaf54dafcf479d15b16b3b522}{Vector}}(std::size\_t\ size\ =\ 10000)\ :\ }
-\DoxyCodeLine{00048\ \ \ \ \ std::unordered\_map<Key,\ Value,\ \mbox{\hyperlink{struct_key_hash}{KeyHash}}>(size),}
-\DoxyCodeLine{00049\ \ \ \ \ \_norm\_sq(1)\ }
-\DoxyCodeLine{00050\ \ \ \ \ \{\}}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_vector_a0124be0e6143a73ebe65847601a5e5d9}{Vector}}(\mbox{\hyperlink{class_vector}{Vector}}\&\ v,\ std::size\_t\ size)\ :}
-\DoxyCodeLine{00059\ \ \ \ \ std::unordered\_map<Key,\ Value,\ \mbox{\hyperlink{struct_key_hash}{KeyHash}}>(size),}
-\DoxyCodeLine{00060\ \ \ \ \ \_norm\_sq(1)}
-\DoxyCodeLine{00061\ \ \ \ \ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ v.begin();\ it\ !=\ v.end();\ it++)\ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ BasisVector\ b(*it);}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ (*this)[b.key]\ =\ b.weight;}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00066\ \ \ \ \ \}}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{class_vector}{Vector}}\&\ \mbox{\hyperlink{class_vector_a076976e16cf9eecd151c91ccd0089647}{operator+=}}(\textcolor{keyword}{const}\ std::pair<Key,\ Value>\&\ v)\ \{}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ a\ basis\ vector\ to\ the\ Vector}}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ (*this)[v.first]\ +=\ v.second;}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00078\ \ \ \ \ \}}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_vector}{Vector}}\&\ \mbox{\hyperlink{class_vector_a8e26a662fa4ee7e2a564e7dfed305862}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\&\ v)\ \{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ (*this)[v.key]\ +=\ v.value;}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00088\ \ \ \ \ \}}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{class_vector}{Vector}}\&\ \mbox{\hyperlink{class_vector_ab0f0ede3b30b39b94c2bc63f95b1c779}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector}{Vector}}\&\ v)\ \{}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ v.begin();\ it\ !=\ v.end();\ it++)\ \{}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\ b(*it);}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ (*this)[b.key]\ +=\ b.value;}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00099\ \ \ \ \ \}}
-\DoxyCodeLine{00100\ }
-\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{class_vector}{Vector}}\&\ \mbox{\hyperlink{class_vector_a903df963261abd0429144d5c24cfb56c}{operator/=}}(\textcolor{keyword}{const}\ Value\ v)\ \{}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ this-\/>begin();\ it\ !=\ this-\/>end();\ it++)\ \{}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\ b(*it);}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ (*this)[b.key]\ /=\ v;}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00113\ \ \ \ \ \}}
-\DoxyCodeLine{00114\ }
-\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_if(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\&\ b,\ \textcolor{keywordtype}{bool}\ cond)\ \{}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cond)\ \{}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ *\textcolor{keyword}{this}\ +=\ b;}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00119\ \ \ \ \ \}}
-\DoxyCodeLine{00120\ }
-\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_a8fe7c81eb0e3c128bb455e3b1730a06e}{print}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Norm:\ "{}}\ <<\ \mbox{\hyperlink{class_vector_ac86119ba1e335db2d95eb9c87fd92c82}{get\_norm}}()\ <<\ endl;}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Components:"{}}\ <<\ endl;}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pair\ :\ *\textcolor{keyword}{this})\ \{}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Key:\ "{}};\ pair.first.print();}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ std::setw(6)\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Value:\ \ "{}}\ <<\ std::setprecision(15)\ <<\ pair.second\ <<\ endl;}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00132\ \ \ \ \ \}}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{class_draining_iterator}{DrainingIterator<Vector>}}\ \mbox{\hyperlink{class_vector_a491ba237bca7f3ecf65c56c7b7f94f7b}{draining\_begin}}()\ \{}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_draining_iterator}{DrainingIterator<Vector>}}(this-\/>begin(),\ \textcolor{keyword}{this});}
-\DoxyCodeLine{00142\ \ \ \ \ \}}
-\DoxyCodeLine{00143\ }
-\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{class_draining_iterator}{DrainingIterator<Vector>}}\ draining\_end()\ \{}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_draining_iterator}{DrainingIterator<Vector>}}(this-\/>end(),\ \textcolor{keyword}{this});}
-\DoxyCodeLine{00146\ \ \ \ \ \}}
-\DoxyCodeLine{00147\ }
-\DoxyCodeLine{00148\ \ \ \ \ LargeFloat\ inner\_product(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector}{Vector}}\&\ v)\ \{}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ LargeFloat\ res(0);}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ v.begin();\ it\ !=\ v.end();\ it++)\ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\ b(*it);}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it2\ =\ this-\/>find(b.key);}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it2\ !=\ this-\/>end())\ \{}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\ b2(*it2);}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Value\ tmp\ =\ b.value\ *\ b2.value;}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res\ +=\ LargeFloat(tmp.real(),\ tmp.imag());}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ res\ *=\ \mbox{\hyperlink{class_vector_ac86119ba1e335db2d95eb9c87fd92c82}{get\_norm}}();}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
-\DoxyCodeLine{00161\ \ \ \ \ \}}
-\DoxyCodeLine{00162\ }
-\DoxyCodeLine{00163\ \ \ \ \ \textcolor{comment}{//\ Value\ inner\_product(const\ VectorPair<T,\ BasisVector<T>,\ Vector<T>>\&\ v);}}
-\DoxyCodeLine{00164\ }
-\DoxyCodeLine{00168\ \ \ \ \ LargeFloat\ \mbox{\hyperlink{class_vector_afe68b3d520c9b67b296822cd6209394d}{get\_norm\_sq}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_norm\_sq;}
-\DoxyCodeLine{00170\ \ \ \ \ \}}
-\DoxyCodeLine{00171\ }
-\DoxyCodeLine{00175\ \ \ \ \ LargeFloat\ \mbox{\hyperlink{class_vector_ac86119ba1e335db2d95eb9c87fd92c82}{get\_norm}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(\_norm\_sq);}
-\DoxyCodeLine{00177\ \ \ \ \ \}}
-\DoxyCodeLine{00178\ }
-\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_ad34348ce72d9ff2ad6d934ecf96d9672}{factorise\_norm}}()\ \{}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ Value\ tmp\ =\ 0;}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ this-\/>begin();\ it\ !=\ this-\/>end();\ it++)\ \{}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\ b(*it);}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ tmp\ +=\ abs(b.value*b.value);}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ *\textcolor{keyword}{this}\ /=\ sqrt(tmp);}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \_norm\_sq\ *=\ LargeFloat(tmp.real(),\ tmp.imag());}
-\DoxyCodeLine{00194\ \ \ \ \ \}}
-\DoxyCodeLine{00195\ }
-\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_ad0ade9790cea3940a9d10b7a8ea572f4}{set\_norm\_sq}}(\textcolor{keyword}{const}\ LargeFloat\ \&other)\ \{}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \_norm\_sq\ =\ other;}
-\DoxyCodeLine{00201\ \ \ \ \ \}}
-\DoxyCodeLine{00202\ }
-\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_afd1eda033d5a0324949ee991ecc862f9}{normalise}}()\ \{}
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector_ad34348ce72d9ff2ad6d934ecf96d9672}{factorise\_norm}}();}
-\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector_ad0ade9790cea3940a9d10b7a8ea572f4}{set\_norm\_sq}}(1);}
-\DoxyCodeLine{00209\ \ \ \ \ \}}
-\DoxyCodeLine{00210\ }
-\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_size()\ \{}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \_size\ =\ 0;}
-\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ this-\/>begin();\ it\ !=\ this-\/>end();\ it++)\ \{}
-\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \_size++;}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00216\ \ \ \ \ \}}
-\DoxyCodeLine{00217\ }
-\DoxyCodeLine{00221\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{class_vector_aeb66df91301154c98540481e3a0f4c2f}{get\_size}}()\ \{}
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \_size\ =\ size();}
-\DoxyCodeLine{00223\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_size;}
-\DoxyCodeLine{00224\ \ \ \ \ \}}
-\DoxyCodeLine{00225\ }
-\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_ac9d0fa459069e3672c3151995b3c2368}{clear}}()\ \{}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ std::unordered\_map<Key,\ Value,\ KeyHash>::clear();}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \_norm\_sq\ =\ 1.0;}
-\DoxyCodeLine{00232\ \ \ \ \ \}}
-\DoxyCodeLine{00233\ \};}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <boost/multiprecision/cpp\_complex.hpp>}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00003}00003\ \textcolor{keyword}{using\ }LargeFloat\ =\ boost::multiprecision::cpp\_complex\_100;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00015}00015\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ B,\ \textcolor{keyword}{typename}\ KeyHash>}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00016}\mbox{\hyperlink{class_vector}{00016}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vector}{Vector}}\ :\ \textcolor{keyword}{public}\ std::unordered\_map<typename\ B::Key,\ typename\ B::Value,\ KeyHash>\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00017}00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00023}00023\ \ \ \ \ LargeFloat\ \_norm\_sq;\ \textcolor{comment}{//\ norm\_squared\ in\ the\ form\ (mantissa,\ exponent)}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00029}00029\ \ \ \ \ std::size\_t\ \_size;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00031}00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_basis_vector}{BasisVector}}\ =\ B;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{using\ }Key\ =\ \textcolor{keyword}{typename}\ BasisVector::Key;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{using\ }Value\ =\ \textcolor{keyword}{typename}\ BasisVector::Value;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ Using\ base\ class\ constructors}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{using\ }std::unordered\_map<Key,\ Value,\ \mbox{\hyperlink{struct_key_hash}{KeyHash}}>::unordered\_map;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{using\ }iterator\ =\ \textcolor{keyword}{typename}\ std::unordered\_map<Key,\ Value,\ KeyHash>::iterator;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00047}\mbox{\hyperlink{class_vector_a0faa99acaf54dafcf479d15b16b3b522}{00047}}\ \ \ \ \ \mbox{\hyperlink{class_vector_a0faa99acaf54dafcf479d15b16b3b522}{Vector}}(std::size\_t\ size\ =\ 10000)\ :\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00048}00048\ \ \ \ \ std::unordered\_map<Key,\ Value,\ \mbox{\hyperlink{struct_key_hash}{KeyHash}}>(size),}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00049}00049\ \ \ \ \ \_norm\_sq(1)\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00050}00050\ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00058}\mbox{\hyperlink{class_vector_a0124be0e6143a73ebe65847601a5e5d9}{00058}}\ \ \ \ \ \mbox{\hyperlink{class_vector_a0124be0e6143a73ebe65847601a5e5d9}{Vector}}(\mbox{\hyperlink{class_vector}{Vector}}\&\ v,\ std::size\_t\ size)\ :}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00059}00059\ \ \ \ \ std::unordered\_map<Key,\ Value,\ \mbox{\hyperlink{struct_key_hash}{KeyHash}}>(size),}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00060}00060\ \ \ \ \ \_norm\_sq(1)}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ v.begin();\ it\ !=\ v.end();\ it++)\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ BasisVector\ b(*it);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ (*this)[b.key]\ =\ b.weight;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00074}\mbox{\hyperlink{class_vector_a076976e16cf9eecd151c91ccd0089647}{00074}}\ \ \ \ \ \mbox{\hyperlink{class_vector}{Vector}}\&\ \mbox{\hyperlink{class_vector_a076976e16cf9eecd151c91ccd0089647}{operator+=}}(\textcolor{keyword}{const}\ std::pair<Key,\ Value>\&\ v)\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Add\ a\ basis\ vector\ to\ the\ Vector}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ (*this)[v.first]\ +=\ v.second;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00085}\mbox{\hyperlink{class_vector_a8e26a662fa4ee7e2a564e7dfed305862}{00085}}\ \ \ \ \ \mbox{\hyperlink{class_vector}{Vector}}\&\ \mbox{\hyperlink{class_vector_a8e26a662fa4ee7e2a564e7dfed305862}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\&\ v)\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ (*this)[v.key]\ +=\ v.value;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00093}\mbox{\hyperlink{class_vector_ab0f0ede3b30b39b94c2bc63f95b1c779}{00093}}\ \ \ \ \ \mbox{\hyperlink{class_vector}{Vector}}\&\ \mbox{\hyperlink{class_vector_ab0f0ede3b30b39b94c2bc63f95b1c779}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector}{Vector}}\&\ v)\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ v.begin();\ it\ !=\ v.end();\ it++)\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\ b(*it);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ (*this)[b.key]\ +=\ b.value;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00107}\mbox{\hyperlink{class_vector_a903df963261abd0429144d5c24cfb56c}{00107}}\ \ \ \ \ \mbox{\hyperlink{class_vector}{Vector}}\&\ \mbox{\hyperlink{class_vector_a903df963261abd0429144d5c24cfb56c}{operator/=}}(\textcolor{keyword}{const}\ Value\ v)\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ this-\/>begin();\ it\ !=\ this-\/>end();\ it++)\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\ b(*it);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ (*this)[b.key]\ /=\ v;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00113}00113\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00115}00115\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_if(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\&\ b,\ \textcolor{keywordtype}{bool}\ cond)\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cond)\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ *\textcolor{keyword}{this}\ +=\ b;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00119}00119\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00124}\mbox{\hyperlink{class_vector_a8fe7c81eb0e3c128bb455e3b1730a06e}{00124}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_a8fe7c81eb0e3c128bb455e3b1730a06e}{print}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00125}00125\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Norm:\ "{}}\ <<\ \mbox{\hyperlink{class_vector_ac86119ba1e335db2d95eb9c87fd92c82}{get\_norm}}()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00126}00126\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Components:"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pair\ :\ *\textcolor{keyword}{this})\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Key:\ "{}};\ pair.first.print();}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ std::setw(6)\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Value:\ \ "{}}\ <<\ std::setprecision(15)\ <<\ pair.second\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00132}00132\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00140}\mbox{\hyperlink{class_vector_a491ba237bca7f3ecf65c56c7b7f94f7b}{00140}}\ \ \ \ \ \mbox{\hyperlink{class_draining_iterator}{DrainingIterator<Vector>}}\ \mbox{\hyperlink{class_vector_a491ba237bca7f3ecf65c56c7b7f94f7b}{draining\_begin}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_draining_iterator}{DrainingIterator<Vector>}}(this-\/>begin(),\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00142}00142\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00144}00144\ \ \ \ \ \mbox{\hyperlink{class_draining_iterator}{DrainingIterator<Vector>}}\ draining\_end()\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_draining_iterator}{DrainingIterator<Vector>}}(this-\/>end(),\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00146}00146\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00148}00148\ \ \ \ \ LargeFloat\ inner\_product(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector}{Vector}}\&\ v)\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00149}00149\ \ \ \ \ \ \ \ \ LargeFloat\ res(0);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ v.begin();\ it\ !=\ v.end();\ it++)\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\ b(*it);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it2\ =\ this-\/>find(b.key);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it2\ !=\ this-\/>end())\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\ b2(*it2);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Value\ tmp\ =\ b.value\ *\ b2.value;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res\ +=\ LargeFloat(tmp.real(),\ tmp.imag());}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00159}00159\ \ \ \ \ \ \ \ \ res\ *=\ \mbox{\hyperlink{class_vector_ac86119ba1e335db2d95eb9c87fd92c82}{get\_norm}}();}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00161}00161\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00163}00163\ \ \ \ \ \textcolor{comment}{//\ Value\ inner\_product(const\ VectorPair<T,\ BasisVector<T>,\ Vector<T>>\&\ v);}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00168}\mbox{\hyperlink{class_vector_afe68b3d520c9b67b296822cd6209394d}{00168}}\ \ \ \ \ LargeFloat\ \mbox{\hyperlink{class_vector_afe68b3d520c9b67b296822cd6209394d}{get\_norm\_sq}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_norm\_sq;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00170}00170\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00175}\mbox{\hyperlink{class_vector_ac86119ba1e335db2d95eb9c87fd92c82}{00175}}\ \ \ \ \ LargeFloat\ \mbox{\hyperlink{class_vector_ac86119ba1e335db2d95eb9c87fd92c82}{get\_norm}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(\_norm\_sq);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00177}00177\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00186}\mbox{\hyperlink{class_vector_ad34348ce72d9ff2ad6d934ecf96d9672}{00186}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_ad34348ce72d9ff2ad6d934ecf96d9672}{factorise\_norm}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00187}00187\ \ \ \ \ \ \ \ \ Value\ tmp\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ this-\/>begin();\ it\ !=\ this-\/>end();\ it++)\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\ b(*it);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ tmp\ +=\ abs(b.value*b.value);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00192}00192\ \ \ \ \ \ \ \ \ *\textcolor{keyword}{this}\ /=\ sqrt(tmp);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \_norm\_sq\ *=\ LargeFloat(tmp.real(),\ tmp.imag());}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00194}00194\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00199}\mbox{\hyperlink{class_vector_ad0ade9790cea3940a9d10b7a8ea572f4}{00199}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_ad0ade9790cea3940a9d10b7a8ea572f4}{set\_norm\_sq}}(\textcolor{keyword}{const}\ LargeFloat\ \&other)\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \_norm\_sq\ =\ other;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00201}00201\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00206}\mbox{\hyperlink{class_vector_afd1eda033d5a0324949ee991ecc862f9}{00206}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_afd1eda033d5a0324949ee991ecc862f9}{normalise}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector_ad34348ce72d9ff2ad6d934ecf96d9672}{factorise\_norm}}();}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector_ad0ade9790cea3940a9d10b7a8ea572f4}{set\_norm\_sq}}(1);}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00209}00209\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00211}00211\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_size()\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \_size\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ this-\/>begin();\ it\ !=\ this-\/>end();\ it++)\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \_size++;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00216}00216\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00221}\mbox{\hyperlink{class_vector_aeb66df91301154c98540481e3a0f4c2f}{00221}}\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{class_vector_aeb66df91301154c98540481e3a0f4c2f}{get\_size}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00222}00222\ \ \ \ \ \ \ \_size\ =\ this-\/>size();}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00223}00223\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_size;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00224}00224\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00229}\mbox{\hyperlink{class_vector_ac9d0fa459069e3672c3151995b3c2368}{00229}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_ac9d0fa459069e3672c3151995b3c2368}{clear}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00230}00230\ \ \ \ \ \ \ \ \ std::unordered\_map<Key,\ Value,\ KeyHash>::clear();}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \_norm\_sq\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00232}00232\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_vector_8hpp_source_l00233}00233\ \};}
 
 \end{DoxyCode}

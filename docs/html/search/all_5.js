@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['home_20page_0',['Home page',['../index.html',1,'']]]
+  ['factorise_5fnorm_0',['factorise_norm',['../class_vector.html#ad34348ce72d9ff2ad6d934ecf96d9672',1,'Vector']]]
 ];

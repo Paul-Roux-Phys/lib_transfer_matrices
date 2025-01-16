@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['page_0',['Home page',['../index.html',1,'']]]
+  ['home_20page_0',['Home page',['../index.html',1,'']]]
 ];

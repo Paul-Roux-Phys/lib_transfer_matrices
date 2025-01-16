@@ -1,9 +1,123 @@
-\doxysection{matrices.\+hpp}
-\hypertarget{include_2_transfer_matrices_2matrices_8hpp_source}{}\label{include_2_transfer_matrices_2matrices_8hpp_source}\index{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/include/TransferMatrices/matrices.hpp@{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/include/TransferMatrices/matrices.hpp}}
+\doxysection{include/\+Transfer\+Matrices/matrices.hpp}
+\hypertarget{include_2_transfer_matrices_2matrices_8hpp_source}{}\label{include_2_transfer_matrices_2matrices_8hpp_source}\index{matrices.hpp@{matrices.hpp}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../src/matrices.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ MATRICES\_HPP}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ MATRICES\_HPP}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00006}00006\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Vector>}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00007}00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_matrix}{Matrix}}\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00008}00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00009}00009\ \ \ \textcolor{keyword}{using\ }Key\ =\ \textcolor{keyword}{typename}\ Vector::Key;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00010}00010\ \ \ \textcolor{keyword}{using\ }Value\ =\ \textcolor{keyword}{typename}\ Vector::Value;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00012}00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00013}00013\ \ \ \mbox{\hyperlink{class_vector}{Vector}}\ *\_v;\ \textcolor{comment}{//\ vector\ that\ holds\ the\ states}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00014}00014\ \ \ \mbox{\hyperlink{class_vector}{Vector}}\ *\_tmp;\ \textcolor{comment}{//\ vector\ used\ in\ intermediary\ computations}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00015}00015\ \ \ std::size\_t\ \_size;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00016}00016\ \ \ Key*\ \_state\_table;\ \textcolor{comment}{//\ index\ the\ keys}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00017}00017\ \ \ void\ (\mbox{\hyperlink{class_vector}{Vector}}::*\_multiply)(\mbox{\hyperlink{class_vector}{Vector}}\&);}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00019}00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00020}00020\ \ \ \mbox{\hyperlink{class_matrix}{Matrix}}(\mbox{\hyperlink{class_vector}{Vector}}*\ v,\ \mbox{\hyperlink{class_vector}{Vector}}*\ tmp,\ \textcolor{keywordtype}{void}\ (\mbox{\hyperlink{class_vector}{Vector}}::*M)(\mbox{\hyperlink{class_vector}{Vector}}\&))}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00021}00021\ \ \ \ \ :\ \_v(v),}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00022}00022\ \ \ \ \ \ \ \_tmp(tmp),\ \ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00023}00023\ \ \ \ \ \ \ \_multiply(M),}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00024}00024\ \ \ \ \ \ \ \_size(v-\/>get\_size())\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00025}00025\ \ \ \ \ generate\_space();}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00026}00026\ \ \ \ \ make\_state\_table();}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00027}00027\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00029}00029\ \ \ \mbox{\hyperlink{class_matrix}{\string~Matrix}}()\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00030}00030\ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \_state\_table;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00031}00031\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00033}00033\ \ \ \textcolor{keywordtype}{void}\ multiply()\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00034}00034\ \ \ \ \ (\_v-\/>*\_multiply)(*\_tmp);}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00035}00035\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00037}00037\ \ \ \textcolor{keywordtype}{void}\ generate\_space()\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00038}00038\ \ \ \ \ std::size\_t\ old\_dim\ =\ 0,\ new\_dim\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{while}\ (new\_dim\ >\ old\_dim)\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00040}00040\ \ \ \ \ \ \ old\_dim\ =\ new\_dim;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00041}00041\ \ \ \ \ \ \ multiply();}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00042}00042\ \ \ \ \ \ \ new\_dim\ =\ \_v-\/>\mbox{\hyperlink{class_vector_aeb66df91301154c98540481e3a0f4c2f}{get\_size}}();}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00044}00044\ \ \ \ \ \_size\ =\ new\_dim;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00045}00045\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00047}00047\ \ \ \textcolor{keywordtype}{void}\ set\_size()\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00048}00048\ \ \ \ \ \_size\ =\ \_v-\/>\mbox{\hyperlink{class_vector_aeb66df91301154c98540481e3a0f4c2f}{get\_size}}();}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00049}00049\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00051}00051\ \ \ std::size\_t\ get\_size()\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{return}\ \_size;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00053}00053\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00055}00055\ \ \ \textcolor{keywordtype}{void}\ MultMx(Value*\ x,\ Value*\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//\ place\ x\ in\ the\ hash\ table}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i\ <\ \_size;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00058}00058\ \ \ \ \ \ \ (*\_v)[\_state\_table[i]]\ =\ x[i];}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//\ multiply\ be\ the\ matrix}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00061}00061\ \ \ \ \ multiply();}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ put\ the\ result\ in\ y}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i\ <\ \_size;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00064}00064\ \ \ \ \ \ \ y[i]\ =\ (*\_v)[\_state\_table[i]];}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00066}00066\ \ \ \ \ \_v-\/>\mbox{\hyperlink{class_vector_ac9d0fa459069e3672c3151995b3c2368}{clear}}();}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00067}00067\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00069}00069\ \ \ \textcolor{keywordtype}{void}\ make\_state\_table()\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00070}00070\ \ \ \ \ \_state\_table\ =\ \textcolor{keyword}{new}\ Key[\_size];}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{int}\ i=0;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ \_v-\/>\mbox{\hyperlink{class_vector_a491ba237bca7f3ecf65c56c7b7f94f7b}{draining\_begin}}();\ it\ !=\ \_v-\/>draining\_end();\ it++)\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00073}00073\ \ \ \ \ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector<Key,\ Value>}}\ b(*it);}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00074}00074\ \ \ \ \ \ \ \_state\_table[i]\ =\ b.key;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00075}00075\ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00077}00077\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00079}00079\ \ \ \textcolor{keywordtype}{void}\ print\_state\_table()\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00080}00080\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i\ <\ \_size;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ cout\ <<\ std::setw(3)\ <<\ i\ <<\ \textcolor{stringliteral}{"{}:\ "{}};\ \_state\_table[i].print();\ cout\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00082}00082\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00083}00083\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00085}00085\ \ \ Value\ operator()(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00086}00086\ \ \ \ \ \ \ Value*\ x\ =\ \textcolor{keyword}{new}\ Value[\_size];}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00087}00087\ \ \ \ \ \ \ Value*\ y\ =\ \textcolor{keyword}{new}\ Value[\_size];}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00089}00089\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k=0;\ k\ <\ \_size;\ k++)\ \{\ x[k]\ =\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00090}00090\ \ \ \ \ \ \ x[i]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00092}00092\ \ \ \ \ \ \ MultMx(x,\ y);}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00094}00094\ \ \ \ \ \ \ Value\ res\ =\ y[j];}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00096}00096\ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ x;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00097}00097\ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ y;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00098}00098\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00099}00099\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00101}00101\ \ \ \textcolor{keywordtype}{void}\ print(\textcolor{keywordtype}{int}\ column\_width\ =\ 10)\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00102}00102\ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Matrix\ of\ dimension\ "{}}\ <<\ \_size\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00103}00103\ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}["{}}\ <<\ endl;;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00104}00104\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i\ <\ \_size;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ cout\ <<\ std::setw(4)\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=0;\ j\ <\ \_size;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ std::left\ <<\ std::setw(column\_width)\ <<\ (*this)(i,\ j);}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ \_size-\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{};"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00112}00112\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00113}00113\ \ \ \ \ \ \ cout\ <<\ endl\ <<\ \textcolor{stringliteral}{"{}]"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00114}00114\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00115}00115\ \};}
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{include_2_transfer_matrices_2matrices_8hpp_source_l00117}00117\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MATRICES\_HPP}}
 
 \end{DoxyCode}

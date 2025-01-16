@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Transfer Matrices
+   <div id="projectname">Transfer Matrices<span id="projectnumber">&#160;0.0.0DEV</span>
    </div>
    <div id="projectbrief">C++ library for transfer matrix computations</div>
   </td>
@@ -106,12 +113,12 @@ $(function(){initNavTree('class_vector_3_01_basis_vector_00_01_key_hash_01_4.htm
 <p>A class for storing large vectors.  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_vector_8hpp_source.html">Vector.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">vectors.hpp</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class for storing large vectors. </p>
-<p>This class represents a vector. It stores the components of the vector in a hash table implemented as a std::unordered_map. (key, value) pairs have the type <a class="el" href="class_basis_vector.html">BasisVector</a> This allows storing arbitrary key types and a O(1) time complexity for insertion and lookup. </p>
+<p>This class represents a vector. It stores the components of the vector in a hash table implemented as a std::unordered_map. (key, value) pairs have the type <a class="el" href="class_basis_vector.html">BasisVector</a>. This allows storing arbitrary key types and a O(1) time complexity for insertion and lookup. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/paulroux/Documents/Recherche/projet_these/code/transfer_matrices/TransferMatricesCpp/cpp_libs/libtransfermatrices/src/vectors/<a class="el" href="_vector_8hpp_source.html">Vector.hpp</a></li>
+<li><a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,120 +1,120 @@
-\doxysection{vector\+\_\+pairs.\+hpp}
-\hypertarget{src_2vector__pairs_8hpp_source}{}\label{src_2vector__pairs_8hpp_source}\index{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/vector\_pairs.hpp@{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/vector\_pairs.hpp}}
+\doxysection{src/vector\+\_\+pairs.hpp}
+\hypertarget{src_2vector__pairs_8hpp_source}{}\label{src_2vector__pairs_8hpp_source}\index{vector\_pairs.hpp@{vector\_pairs.hpp}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Vec>}
-\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vector_pair}{VectorPair}}\ \{}
-\DoxyCodeLine{00005\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{using\ }Key\ =\ \textcolor{keyword}{typename}\ Vec::Key;}
-\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{using\ }Value\ =\ \textcolor{keyword}{typename}\ Vec::Value;}
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_basis_vector}{BasisVector}}\ =\ \textcolor{keyword}{typename}\ Vec::BasisVector;}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{using\ }iterator\ =\ \textcolor{keyword}{typename}\ Vec::iterator;}
-\DoxyCodeLine{00010\ \ \ \ \ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00012\ \ \ \ \ Vec*\ \_v[2];}
-\DoxyCodeLine{00013\ \ \ \ \ std::size\_t\ \_size;}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \_data\_position;}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_vector_pair}{VectorPair}}(Vec*\ v1,\ Vec*\ v2)\ :\ \_v\{v1,\ v2\},\ \_data\_position(0)\ \{\}}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ Vec*\ get()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_v[\_data\_position];\ \}}
-\DoxyCodeLine{00020\ \ \ \ \ Vec*\ getempty()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_v[1-\/\_data\_position];\ \}}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ print()\textcolor{keyword}{\ const\ }\{\ get()-\/>print();\ \}}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_size()\ \{\ \_size\ =\ get()-\/>size();\}}
-\DoxyCodeLine{00023\ \ \ \ \ std::size\_t\ size()\ \{\ set\_size();\ \textcolor{keywordflow}{return}\ \_size;\}}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ swap\_data\_position()\ \{\ \_data\_position\ =\ 1-\/\_data\_position;\ \}}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...\ Params>}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ mul(RMatrix<Vec,\ Params...>\ r,\ Params...\ params)\ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ multiply<Vec,\ Params...>(\_v[1-\/\_data\_position],\ r,\ \_v[\_data\_position],\ params...);}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ swap\_data\_position();}
-\DoxyCodeLine{00030\ \ \ \ \ \}}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ transfer();}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ Value\ operator[](Key\ k)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*this-\/>get())[k];}
-\DoxyCodeLine{00036\ \ \ \ \ \}}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_vector_pair}{VectorPair}}\&\ operator+=(\textcolor{keyword}{const}\ std::pair<Key,\ Value>\&\ p)\ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ *get()\ +=\ p;}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00041\ \ \ \ \ \}}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_vector_pair}{VectorPair}}\&\ operator+=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\&\ b)\ \{}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ *get()\ +=\ b;}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00046\ \ \ \ \ \}}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_vector_pair}{VectorPair}}\&\ operator+=(\textcolor{keyword}{const}\ Vec\&\ v)\ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ *get()\ +=\ v;}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00051\ \ \ \ \ \}}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_vector_pair}{VectorPair}}\&\ operator/=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ d)\ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ get()-\/>operator/=(d);}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{00056\ \ \ \ \ \}}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_if(\mbox{\hyperlink{class_basis_vector}{BasisVector}}\ b,\ \textcolor{keywordtype}{bool}\ cond)\ \{}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ get()-\/>add\_if(b,\ cond);}
-\DoxyCodeLine{00060\ \ \ \ \ \}}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ generate\_space()\ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ old\_dim=0,\ new\_dim=1;}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(new\_dim\ >\ old\_dim)\ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ old\_dim\ =\ new\_dim;}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ transfer();}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ new\_dim\ =\ size();}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00070\ \ \ \ \ \}}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ clear()\ \{\ get()-\/>clear();\ getempty()-\/>clear();\ \}}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \ \ \ \ LargeFloat\ inner\_product(Vec\&\ v)\ \{}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get()-\/>inner\_product(v);}
-\DoxyCodeLine{00076\ \ \ \ \ \}}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \ \ LargeFloat\ inner\_product(\mbox{\hyperlink{class_vector_pair}{VectorPair<Vec>}}\&\ v)\ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get()-\/>inner\_product(v-\/>get());}
-\DoxyCodeLine{00080\ \ \ \ \ \}}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ \ \ \ \ LargeFloat\ get\_norm()\ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get()-\/>get\_norm();}
-\DoxyCodeLine{00084\ \ \ \ \ \}}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ factorise\_norm()\ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ get()-\/>factorise\_norm();}
-\DoxyCodeLine{00088\ \ \ \ \ \}}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ normalise()\ \{}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ get()-\/>normalise();}
-\DoxyCodeLine{00092\ \ \ \ \ \}}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00094\ \ \ \ \ iterator\ begin()}
-\DoxyCodeLine{00095\ \ \ \ \ \{}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get()-\/>begin();}
-\DoxyCodeLine{00097\ \ \ \ \ \}}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00099\ \ \ \ \ iterator\ end()}
-\DoxyCodeLine{00100\ \ \ \ \ \{}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get()-\/>end();}
-\DoxyCodeLine{00102\ \ \ \ \ \}}
-\DoxyCodeLine{00103\ \};}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00105\ \textcolor{comment}{//\ template\ <typename\ T>}}
-\DoxyCodeLine{00106\ \textcolor{comment}{//\ T\ Vector<T>::inner\_product(const\ VectorPair<Vec>\&\ v)}}
-\DoxyCodeLine{00107\ \textcolor{comment}{//\ \{}}
-\DoxyCodeLine{00108\ \textcolor{comment}{//\ \ \ \ \ return\ inner\_product(*(v.get()));}}
-\DoxyCodeLine{00109\ \textcolor{comment}{//\ \}}}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00111\ \textcolor{comment}{//\ template<typename\ T>}}
-\DoxyCodeLine{00112\ \textcolor{comment}{//\ Vector<T>::Vector(VectorPair<T,\ BasisVector<T>,\ Vector<T>>\ v,\ std::size\_t\ size)}}
-\DoxyCodeLine{00113\ \textcolor{comment}{//\ :\ Vector(*v.get(),\ size)}}
-\DoxyCodeLine{00114\ \textcolor{comment}{//\ \{\}\ }}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00003}00003\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Vec>}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00004}\mbox{\hyperlink{class_vector_pair}{00004}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vector_pair}{VectorPair}}\ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00005}00005\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00006}00006\ \ \ \ \ \textcolor{keyword}{using\ }Key\ =\ \textcolor{keyword}{typename}\ Vec::Key;}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{using\ }Value\ =\ \textcolor{keyword}{typename}\ Vec::Value;}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_basis_vector}{BasisVector}}\ =\ \textcolor{keyword}{typename}\ Vec::BasisVector;}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{using\ }iterator\ =\ \textcolor{keyword}{typename}\ Vec::iterator;}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00010}00010\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00011}00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00012}00012\ \ \ \ \ Vec*\ \_v[2];}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00013}00013\ \ \ \ \ std::size\_t\ \_size;}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \_data\_position;}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00016}00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_vector_pair}{VectorPair}}(Vec*\ v1,\ Vec*\ v2)\ :\ \_v\{v1,\ v2\},\ \_data\_position(0)\ \{\}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00019}00019\ \ \ \ \ Vec*\ get()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_v[\_data\_position];\ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00020}00020\ \ \ \ \ Vec*\ getempty()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_v[1-\/\_data\_position];\ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ print()\textcolor{keyword}{\ const\ }\{\ get()-\/>print();\ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_size()\ \{\ \_size\ =\ get()-\/>size();\}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00023}00023\ \ \ \ \ std::size\_t\ size()\ \{\ set\_size();\ \textcolor{keywordflow}{return}\ \_size;\}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ swap\_data\_position()\ \{\ \_data\_position\ =\ 1-\/\_data\_position;\ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}...\ Params>}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ mul(RMatrix<Vec,\ Params...>\ r,\ Params...\ params)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ multiply<Vec,\ Params...>(\_v[1-\/\_data\_position],\ r,\ \_v[\_data\_position],\ params...);}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ swap\_data\_position();}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{void}\ transfer();}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00034}00034\ \ \ \ \ Value\ operator[](Key\ k)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*this-\/>get())[k];}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{class_vector_pair}{VectorPair}}\&\ operator+=(\textcolor{keyword}{const}\ std::pair<Key,\ Value>\&\ p)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ *get()\ +=\ p;}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{class_vector_pair}{VectorPair}}\&\ operator+=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\&\ b)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ *get()\ +=\ b;}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{class_vector_pair}{VectorPair}}\&\ operator+=(\textcolor{keyword}{const}\ Vec\&\ v)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ *get()\ +=\ v;}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{class_vector_pair}{VectorPair}}\&\ operator/=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ d)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ get()-\/>operator/=(d);}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{void}\ add\_if(\mbox{\hyperlink{class_basis_vector}{BasisVector}}\ b,\ \textcolor{keywordtype}{bool}\ cond)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ get()-\/>add\_if(b,\ cond);}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{void}\ generate\_space()\ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ old\_dim=0,\ new\_dim=1;}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(new\_dim\ >\ old\_dim)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ old\_dim\ =\ new\_dim;}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ transfer();}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ new\_dim\ =\ size();}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{void}\ clear()\ \{\ get()-\/>clear();\ getempty()-\/>clear();\ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00074}00074\ \ \ \ \ LargeFloat\ inner\_product(Vec\&\ v)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get()-\/>inner\_product(v);}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00078}00078\ \ \ \ \ LargeFloat\ inner\_product(\mbox{\hyperlink{class_vector_pair}{VectorPair<Vec>}}\&\ v)\ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get()-\/>inner\_product(v-\/>get());}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00082}00082\ \ \ \ \ LargeFloat\ get\_norm()\ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get()-\/>get\_norm();}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordtype}{void}\ factorise\_norm()\ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00087}00087\ \ \ \ \ \ \ \ \ get()-\/>factorise\_norm();}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordtype}{void}\ normalise()\ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00091}00091\ \ \ \ \ \ \ \ \ get()-\/>normalise();}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00092}00092\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00094}00094\ \ \ \ \ iterator\ begin()}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00095}00095\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get()-\/>begin();}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00099}00099\ \ \ \ \ iterator\ end()}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00100}00100\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ get()-\/>end();}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00103}00103\ \};}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00105}00105\ \textcolor{comment}{//\ template\ <typename\ T>}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00106}00106\ \textcolor{comment}{//\ T\ Vector<T>::inner\_product(const\ VectorPair<Vec>\&\ v)}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00107}00107\ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00108}00108\ \textcolor{comment}{//\ \ \ \ \ return\ inner\_product(*(v.get()));}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00109}00109\ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00111}00111\ \textcolor{comment}{//\ template<typename\ T>}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00112}00112\ \textcolor{comment}{//\ Vector<T>::Vector(VectorPair<T,\ BasisVector<T>,\ Vector<T>>\ v,\ std::size\_t\ size)}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00113}00113\ \textcolor{comment}{//\ :\ Vector(*v.get(),\ size)}}
+\DoxyCodeLine{\Hypertarget{src_2vector__pairs_8hpp_source_l00114}00114\ \textcolor{comment}{//\ \{\}\ }}
 
 \end{DoxyCode}

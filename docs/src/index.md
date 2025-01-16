@@ -1,122 +1,57 @@
-# Home page            {#mainpage}
+# Home page {#mainpage}
 
 ## Purpose of this library
 
-This small template library provides a few convenient data types and methods that aim to make it easy to write performant transfer matrix programs.
+This small template library offers a few convenient data types and methods designed to simplify writing efficient transfer matrix programs.
 
-## Dependencies
+Specifically, the program is designed to perform computations on transfer matrices written in the form
 
-To use this library, the user should download and install the [mpfr](https://www.mpfr.org/), 
-[mpc](https://www.multiprecision.org/mpc/), and [arpack](https://github.com/opencollab/arpack-ng)
-libraries.
+$$T = \prod R_i,$$
 
-## Getting started
+where the \f$R_i\f$ are sparse matrices, in the sense that there exists a basis \f$|e_i \rangle\f$ such that \f$R |e_i \rangle\f$ has only a few non-zero components in the basis \f$|e_i\rangle\f$.
 
-This library is a template library, meaning it requires no compilation. Simply put the directory
-to `some/path/libtransftermatrices` and include `TransferMatrices.hpp` in your project:
+## Installation
+
+This library is a template library, meaning the library itself requires no compilation. Simply clone or download the 
+[git repo](https://github.com/Paul-Roux-Phys/lib_transfer_matrices/) to `some/path/lib_transfter_matrices`
+and include `TransferMatrices.hpp` in your project:
 
 ```cpp
 #include "TransferMatrices.hpp"
 ```
 
-Make sure to compile with the option `-I/path/to/libtransfermatrices/include` so that the compiler
-sees the file `TransferMatrices.hpp`.
+Make sure to compile with the option `-I/path/to/lib_transfer_matrices/include` so that the compiler
+finds the file `TransferMatrices.hpp`.
 
-## Usage
+### Dependencies
 
-The library provides some convenient template classes to cover common needs in transfer matrix computations.
+The library depends on a few external libraries: 
 
-### Basis Vectors
+ * [mpfr](https://www.mpfr.org/)
+ * [mpc](https://www.multiprecision.org/mpc/)
+ * [arpack](https://github.com/opencollab/arpack-ng)
+ * [blas](http://www.openmathlib.org/OpenBLAS/docs/user_manual/)
+ * [boost/multiprecision](https://www.boost.org/)
 
-The class [BasisVector<K, V>](@ref BasisVector) holds a `(key, value)` pair of arbitrary types.
+These libraries need to be installed on your system in order to use `lib_transfer_matrices`.
+The easiest way to achieve this is in your console, via your system's package manager; here are a few examples for popular packages managers:
 
-A good practice is to derive from this class in order to define a particular basis of a space of states:
+```bash
+# on macOS
+brew install arpack mpfr libmpc openblas boost
 
-```cpp
-using BV = BasisVector<bool *, double>;
-class IsingPM : public BV {
-private:
-    using BV::BV;
-};
+# on windows: via vcpkg (https://vcpkg.io/en/index.html)
+vcpkg install arpack-ng mpfr mpc openblas boost
+
+# on linux; depending on your distribution: 
+# ubuntu/debian based
+sudo apt install libarpack2-dev libmpfr-dev libmpc-dev libopenblas-dev libboost-all-dev
+# Fedora, CentOS, or RHEL-based Systems
+sudo dnf install arpack-devel mpfr-devel libmpc-devel openblas-devel boost-devel
+# for older versions
+sudo yum install arpack-devel mpfr-devel libmpc-devel openblas-devel boost-devel
+# on arch / Manjaro
+sudo pacman -S arpack mpfr libmpc openblas boost
+# on openSUSE
+sudo zypper install arpack-devel mpfr-devel libmpc-devel openblas-devel boost-devel
 ```
-
-In this example, we create a class `IsingPM` which holds `(key, value)` pairs, with 
-
-* keys of type `char *`, (C-style strings): sequences of 0s and 1s.
-* values of type `double`.
-
-The last `using` statement lets `IsingPM` inherit from the `BasisVector` constructor.
-
-Inheriting gives us some flexibility to integrate more data into the BasisVector if we want, e.g.
-we could add
-
-```cpp
-class IsingPMBasis : public BV {
-// ...
-private:
-    uint nb_domain_walls;
-}
-```
-
-to store some more information about the state, in this case the number of Ising domain walls.
-Or we could define additional methods on the state:
-
-```cpp
-public:
-    int nb_domain_walls() {
-        int res = 0;
-        for (int i = 0; i < sizeof(*this) - 1; i++)
-            if ((*this)[i] != (*this)[i+1])
-                res += 1;
-        return res;
-    }
-```
-
-For the complete documentation of this class click [here](@ref BasisVector)
-
-### Vectors
-
-To represent a general vector, which is a linear combination of basis vectors, the library exposes
-a class [Vector<BasisVector>](@ref Vector) which stores several `(key, value)` pairs in a hash table (or dictionary),
-using the hash table implementation of the C++ standard library `std::unordered_map`.
-This data structure allows for fast insertion, lookup, and deletion.
-
-Like for `BasisVector`s, it is a good practice to inherit from the `Vector` class:
-
-```cpp
-class IsingState : public Vector<BasisVector> {
-public:
-    using Vector<BasisVector>::Vector<BasisVector>;
-};
-```
-
-This again gives some flexibility to add methods and data to the state.
-
-One can multiply a vector by a scalar, add a basis vector to a vector, or add vectors together.
-Vectors can be looped through, or looped through and drained at the same time, which is useful to 
-limit memory usage. 
-To prevent overflowing of vector components, one can factorize the norm of the vector:
-
-```cpp
-IsingState v = IsingState(10); # initialises a vector with a hash table of size 10
-v *= 100.0;
-v.factorise_norm();
-```
-
-The norm of the vector is stored as an arbitrary precision number, which cannot overflow.
-
-One can easily iterate over all components of a vector `v`: iterate over the vector and
-cast the iterator to a `BasisVector`, in our example of type `IsingPMbasis`.
-
-```cpp
-for(auto it = v.begin(); it = v.end(); it++) {
-	IsingPMBasis p(*it);
-	printf("key = "); p.print(); printf("\n");
-}
-```
-
-For the complete documentation of this class click [here](@ref Vector).
-
-### R-matrices
-
-

@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Transfer Matrices
+   <div id="projectname">Transfer Matrices<span id="projectnumber">&#160;0.0.0DEV</span>
    </div>
    <div id="projectbrief">C++ library for transfer matrix computations</div>
   </td>
@@ -110,57 +117,900 @@ $(function(){initNavTree('class_matrix.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a0754dd5f9f2b0b05308cc95f2396a912" id="r_a0754dd5f9f2b0b05308cc95f2396a912"><td class="memItemLeft" align="right" valign="top"><a id="a0754dd5f9f2b0b05308cc95f2396a912" name="a0754dd5f9f2b0b05308cc95f2396a912"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Value</b> = typename VectorPair::Value</td></tr>
+<tr class="memitem:a0754dd5f9f2b0b05308cc95f2396a912" id="r_a0754dd5f9f2b0b05308cc95f2396a912"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0754dd5f9f2b0b05308cc95f2396a912">Value</a> = typename VectorPair::Value</td></tr>
 <tr class="separator:a0754dd5f9f2b0b05308cc95f2396a912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0377876912fd075c236e7a4089742be" id="r_af0377876912fd075c236e7a4089742be"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0377876912fd075c236e7a4089742be">Key</a> = typename Vector::Key</td></tr>
+<tr class="separator:af0377876912fd075c236e7a4089742be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b5d238e2ab19e6646a5d320f751b1dc" id="r_a2b5d238e2ab19e6646a5d320f751b1dc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b5d238e2ab19e6646a5d320f751b1dc">Value</a> = typename Vector::Value</td></tr>
+<tr class="separator:a2b5d238e2ab19e6646a5d320f751b1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a73437329eadc4107cc56e95e05d55a3d" id="r_a73437329eadc4107cc56e95e05d55a3d"><td class="memItemLeft" align="right" valign="top"><a id="a73437329eadc4107cc56e95e05d55a3d" name="a73437329eadc4107cc56e95e05d55a3d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Matrix</b> (<a class="el" href="class_vector_pair.html">VP</a> *v, int nev=2, const char *which=&quot;LM&quot;)</td></tr>
+<tr class="memitem:a73437329eadc4107cc56e95e05d55a3d" id="r_a73437329eadc4107cc56e95e05d55a3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73437329eadc4107cc56e95e05d55a3d">Matrix</a> (<a class="el" href="class_vector_pair.html">VP</a> *v, int nev=2, const char *which=&quot;LM&quot;)</td></tr>
 <tr class="separator:a73437329eadc4107cc56e95e05d55a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a4cc30287150f92522061ee26966b8e" id="r_a7a4cc30287150f92522061ee26966b8e"><td class="memItemLeft" align="right" valign="top"><a id="a7a4cc30287150f92522061ee26966b8e" name="a7a4cc30287150f92522061ee26966b8e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> ()</td></tr>
+<tr class="memitem:a7a4cc30287150f92522061ee26966b8e" id="r_a7a4cc30287150f92522061ee26966b8e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a4cc30287150f92522061ee26966b8e">size</a> ()</td></tr>
 <tr class="separator:a7a4cc30287150f92522061ee26966b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0021f873489a8a55e043737d22b2550b" id="r_a0021f873489a8a55e043737d22b2550b"><td class="memItemLeft" align="right" valign="top"><a id="a0021f873489a8a55e043737d22b2550b" name="a0021f873489a8a55e043737d22b2550b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>MultMx</b> (Value *x, Value *y)</td></tr>
+<tr class="memitem:a0021f873489a8a55e043737d22b2550b" id="r_a0021f873489a8a55e043737d22b2550b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0021f873489a8a55e043737d22b2550b">MultMx</a> (Value *x, Value *y)</td></tr>
 <tr class="separator:a0021f873489a8a55e043737d22b2550b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea18ae153885e0e81216bc7878d4120e" id="r_aea18ae153885e0e81216bc7878d4120e"><td class="memItemLeft" align="right" valign="top"><a id="aea18ae153885e0e81216bc7878d4120e" name="aea18ae153885e0e81216bc7878d4120e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>make_state_table</b> ()</td></tr>
+<tr class="memitem:aea18ae153885e0e81216bc7878d4120e" id="r_aea18ae153885e0e81216bc7878d4120e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea18ae153885e0e81216bc7878d4120e">make_state_table</a> ()</td></tr>
 <tr class="separator:aea18ae153885e0e81216bc7878d4120e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ed436cd0e9e02f0f2b27f09b28c8949" id="r_a5ed436cd0e9e02f0f2b27f09b28c8949"><td class="memItemLeft" align="right" valign="top"><a id="a5ed436cd0e9e02f0f2b27f09b28c8949" name="a5ed436cd0e9e02f0f2b27f09b28c8949"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>print_state_table</b> ()</td></tr>
+<tr class="memitem:a5ed436cd0e9e02f0f2b27f09b28c8949" id="r_a5ed436cd0e9e02f0f2b27f09b28c8949"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ed436cd0e9e02f0f2b27f09b28c8949">print_state_table</a> ()</td></tr>
 <tr class="separator:a5ed436cd0e9e02f0f2b27f09b28c8949"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9b6cdcf31c1e228443031bebe1a9e31" id="r_ad9b6cdcf31c1e228443031bebe1a9e31"><td class="memItemLeft" align="right" valign="top"><a id="ad9b6cdcf31c1e228443031bebe1a9e31" name="ad9b6cdcf31c1e228443031bebe1a9e31"></a>
-Value&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (int i, int j)</td></tr>
+<tr class="memitem:ad9b6cdcf31c1e228443031bebe1a9e31" id="r_ad9b6cdcf31c1e228443031bebe1a9e31"><td class="memItemLeft" align="right" valign="top">Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9b6cdcf31c1e228443031bebe1a9e31">operator()</a> (int i, int j)</td></tr>
 <tr class="separator:ad9b6cdcf31c1e228443031bebe1a9e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af500ee7b14a3dbbf6281802b3ea1e3ce" id="r_af500ee7b14a3dbbf6281802b3ea1e3ce"><td class="memItemLeft" align="right" valign="top"><a id="af500ee7b14a3dbbf6281802b3ea1e3ce" name="af500ee7b14a3dbbf6281802b3ea1e3ce"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (int column_width=10)</td></tr>
+<tr class="memitem:af500ee7b14a3dbbf6281802b3ea1e3ce" id="r_af500ee7b14a3dbbf6281802b3ea1e3ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af500ee7b14a3dbbf6281802b3ea1e3ce">print</a> (int column_width=10)</td></tr>
 <tr class="separator:af500ee7b14a3dbbf6281802b3ea1e3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03d9eef84b585df808d4e0eb5d28d217" id="r_a03d9eef84b585df808d4e0eb5d28d217"><td class="memItemLeft" align="right" valign="top"><a id="a03d9eef84b585df808d4e0eb5d28d217" name="a03d9eef84b585df808d4e0eb5d28d217"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isapprox</b> (Value a, Value b, Value eps)</td></tr>
+<tr class="memitem:a03d9eef84b585df808d4e0eb5d28d217" id="r_a03d9eef84b585df808d4e0eb5d28d217"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03d9eef84b585df808d4e0eb5d28d217">isapprox</a> (Value a, Value b, Value eps)</td></tr>
 <tr class="separator:a03d9eef84b585df808d4e0eb5d28d217"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73cacd5a271c7d63772d8c8d48f84bfd" id="r_a73cacd5a271c7d63772d8c8d48f84bfd"><td class="memItemLeft" align="right" valign="top"><a id="a73cacd5a271c7d63772d8c8d48f84bfd" name="a73cacd5a271c7d63772d8c8d48f84bfd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>remove_duplicate_eigvals</b> (Value eps=1e-10)</td></tr>
+<tr class="memitem:a73cacd5a271c7d63772d8c8d48f84bfd" id="r_a73cacd5a271c7d63772d8c8d48f84bfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73cacd5a271c7d63772d8c8d48f84bfd">remove_duplicate_eigvals</a> (Value eps=1e-10)</td></tr>
 <tr class="separator:a73cacd5a271c7d63772d8c8d48f84bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88407ae0c939cc77aec762c7a98471e8" id="r_a88407ae0c939cc77aec762c7a98471e8"><td class="memItemLeft" align="right" valign="top"><a id="a88407ae0c939cc77aec762c7a98471e8" name="a88407ae0c939cc77aec762c7a98471e8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>find_eigenvalues</b> (bool no_mult=false, Value eps=1e-10)</td></tr>
+<tr class="memitem:a88407ae0c939cc77aec762c7a98471e8" id="r_a88407ae0c939cc77aec762c7a98471e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88407ae0c939cc77aec762c7a98471e8">find_eigenvalues</a> (bool no_mult=false, Value eps=1e-10)</td></tr>
 <tr class="separator:a88407ae0c939cc77aec762c7a98471e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb998538886ce9e5d1e91c2da4cc4173" id="r_afb998538886ce9e5d1e91c2da4cc4173"><td class="memItemLeft" align="right" valign="top"><a id="afb998538886ce9e5d1e91c2da4cc4173" name="afb998538886ce9e5d1e91c2da4cc4173"></a>
-std::pair&lt; double *, double * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_eigenvalues</b> ()</td></tr>
+<tr class="memitem:afb998538886ce9e5d1e91c2da4cc4173" id="r_afb998538886ce9e5d1e91c2da4cc4173"><td class="memItemLeft" align="right" valign="top">std::pair&lt; double *, double * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb998538886ce9e5d1e91c2da4cc4173">get_eigenvalues</a> ()</td></tr>
 <tr class="separator:afb998538886ce9e5d1e91c2da4cc4173"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ede10292b5f626663033f11f6882f8b" id="r_a4ede10292b5f626663033f11f6882f8b"><td class="memItemLeft" align="right" valign="top"><a id="a4ede10292b5f626663033f11f6882f8b" name="a4ede10292b5f626663033f11f6882f8b"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>sprint_eigenvalues</b> (int nev=0, int width_real_part=20, int width_imag_part=10)</td></tr>
+<tr class="memitem:a4ede10292b5f626663033f11f6882f8b" id="r_a4ede10292b5f626663033f11f6882f8b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ede10292b5f626663033f11f6882f8b">sprint_eigenvalues</a> (int nev=0, int width_real_part=20, int width_imag_part=10)</td></tr>
 <tr class="separator:a4ede10292b5f626663033f11f6882f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ca410106bb6126ddf27a0fe36546a6" id="r_a60ca410106bb6126ddf27a0fe36546a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60ca410106bb6126ddf27a0fe36546a6">Matrix</a> (<a class="el" href="class_vector.html">Vector</a> *v, <a class="el" href="class_vector.html">Vector</a> *tmp, void(Vector::*M)(<a class="el" href="class_vector.html">Vector</a> &amp;))</td></tr>
+<tr class="separator:a60ca410106bb6126ddf27a0fe36546a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad881c70a40f227c0a8ec8e119325d1c" id="r_aad881c70a40f227c0a8ec8e119325d1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad881c70a40f227c0a8ec8e119325d1c">multiply</a> ()</td></tr>
+<tr class="separator:aad881c70a40f227c0a8ec8e119325d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e57e03d109e87190b31270d3915e133" id="r_a5e57e03d109e87190b31270d3915e133"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e57e03d109e87190b31270d3915e133">generate_space</a> ()</td></tr>
+<tr class="separator:a5e57e03d109e87190b31270d3915e133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af37cd8079a4443dd65eeeca8ee6b0a9a" id="r_af37cd8079a4443dd65eeeca8ee6b0a9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af37cd8079a4443dd65eeeca8ee6b0a9a">set_size</a> ()</td></tr>
+<tr class="separator:af37cd8079a4443dd65eeeca8ee6b0a9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace56c5d4787695301eee0654b2dbb89d" id="r_ace56c5d4787695301eee0654b2dbb89d"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace56c5d4787695301eee0654b2dbb89d">get_size</a> ()</td></tr>
+<tr class="separator:ace56c5d4787695301eee0654b2dbb89d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0021f873489a8a55e043737d22b2550b" id="r_a0021f873489a8a55e043737d22b2550b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0021f873489a8a55e043737d22b2550b">MultMx</a> (Value *x, Value *y)</td></tr>
+<tr class="separator:a0021f873489a8a55e043737d22b2550b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea18ae153885e0e81216bc7878d4120e" id="r_aea18ae153885e0e81216bc7878d4120e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea18ae153885e0e81216bc7878d4120e">make_state_table</a> ()</td></tr>
+<tr class="separator:aea18ae153885e0e81216bc7878d4120e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ed436cd0e9e02f0f2b27f09b28c8949" id="r_a5ed436cd0e9e02f0f2b27f09b28c8949"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ed436cd0e9e02f0f2b27f09b28c8949">print_state_table</a> ()</td></tr>
+<tr class="separator:a5ed436cd0e9e02f0f2b27f09b28c8949"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9b6cdcf31c1e228443031bebe1a9e31" id="r_ad9b6cdcf31c1e228443031bebe1a9e31"><td class="memItemLeft" align="right" valign="top">Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9b6cdcf31c1e228443031bebe1a9e31">operator()</a> (int i, int j)</td></tr>
+<tr class="separator:ad9b6cdcf31c1e228443031bebe1a9e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af500ee7b14a3dbbf6281802b3ea1e3ce" id="r_af500ee7b14a3dbbf6281802b3ea1e3ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af500ee7b14a3dbbf6281802b3ea1e3ce">print</a> (int column_width=10)</td></tr>
+<tr class="separator:af500ee7b14a3dbbf6281802b3ea1e3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a621269fd0c657cf14307c0c26abeceb5" id="r_a621269fd0c657cf14307c0c26abeceb5"><td class="memItemLeft" align="right" valign="top"><a id="a621269fd0c657cf14307c0c26abeceb5" name="a621269fd0c657cf14307c0c26abeceb5"></a>
-Key *&#160;</td><td class="memItemRight" valign="bottom"><b>_state_table</b></td></tr>
-<tr class="separator:a621269fd0c657cf14307c0c26abeceb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94d3810ebd5a46edcd896e79f94d0fdf" id="r_a94d3810ebd5a46edcd896e79f94d0fdf"><td class="memItemLeft" align="right" valign="top">Key *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94d3810ebd5a46edcd896e79f94d0fdf">_state_table</a></td></tr>
+<tr class="separator:a94d3810ebd5a46edcd896e79f94d0fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/paulroux/Documents/Recherche/projet_these/code/transfer_matrices/TransferMatricesCpp/cpp_libs/libtransfermatrices/src/<a class="el" href="src_2eigensolver_8hpp_source.html">eigensolver.hpp</a></li>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a>&gt;<br />
+class Matrix&lt; VectorPair &gt;</div>
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00005">5</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="af0377876912fd075c236e7a4089742be" name="af0377876912fd075c236e7a4089742be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0377876912fd075c236e7a4089742be">&#9670;&#160;</a></span>Key</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::Key = typename Vector::Key</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html#l00009">9</a> of file <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html">include/TransferMatrices/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2b5d238e2ab19e6646a5d320f751b1dc" name="a2b5d238e2ab19e6646a5d320f751b1dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b5d238e2ab19e6646a5d320f751b1dc">&#9670;&#160;</a></span>Value <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::Value = typename Vector::Value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html#l00010">10</a> of file <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html">include/TransferMatrices/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0754dd5f9f2b0b05308cc95f2396a912" name="a0754dd5f9f2b0b05308cc95f2396a912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0754dd5f9f2b0b05308cc95f2396a912">&#9670;&#160;</a></span>Value <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::Value = typename VectorPair::Value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00007">7</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a73437329eadc4107cc56e95e05d55a3d" name="a73437329eadc4107cc56e95e05d55a3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73437329eadc4107cc56e95e05d55a3d">&#9670;&#160;</a></span>Matrix() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;<a class="el" href="class_matrix.html">::Matrix</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_vector_pair.html">VP</a> *</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nev</em></span><span class="paramdefsep"> = </span><span class="paramdefval">2</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>which</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;LM&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00028">28</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad40a03429cd3977a291fe4d09dbd0100" name="ad40a03429cd3977a291fe4d09dbd0100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad40a03429cd3977a291fe4d09dbd0100">&#9670;&#160;</a></span>~Matrix() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::~<a class="el" href="class_matrix.html">Matrix</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00037">37</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a60ca410106bb6126ddf27a0fe36546a6" name="a60ca410106bb6126ddf27a0fe36546a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60ca410106bb6126ddf27a0fe36546a6">&#9670;&#160;</a></span>Matrix() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;<a class="el" href="class_matrix.html">::Matrix</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a> *</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a> *</td>          <td class="paramname"><span class="paramname"><em>tmp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(Vector::*</td>          <td class="paramname"><span class="paramname"><em>M&#160;</em></span>)(<a class="el" href="class_vector.html">Vector</a> &amp;)&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html#l00020">20</a> of file <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html">include/TransferMatrices/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad40a03429cd3977a291fe4d09dbd0100" name="ad40a03429cd3977a291fe4d09dbd0100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad40a03429cd3977a291fe4d09dbd0100">&#9670;&#160;</a></span>~Matrix() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::~<a class="el" href="class_matrix.html">Matrix</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html#l00029">29</a> of file <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html">include/TransferMatrices/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a88407ae0c939cc77aec762c7a98471e8" name="a88407ae0c939cc77aec762c7a98471e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88407ae0c939cc77aec762c7a98471e8">&#9670;&#160;</a></span>find_eigenvalues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::find_eigenvalues </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>no_mult</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Value</td>          <td class="paramname"><span class="paramname"><em>eps</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1e-10</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00144">144</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5e57e03d109e87190b31270d3915e133" name="a5e57e03d109e87190b31270d3915e133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e57e03d109e87190b31270d3915e133">&#9670;&#160;</a></span>generate_space()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::generate_space </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html#l00037">37</a> of file <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html">include/TransferMatrices/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="afb998538886ce9e5d1e91c2da4cc4173" name="afb998538886ce9e5d1e91c2da4cc4173"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb998538886ce9e5d1e91c2da4cc4173">&#9670;&#160;</a></span>get_eigenvalues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; double *, double * &gt; <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::get_eigenvalues </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00156">156</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ace56c5d4787695301eee0654b2dbb89d" name="ace56c5d4787695301eee0654b2dbb89d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace56c5d4787695301eee0654b2dbb89d">&#9670;&#160;</a></span>get_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::get_size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html#l00051">51</a> of file <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html">include/TransferMatrices/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a03d9eef84b585df808d4e0eb5d28d217" name="a03d9eef84b585df808d4e0eb5d28d217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03d9eef84b585df808d4e0eb5d28d217">&#9670;&#160;</a></span>isapprox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::isapprox </td>
+          <td>(</td>
+          <td class="paramtype">Value</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Value</td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Value</td>          <td class="paramname"><span class="paramname"><em>eps</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00108">108</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aea18ae153885e0e81216bc7878d4120e" name="aea18ae153885e0e81216bc7878d4120e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea18ae153885e0e81216bc7878d4120e">&#9670;&#160;</a></span>make_state_table() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::make_state_table </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html#l00069">69</a> of file <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html">include/TransferMatrices/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aea18ae153885e0e81216bc7878d4120e" name="aea18ae153885e0e81216bc7878d4120e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea18ae153885e0e81216bc7878d4120e">&#9670;&#160;</a></span>make_state_table() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::make_state_table </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00061">61</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aad881c70a40f227c0a8ec8e119325d1c" name="aad881c70a40f227c0a8ec8e119325d1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad881c70a40f227c0a8ec8e119325d1c">&#9670;&#160;</a></span>multiply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::multiply </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html#l00033">33</a> of file <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html">include/TransferMatrices/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0021f873489a8a55e043737d22b2550b" name="a0021f873489a8a55e043737d22b2550b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0021f873489a8a55e043737d22b2550b">&#9670;&#160;</a></span>MultMx() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::MultMx </td>
+          <td>(</td>
+          <td class="paramtype">Value *</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Value *</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html#l00055">55</a> of file <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html">include/TransferMatrices/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0021f873489a8a55e043737d22b2550b" name="a0021f873489a8a55e043737d22b2550b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0021f873489a8a55e043737d22b2550b">&#9670;&#160;</a></span>MultMx() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::MultMx </td>
+          <td>(</td>
+          <td class="paramtype">Value *</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Value *</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00043">43</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad9b6cdcf31c1e228443031bebe1a9e31" name="ad9b6cdcf31c1e228443031bebe1a9e31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9b6cdcf31c1e228443031bebe1a9e31">&#9670;&#160;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Value <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>j</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html#l00085">85</a> of file <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html">include/TransferMatrices/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad9b6cdcf31c1e228443031bebe1a9e31" name="ad9b6cdcf31c1e228443031bebe1a9e31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9b6cdcf31c1e228443031bebe1a9e31">&#9670;&#160;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Value <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>j</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00077">77</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af500ee7b14a3dbbf6281802b3ea1e3ce" name="af500ee7b14a3dbbf6281802b3ea1e3ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af500ee7b14a3dbbf6281802b3ea1e3ce">&#9670;&#160;</a></span>print() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::print </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>column_width</em></span><span class="paramdefsep"> = </span><span class="paramdefval">10</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html#l00101">101</a> of file <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html">include/TransferMatrices/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af500ee7b14a3dbbf6281802b3ea1e3ce" name="af500ee7b14a3dbbf6281802b3ea1e3ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af500ee7b14a3dbbf6281802b3ea1e3ce">&#9670;&#160;</a></span>print() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::print </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>column_width</em></span><span class="paramdefsep"> = </span><span class="paramdefval">10</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00093">93</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5ed436cd0e9e02f0f2b27f09b28c8949" name="a5ed436cd0e9e02f0f2b27f09b28c8949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ed436cd0e9e02f0f2b27f09b28c8949">&#9670;&#160;</a></span>print_state_table() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::print_state_table </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html#l00079">79</a> of file <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html">include/TransferMatrices/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5ed436cd0e9e02f0f2b27f09b28c8949" name="a5ed436cd0e9e02f0f2b27f09b28c8949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ed436cd0e9e02f0f2b27f09b28c8949">&#9670;&#160;</a></span>print_state_table() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::print_state_table </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00071">71</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a73cacd5a271c7d63772d8c8d48f84bfd" name="a73cacd5a271c7d63772d8c8d48f84bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73cacd5a271c7d63772d8c8d48f84bfd">&#9670;&#160;</a></span>remove_duplicate_eigvals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::remove_duplicate_eigvals </td>
+          <td>(</td>
+          <td class="paramtype">Value</td>          <td class="paramname"><span class="paramname"><em>eps</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1e-10</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00112">112</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af37cd8079a4443dd65eeeca8ee6b0a9a" name="af37cd8079a4443dd65eeeca8ee6b0a9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af37cd8079a4443dd65eeeca8ee6b0a9a">&#9670;&#160;</a></span>set_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::set_size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html#l00047">47</a> of file <a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html">include/TransferMatrices/matrices.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7a4cc30287150f92522061ee26966b8e" name="a7a4cc30287150f92522061ee26966b8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a4cc30287150f92522061ee26966b8e">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00041">41</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4ede10292b5f626663033f11f6882f8b" name="a4ede10292b5f626663033f11f6882f8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ede10292b5f626663033f11f6882f8b">&#9670;&#160;</a></span>sprint_eigenvalues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::sprint_eigenvalues </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nev</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width_real_part</em></span><span class="paramdefsep"> = </span><span class="paramdefval">20</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width_imag_part</em></span><span class="paramdefsep"> = </span><span class="paramdefval">10</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00161">161</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a94d3810ebd5a46edcd896e79f94d0fdf" name="a94d3810ebd5a46edcd896e79f94d0fdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94d3810ebd5a46edcd896e79f94d0fdf">&#9670;&#160;</a></span>_state_table</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="class_vector_pair.html">VectorPair</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Key * <a class="el" href="class_matrix.html">Matrix</a>&lt; <a class="el" href="class_vector_pair.html">VectorPair</a> &gt;::_state_table</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="src_2eigensolver_8hpp_source.html#l00026">26</a> of file <a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="src_2eigensolver_8hpp_source.html">src/eigensolver.hpp</a></li>
+<li><a class="el" href="include_2_transfer_matrices_2matrices_8hpp_source.html">include/TransferMatrices/matrices.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

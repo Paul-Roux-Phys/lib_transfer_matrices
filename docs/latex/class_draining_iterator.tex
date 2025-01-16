@@ -3,41 +3,159 @@
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_draining_iterator_a7bacb4843f308cf9f290308dd8fda010}\label{class_draining_iterator_a7bacb4843f308cf9f290308dd8fda010} 
-using {\bfseries iterator} = typename Vector\+::iterator
+using \mbox{\hyperlink{class_draining_iterator_a7bacb4843f308cf9f290308dd8fda010}{iterator}} = typename Vector\+::iterator
 \item 
-\Hypertarget{class_draining_iterator_ad1b3c0f194a94553a4bff8cd6e8c4b42}\label{class_draining_iterator_ad1b3c0f194a94553a4bff8cd6e8c4b42} 
-using {\bfseries Value} = std\+::pair$<$const typename Vector\+::\+Key, typename Vector\+::\+Value$>$
+using \mbox{\hyperlink{class_draining_iterator_ad1b3c0f194a94553a4bff8cd6e8c4b42}{Value}} = std\+::pair$<$const typename Vector\+::\+Key, typename Vector\+::\+Value$>$
 \item 
-\Hypertarget{class_draining_iterator_ab72a57d178433c81b1260822f9f936c9}\label{class_draining_iterator_ab72a57d178433c81b1260822f9f936c9} 
-using {\bfseries Basis\+Vector} = typename Vector\+::\+Basis\+Vector
+using \mbox{\hyperlink{class_draining_iterator_ab72a57d178433c81b1260822f9f936c9}{Basis\+Vector}} = typename Vector\+::\+Basis\+Vector
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_draining_iterator_a6b73accd4ab44ad763b22733b254cb46}\label{class_draining_iterator_a6b73accd4ab44ad763b22733b254cb46} 
-{\bfseries Draining\+Iterator} (iterator it, \mbox{\hyperlink{class_vector}{Vector}} \texorpdfstring{$\ast$}{*}vec)
+\mbox{\hyperlink{class_draining_iterator_a6b73accd4ab44ad763b22733b254cb46}{Draining\+Iterator}} (iterator it, \mbox{\hyperlink{class_vector}{Vector}} \texorpdfstring{$\ast$}{*}vec)
 \item 
-\Hypertarget{class_draining_iterator_ae7de91a678d98d2c72bc3d028948b785}\label{class_draining_iterator_ae7de91a678d98d2c72bc3d028948b785} 
-Value \& {\bfseries operator\texorpdfstring{$\ast$}{*}} ()
+Value \& \mbox{\hyperlink{class_draining_iterator_ae7de91a678d98d2c72bc3d028948b785}{operator\texorpdfstring{$\ast$}{*}}} ()
 \item 
-\Hypertarget{class_draining_iterator_a7662987b26cd662342cb23379b004e9b}\label{class_draining_iterator_a7662987b26cd662342cb23379b004e9b} 
-Value \texorpdfstring{$\ast$}{*} {\bfseries operator-\/$>$} ()
+Value \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_draining_iterator_a7662987b26cd662342cb23379b004e9b}{operator-\/$>$}} ()
 \item 
-\Hypertarget{class_draining_iterator_a0accf0867a1f67da8a4a79771ff934ed}\label{class_draining_iterator_a0accf0867a1f67da8a4a79771ff934ed} 
-\mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}} \& {\bfseries operator++} ()
+\mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}} \& \mbox{\hyperlink{class_draining_iterator_a0accf0867a1f67da8a4a79771ff934ed}{operator++}} ()
 \item 
-\Hypertarget{class_draining_iterator_a8b439030f4f6deda2dc74aa6ee0b9e1d}\label{class_draining_iterator_a8b439030f4f6deda2dc74aa6ee0b9e1d} 
-\mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}} {\bfseries operator++} (int)
+\mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}} \mbox{\hyperlink{class_draining_iterator_a8b439030f4f6deda2dc74aa6ee0b9e1d}{operator++}} (int)
 \item 
-\Hypertarget{class_draining_iterator_a16963164005ddc693eda7a2cb795ea58}\label{class_draining_iterator_a16963164005ddc693eda7a2cb795ea58} 
-bool {\bfseries operator==} (const \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}} \&other) const
+bool \mbox{\hyperlink{class_draining_iterator_a16963164005ddc693eda7a2cb795ea58}{operator==}} (const \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}} \&other) const
 \item 
-\Hypertarget{class_draining_iterator_a46f54bd59caae54c16f75328474dfbdd}\label{class_draining_iterator_a46f54bd59caae54c16f75328474dfbdd} 
-bool {\bfseries operator!=} (const \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}} \&other) const
+bool \mbox{\hyperlink{class_draining_iterator_a46f54bd59caae54c16f75328474dfbdd}{operator!=}} (const \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}} \&other) const
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \mbox{\hyperlink{class_vector}{Vector}}$>$\newline
+class Draining\+Iterator$<$ Vector $>$}
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00302}{302}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_draining_iterator_ab72a57d178433c81b1260822f9f936c9}\index{DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}!BasisVector@{BasisVector}}
+\index{BasisVector@{BasisVector}!DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}}
+\doxysubsubsection{\texorpdfstring{BasisVector}{BasisVector}}
+{\footnotesize\ttfamily \label{class_draining_iterator_ab72a57d178433c81b1260822f9f936c9} 
+template$<$typename \mbox{\hyperlink{class_vector}{Vector}} $>$ \\
+using \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}}$<$ \mbox{\hyperlink{class_vector}{Vector}} $>$\mbox{\hyperlink{class_basis_vector}{\+::\+Basis\+Vector}} = typename Vector\+::\+Basis\+Vector}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00306}{306}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+\Hypertarget{class_draining_iterator_a7bacb4843f308cf9f290308dd8fda010}\index{DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily \label{class_draining_iterator_a7bacb4843f308cf9f290308dd8fda010} 
+template$<$typename \mbox{\hyperlink{class_vector}{Vector}} $>$ \\
+using \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}}$<$ \mbox{\hyperlink{class_vector}{Vector}} $>$\+::iterator = typename Vector\+::iterator}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00304}{304}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+\Hypertarget{class_draining_iterator_ad1b3c0f194a94553a4bff8cd6e8c4b42}\index{DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}!Value@{Value}}
+\index{Value@{Value}!DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}}
+\doxysubsubsection{\texorpdfstring{Value}{Value}}
+{\footnotesize\ttfamily \label{class_draining_iterator_ad1b3c0f194a94553a4bff8cd6e8c4b42} 
+template$<$typename \mbox{\hyperlink{class_vector}{Vector}} $>$ \\
+using \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}}$<$ \mbox{\hyperlink{class_vector}{Vector}} $>$\+::\+Value = std\+::pair$<$const typename Vector\+::\+Key, typename Vector\+::\+Value$>$}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00305}{305}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_draining_iterator_a6b73accd4ab44ad763b22733b254cb46}\index{DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}!DrainingIterator@{DrainingIterator}}
+\index{DrainingIterator@{DrainingIterator}!DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}}
+\doxysubsubsection{\texorpdfstring{DrainingIterator()}{DrainingIterator()}}
+{\footnotesize\ttfamily \label{class_draining_iterator_a6b73accd4ab44ad763b22733b254cb46} 
+template$<$typename \mbox{\hyperlink{class_vector}{Vector}} $>$ \\
+\mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}}$<$ \mbox{\hyperlink{class_vector}{Vector}} $>$\mbox{\hyperlink{class_draining_iterator}{\+::\+Draining\+Iterator}} (\begin{DoxyParamCaption}\item[{iterator}]{it}{, }\item[{\mbox{\hyperlink{class_vector}{Vector}} \texorpdfstring{$\ast$}{*}}]{vec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00313}{313}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_draining_iterator_a46f54bd59caae54c16f75328474dfbdd}\index{DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{class_draining_iterator_a46f54bd59caae54c16f75328474dfbdd} 
+template$<$typename \mbox{\hyperlink{class_vector}{Vector}} $>$ \\
+bool \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}}$<$ \mbox{\hyperlink{class_vector}{Vector}} $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}}$<$ \mbox{\hyperlink{class_vector}{Vector}} $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00343}{343}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+\Hypertarget{class_draining_iterator_ae7de91a678d98d2c72bc3d028948b785}\index{DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{class_draining_iterator_ae7de91a678d98d2c72bc3d028948b785} 
+template$<$typename \mbox{\hyperlink{class_vector}{Vector}} $>$ \\
+Value \& \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}}$<$ \mbox{\hyperlink{class_vector}{Vector}} $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00315}{315}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+\Hypertarget{class_draining_iterator_a0accf0867a1f67da8a4a79771ff934ed}\index{DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_draining_iterator_a0accf0867a1f67da8a4a79771ff934ed} 
+template$<$typename \mbox{\hyperlink{class_vector}{Vector}} $>$ \\
+\mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}} \& \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}}$<$ \mbox{\hyperlink{class_vector}{Vector}} $>$\+::operator++ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00323}{323}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+\Hypertarget{class_draining_iterator_a8b439030f4f6deda2dc74aa6ee0b9e1d}\index{DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_draining_iterator_a8b439030f4f6deda2dc74aa6ee0b9e1d} 
+template$<$typename \mbox{\hyperlink{class_vector}{Vector}} $>$ \\
+\mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}} \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}}$<$ \mbox{\hyperlink{class_vector}{Vector}} $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00332}{332}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+\Hypertarget{class_draining_iterator_a7662987b26cd662342cb23379b004e9b}\index{DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily \label{class_draining_iterator_a7662987b26cd662342cb23379b004e9b} 
+template$<$typename \mbox{\hyperlink{class_vector}{Vector}} $>$ \\
+Value \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}}$<$ \mbox{\hyperlink{class_vector}{Vector}} $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00319}{319}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
+\Hypertarget{class_draining_iterator_a16963164005ddc693eda7a2cb795ea58}\index{DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!DrainingIterator$<$ Vector $>$@{DrainingIterator$<$ Vector $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{class_draining_iterator_a16963164005ddc693eda7a2cb795ea58} 
+template$<$typename \mbox{\hyperlink{class_vector}{Vector}} $>$ \\
+bool \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}}$<$ \mbox{\hyperlink{class_vector}{Vector}} $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_draining_iterator}{Draining\+Iterator}}$<$ \mbox{\hyperlink{class_vector}{Vector}} $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source_l00339}{339}} of file \mbox{\hyperlink{include_2_transfer_matrices_2vectors_8hpp_source}{include/\+Transfer\+Matrices/vectors.\+hpp}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/paulroux/\+Documents/\+Recherche/projet\+\_\+these/code/transfer\+\_\+matrices/\+Transfer\+Matrices\+Cpp/cpp\+\_\+libs/libtransfermatrices/src/vectors/draining\+\_\+iterator.\+hpp\end{DoxyCompactItemize}
+include/\+Transfer\+Matrices/vectors.\+hpp\end{DoxyCompactItemize}

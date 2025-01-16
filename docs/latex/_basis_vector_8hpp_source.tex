@@ -1,25 +1,25 @@
 \doxysection{Basis\+Vector.\+hpp}
-\hypertarget{_basis_vector_8hpp_source}{}\label{_basis_vector_8hpp_source}\index{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/vectors/BasisVector.hpp@{/Users/paulroux/Documents/Recherche/projet\_these/code/transfer\_matrices/TransferMatricesCpp/cpp\_libs/libtransfermatrices/src/vectors/BasisVector.hpp}}
+\hypertarget{_basis_vector_8hpp_source}{}\label{_basis_vector_8hpp_source}\index{BasisVector.hpp@{BasisVector.hpp}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ }
-\DoxyCodeLine{00005\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ K,\ \textcolor{keyword}{typename}\ V>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_basis_vector}{BasisVector}}\ \{}
-\DoxyCodeLine{00006\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00007\ \ \ \textcolor{keyword}{using\ }Key\ =\ K;}
-\DoxyCodeLine{00008\ \ \ \textcolor{keyword}{using\ }Value\ =\ V;}
-\DoxyCodeLine{00009\ \ \ Key\ key;}
-\DoxyCodeLine{00010\ \ \ Value\ value;}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}()\ :\ key(),\ value()\ \{\}}
-\DoxyCodeLine{00013\ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}(Key\ k,\ Value\ v)\ :\ key(k),\ value(v)\ \{\}}
-\DoxyCodeLine{00014\ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\ \&other)\ :\ key(other.key),\ value(other.value)\ \{\}}
-\DoxyCodeLine{00015\ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}(std::pair<Key,\ Value>\ v)\ :\ key(v.first),\ value(v.second)\ \{\}}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{void}\ print()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00018\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Key:\ "{}};\ key.print();}
-\DoxyCodeLine{00019\ \ \ \ \ std::cout\ <<\ std::setw(6)\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Value:\ \ "{}}\ <<\ value\ <<\ std::endl;}
-\DoxyCodeLine{00021\ \ \ \}}
-\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00005}\mbox{\hyperlink{class_basis_vector}{00005}}\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ K,\ \textcolor{keyword}{typename}\ V>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_basis_vector}{BasisVector}}\ \{}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00006}00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00007}00007\ \ \ \textcolor{keyword}{using\ }Key\ =\ K;}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00008}00008\ \ \ \textcolor{keyword}{using\ }Value\ =\ V;}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00009}00009\ \ \ Key\ key;}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00010}00010\ \ \ Value\ value;}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00012}00012\ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}()\ :\ key(),\ value()\ \{\}}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00013}00013\ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}(Key\ k,\ Value\ v)\ :\ key(k),\ value(v)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00014}00014\ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_basis_vector}{BasisVector}}\ \&other)\ :\ key(other.key),\ value(other.value)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00015}00015\ \ \ \mbox{\hyperlink{class_basis_vector}{BasisVector}}(std::pair<Key,\ Value>\ v)\ :\ key(v.first),\ value(v.second)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00017}00017\ \ \ \textcolor{keywordtype}{void}\ print()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00018}00018\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Key:\ "{}};\ key.print();}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00019}00019\ \ \ \ \ std::cout\ <<\ std::setw(6)\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Value:\ \ "{}}\ <<\ value\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00021}00021\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basis_vector_8hpp_source_l00022}00022\ \};}
 
 \end{DoxyCode}

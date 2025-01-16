@@ -26,6 +26,19 @@ var NAVTREE =
 [
   [ "Transfer Matrices", "index.html", [
     [ "Home page", "index.html", "index" ],
+    [ "Tutorial", "tutorial.html", [
+      [ "Data types", "tutorial.html#autotoc_md3", [
+        [ "Built-in key types", "tutorial.html#autotoc_md4", null ],
+        [ "Defining a basis", "tutorial.html#autotoc_md5", null ],
+        [ "Vectors", "tutorial.html#autotoc_md6", null ]
+      ] ],
+      [ "Transfer matrix", "tutorial.html#autotoc_md7", [
+        [ "Multiplication", "tutorial.html#autotoc_md8", null ],
+        [ "Display", "tutorial.html#autotoc_md9", null ]
+      ] ],
+      [ "Diagonalisation", "tutorial.html#autotoc_md10", null ]
+    ] ],
+    [ "Examples", "examples.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -43,7 +56,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"64bit_8hpp_source.html"
+"_transfer_matrices_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
