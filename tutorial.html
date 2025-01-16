@@ -171,9 +171,8 @@ Vectors</h2>
 <div class="line"><span class="keyword">class </span>IsingState : <span class="keyword">public</span> <a class="code hl_class" href="class_vector.html">Vector</a>&lt;IsingPM, Hash&gt; {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">using </span><a class="code hl_class" href="class_vector.html">Vector</a>&lt;IsingPM, Hash&gt;<a class="code hl_function" href="class_vector.html#a0faa99acaf54dafcf479d15b16b3b522">::Vector</a>; <span class="comment">// inherit base constructors</span></div>
-<div class="line"><span class="keyword">using </span><a class="code hl_class" href="class_vector.html">Vector</a>&lt;IsingPM, Hash&gt;::operator+=;</div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="class_vector.html#a8fe7c81eb0e3c128bb455e3b1730a06e">print</a> ()<span class="keyword"> const </span>{ <a class="code hl_function" href="class_vector.html#a8fe7c81eb0e3c128bb455e3b1730a06e">Vector&lt;IsingPM, Hash&gt;::print</a> (); }</div>
-<div class="line"><span class="comment">// ...</span></div>
+<div class="line">  <span class="keyword">using </span><a class="code hl_class" href="class_vector.html">Vector</a>&lt;IsingPM, Hash&gt;::operator+=;</div>
+<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="class_vector.html#a8fe7c81eb0e3c128bb455e3b1730a06e">print</a> ()<span class="keyword"> const </span>{ <a class="code hl_function" href="class_vector.html#a8fe7c81eb0e3c128bb455e3b1730a06e">Vector&lt;IsingPM, Hash&gt;::print</a> (); }</div>
 </div><!-- fragment --><p> This again gives some flexibility to add methods and data to the state.</p>
 <p>One can multiply a vector by a scalar, add a basis vector to a vector, or add vectors together. Vectors can be looped through, or looped through and drained at the same time, which is useful to limit memory usage. To prevent overflowing of vector components, one can factorize the norm of the vector. The norm of the vector is stored as an arbitrary precision number, which cannot overflow.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> test_vector() {</div>
@@ -183,13 +182,11 @@ Vectors</h2>
 <div class="line">}</div>
 </div><!-- fragment --><p>Vectors can be iterated over with </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> it = v.begin(); it != v.end(); it++) { <span class="comment">/* do stuff */</span> }</div>
 </div><!-- fragment --><p> The library also provides a draining iterator, which empties the vector as it goes:</p>
-<div class="fragment"><div class="line"><span class="comment">// in class IsingState {</span></div>
-<div class="line"><span class="keyword">public</span>: </div>
-<div class="line"><span class="keywordtype">void</span> r_matrix(IsingState&amp; tmp, <span class="keywordtype">int</span> i) {</div>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> IsingState::r_matrix(IsingState&amp; tmp, <span class="keywordtype">int</span> i) {</div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> it = draining_begin (); it != draining_end (); it++)</div>
-<div class="line">    IsingPM (*it).r_matrix (tmp, i);</div>
+<div class="line">  IsingPM (*it).r_matrix (tmp, i);</div>
 <div class="line"><span class="comment">// here tmp = R_i * v</span></div>
-<div class="line">swap (tmp); <span class="comment">// pull the result back in v.</span></div>
+<div class="line"> swap (tmp); <span class="comment">// pull the result back in v.</span></div>
 <div class="line">}</div>
 </div><!-- fragment --><p>The code above iterates over the state, applies the \(R\)-matrix to each of its components, storing the result in a vector <code>tmp</code>. Then we do a swap to bring back the result to the current vector.</p>
 <h1><a class="anchor" id="autotoc_md7"></a>
@@ -197,9 +194,7 @@ Transfer matrix</h1>
 <h2><a class="anchor" id="autotoc_md8"></a>
 Multiplication</h2>
 <p>Once the \(R\)-matrices are defined, the transfer matrix is easy to define:</p>
-<div class="fragment"><div class="line"><span class="comment">// in class IsingState {</span></div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line"><span class="keywordtype">void</span> transfer(IsingState&amp; tmp) {</div>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> IsingState::transfer(IsingState&amp; tmp) {</div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> pos = 0; pos &lt; SIZE; pos++)</div>
 <div class="line">    r_matrix(tmp, 2*pos);</div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> pos = 0; pos &lt; SIZE; pos++)</div>
@@ -245,10 +240,7 @@ Display</h2>
 <div class="line"><span class="comment">      6  :  (0  0  1    )</span></div>
 <div class="line"><span class="comment">      7  :  (0  0  0    )</span></div>
 <div class="line"><span class="comment">  */</span></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md10"></a>
-Diagonalisation</h1>
-<p>TODO </p>
-</div></div><!-- contents -->
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

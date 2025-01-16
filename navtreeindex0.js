@@ -52,7 +52,6 @@ var NAVTREEINDEX0 =
 "struct_key_hash.html":[3,0,5],
 "structkey__int8__hash__t.html":[3,0,3],
 "tutorial.html":[1],
-"tutorial.html#autotoc_md10":[1,2],
 "tutorial.html#autotoc_md3":[1,0],
 "tutorial.html#autotoc_md4":[1,0,0],
 "tutorial.html#autotoc_md5":[1,0,1],
