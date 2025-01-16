@@ -35,8 +35,7 @@ var NAVTREE =
       [ "Transfer matrix", "tutorial.html#autotoc_md7", [
         [ "Multiplication", "tutorial.html#autotoc_md8", null ],
         [ "Display", "tutorial.html#autotoc_md9", null ]
-      ] ],
-      [ "Diagonalisation", "tutorial.html#autotoc_md10", null ]
+      ] ]
     ] ],
     [ "Examples", "examples.html", null ],
     [ "Classes", "annotated.html", [

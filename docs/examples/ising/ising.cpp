@@ -27,6 +27,15 @@ void IsingPM::r_matrix(IsingState& v, int pos) {
     add_horizontal_edge (v, pos/2, (pos/2+1)%SIZE);
 }
 
+/// [draining_iterator]
+void IsingState::r_matrix(IsingState& tmp, int i) {
+for (auto it = draining_begin (); it != draining_end (); it++)
+  IsingPM (*it).r_matrix (tmp, i);
+// here tmp = R_i * v
+ swap (tmp); // pull the result back in v.
+}
+/// [draining_iterator]
+
 void test_matrix() {
 /// [test_matrix]
   IsingPM ini({1, 0, 1}, 1);
@@ -63,6 +72,32 @@ void test_matrix() {
   */
 /// [print_state_table]
 }
+
+/// [transfer matrix]
+void IsingState::transfer(IsingState& tmp) {
+for (int pos = 0; pos < SIZE; pos++)
+    r_matrix(tmp, 2*pos);
+for (int pos = 0; pos < SIZE; pos++)
+    r_matrix(tmp, 2*pos+1);
+}
+/// [transfer matrix]
+
+
+/// [test_vector]
+void test_vector() {
+  IsingState v = IsingState(10); // initialises a vector with a hash table with 10 slots
+  v *= 100.0; // multiplies the norm of v by 100
+  v.factorise_norm(); // rewrites v as |v| * v' where v' has norm 1.
+}
+/// [test_vector]
+
+/// [test_transfer]
+void test_multiplication () {
+  IsingState v, tmp;
+  v += IsingPM({1, 0, 1}, 2.0); // v = 2 * |+-+>
+  v.transfer(tmp); // v -> T*v
+}
+/// [test_transfer]
 
 int main() {
   test_matrix();

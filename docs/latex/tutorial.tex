@@ -93,9 +93,8 @@ Like for {\ttfamily \doxylink{class_basis_vector}{Basis\+Vector}}s, it is a good
 \DoxyCodeLine{\textcolor{keyword}{class\ }IsingState\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_vector}{Vector}}<IsingPM,\ Hash>\ \{}
 \DoxyCodeLine{\textcolor{keyword}{public}:}
 \DoxyCodeLine{\ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_vector}{Vector}}<IsingPM,\ Hash>\mbox{\hyperlink{class_vector_a0faa99acaf54dafcf479d15b16b3b522}{::Vector}};\ \textcolor{comment}{//\ inherit\ base\ constructors}}
-\DoxyCodeLine{\textcolor{keyword}{using\ }\mbox{\hyperlink{class_vector}{Vector}}<IsingPM,\ Hash>::operator+=;}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_a8fe7c81eb0e3c128bb455e3b1730a06e}{print}}\ ()\textcolor{keyword}{\ const\ }\{\ \mbox{\hyperlink{class_vector_a8fe7c81eb0e3c128bb455e3b1730a06e}{Vector<IsingPM,\ Hash>::print}}\ ();\ \}}
-\DoxyCodeLine{\textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_vector}{Vector}}<IsingPM,\ Hash>::operator+=;}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vector_a8fe7c81eb0e3c128bb455e3b1730a06e}{print}}\ ()\textcolor{keyword}{\ const\ }\{\ \mbox{\hyperlink{class_vector_a8fe7c81eb0e3c128bb455e3b1730a06e}{Vector<IsingPM,\ Hash>::print}}\ ();\ \}}
 
 \end{DoxyCodeInclude}
  This again gives some flexibility to add methods and data to the state.
@@ -122,13 +121,11 @@ Vectors can be iterated over with
 
 
 \begin{DoxyCodeInclude}{0}
-\DoxyCodeLine{\textcolor{comment}{//\ in\ class\ IsingState\ \{}}
-\DoxyCodeLine{\textcolor{keyword}{public}:\ }
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ r\_matrix(IsingState\&\ tmp,\ \textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ IsingState::r\_matrix(IsingState\&\ tmp,\ \textcolor{keywordtype}{int}\ i)\ \{}
 \DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ draining\_begin\ ();\ it\ !=\ draining\_end\ ();\ it++)}
-\DoxyCodeLine{\ \ \ \ IsingPM\ (*it).r\_matrix\ (tmp,\ i);}
+\DoxyCodeLine{\ \ IsingPM\ (*it).r\_matrix\ (tmp,\ i);}
 \DoxyCodeLine{\textcolor{comment}{//\ here\ tmp\ =\ R\_i\ *\ v}}
-\DoxyCodeLine{swap\ (tmp);\ \textcolor{comment}{//\ pull\ the\ result\ back\ in\ v.}}
+\DoxyCodeLine{\ swap\ (tmp);\ \textcolor{comment}{//\ pull\ the\ result\ back\ in\ v.}}
 \DoxyCodeLine{\}}
 
 \end{DoxyCodeInclude}
@@ -140,9 +137,7 @@ Once the $R$-\/matrices are defined, the transfer matrix is easy to define\+:
 
 
 \begin{DoxyCodeInclude}{0}
-\DoxyCodeLine{\textcolor{comment}{//\ in\ class\ IsingState\ \{}}
-\DoxyCodeLine{\textcolor{keyword}{public}:}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ transfer(IsingState\&\ tmp)\ \{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ IsingState::transfer(IsingState\&\ tmp)\ \{}
 \DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ pos\ =\ 0;\ pos\ <\ SIZE;\ pos++)}
 \DoxyCodeLine{\ \ \ \ r\_matrix(tmp,\ 2*pos);}
 \DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ pos\ =\ 0;\ pos\ <\ SIZE;\ pos++)}
@@ -208,5 +203,4 @@ The class also lets us print the basis\+:
 \DoxyCodeLine{\textcolor{comment}{\ \ */}}
 
 \end{DoxyCodeInclude}
-\hypertarget{tutorial_autotoc_md10}{}\doxysection{\texorpdfstring{Diagonalisation}{Diagonalisation}}\label{tutorial_autotoc_md10}
-TODO 
+ 

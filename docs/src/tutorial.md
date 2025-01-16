@@ -52,13 +52,20 @@ Like for `BasisVector`s, it is a good practice to inherit from the `Vector` clas
 @snippet ../examples/ising/ising.hpp Defining a vector class
 This again gives some flexibility to add methods and data to the state.
 
-One can multiply a vector by a scalar, add a basis vector to a vector, or add vectors together.
+One can multiply a vector by a scalar, add a basis vector to a vector, or add vectors together via
+
+```cpp
+v *= scalar;
+v += basis_vector;
+v += other_vector;
+```
+
 Vectors can be looped through, or looped through and drained at the same time, which is useful to 
 limit memory usage. 
 To prevent overflowing of vector components, one can factorize the norm of the vector.
 The norm of the vector is stored as an arbitrary precision number, which cannot overflow.
 
-@snippet ../examples/ising/ising.hpp test_vector
+@snippet ../examples/ising/ising.cpp test_vector
 
 Vectors can be iterated over with 
 ```cpp
@@ -66,7 +73,7 @@ for (auto it = v.begin(); it != v.end(); it++) { /* do stuff */ }
 ```
 The library also provides a draining iterator, which empties the vector as it goes:
 
-@snippet ../examples/ising/ising.hpp draining_iterator
+@snippet ../examples/ising/ising.cpp draining_iterator
 
 The code above iterates over the state, applies the \f$R\f$-matrix to each of its components, storing the result in a vector `tmp`. Then we do a swap to bring back the result to the current vector.
 
@@ -76,11 +83,11 @@ The code above iterates over the state, applies the \f$R\f$-matrix to each of it
 
 Once the \f$R\f$-matrices are defined, the transfer matrix is easy to define:
 
-@snippet ../examples/ising/ising.hpp transfer matrix
+@snippet ../examples/ising/ising.cpp transfer matrix
 
 Now to multiply a state by the transfer matrix we just need to call `transfer` and feed a vector for storing the intermediate results:
 
-@snippet ../examples/ising/ising.hpp test_transfer
+@snippet ../examples/ising/ising.cpp test_transfer
 
 ### Display
 
