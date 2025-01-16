@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Transfer Matrices
+   <div id="projectname">Transfer Matrices<span id="projectnumber">&#160;0.0.0DEV</span>
    </div>
    <div id="projectbrief">C++ library for transfer matrix computations</div>
   </td>
@@ -109,97 +116,830 @@ $(function(){initNavTree('class_vector_pair.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a6ca88cc644d650805159d1775b5df21b" id="r_a6ca88cc644d650805159d1775b5df21b"><td class="memItemLeft" align="right" valign="top"><a id="a6ca88cc644d650805159d1775b5df21b" name="a6ca88cc644d650805159d1775b5df21b"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Key</b> = typename Vec::Key</td></tr>
+<tr class="memitem:a6ca88cc644d650805159d1775b5df21b" id="r_a6ca88cc644d650805159d1775b5df21b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ca88cc644d650805159d1775b5df21b">Key</a> = typename Vec::Key</td></tr>
 <tr class="separator:a6ca88cc644d650805159d1775b5df21b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f32261ceb502f92592a08db7197b260" id="r_a2f32261ceb502f92592a08db7197b260"><td class="memItemLeft" align="right" valign="top"><a id="a2f32261ceb502f92592a08db7197b260" name="a2f32261ceb502f92592a08db7197b260"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Value</b> = typename Vec::Value</td></tr>
+<tr class="memitem:a2f32261ceb502f92592a08db7197b260" id="r_a2f32261ceb502f92592a08db7197b260"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f32261ceb502f92592a08db7197b260">Value</a> = typename Vec::Value</td></tr>
 <tr class="separator:a2f32261ceb502f92592a08db7197b260"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8db31694aaecc5dd75d894842fcc96db" id="r_a8db31694aaecc5dd75d894842fcc96db"><td class="memItemLeft" align="right" valign="top"><a id="a8db31694aaecc5dd75d894842fcc96db" name="a8db31694aaecc5dd75d894842fcc96db"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>BasisVector</b> = typename Vec::BasisVector</td></tr>
+<tr class="memitem:a8db31694aaecc5dd75d894842fcc96db" id="r_a8db31694aaecc5dd75d894842fcc96db"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8db31694aaecc5dd75d894842fcc96db">BasisVector</a> = typename Vec::BasisVector</td></tr>
 <tr class="separator:a8db31694aaecc5dd75d894842fcc96db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaff83ae49b75ff368c02a360031c58ea" id="r_aaff83ae49b75ff368c02a360031c58ea"><td class="memItemLeft" align="right" valign="top"><a id="aaff83ae49b75ff368c02a360031c58ea" name="aaff83ae49b75ff368c02a360031c58ea"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>iterator</b> = typename Vec::iterator</td></tr>
+<tr class="memitem:aaff83ae49b75ff368c02a360031c58ea" id="r_aaff83ae49b75ff368c02a360031c58ea"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaff83ae49b75ff368c02a360031c58ea">iterator</a> = typename Vec::iterator</td></tr>
 <tr class="separator:aaff83ae49b75ff368c02a360031c58ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a64d0a7347cd2b9171e62ad7c34579792" id="r_a64d0a7347cd2b9171e62ad7c34579792"><td class="memItemLeft" align="right" valign="top"><a id="a64d0a7347cd2b9171e62ad7c34579792" name="a64d0a7347cd2b9171e62ad7c34579792"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>VectorPair</b> (Vec *v1, Vec *v2)</td></tr>
+<tr class="memitem:a64d0a7347cd2b9171e62ad7c34579792" id="r_a64d0a7347cd2b9171e62ad7c34579792"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64d0a7347cd2b9171e62ad7c34579792">VectorPair</a> (Vec *v1, Vec *v2)</td></tr>
 <tr class="separator:a64d0a7347cd2b9171e62ad7c34579792"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8b581e4f5043f29f4968be5bcf2ce16" id="r_ae8b581e4f5043f29f4968be5bcf2ce16"><td class="memItemLeft" align="right" valign="top"><a id="ae8b581e4f5043f29f4968be5bcf2ce16" name="ae8b581e4f5043f29f4968be5bcf2ce16"></a>
-Vec *&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> () const</td></tr>
+<tr class="memitem:ae8b581e4f5043f29f4968be5bcf2ce16" id="r_ae8b581e4f5043f29f4968be5bcf2ce16"><td class="memItemLeft" align="right" valign="top">Vec *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8b581e4f5043f29f4968be5bcf2ce16">get</a> () const</td></tr>
 <tr class="separator:ae8b581e4f5043f29f4968be5bcf2ce16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6cdcc7ba0b41221e1a1ceffb4ee65d4" id="r_ad6cdcc7ba0b41221e1a1ceffb4ee65d4"><td class="memItemLeft" align="right" valign="top"><a id="ad6cdcc7ba0b41221e1a1ceffb4ee65d4" name="ad6cdcc7ba0b41221e1a1ceffb4ee65d4"></a>
-Vec *&#160;</td><td class="memItemRight" valign="bottom"><b>getempty</b> () const</td></tr>
+<tr class="memitem:ad6cdcc7ba0b41221e1a1ceffb4ee65d4" id="r_ad6cdcc7ba0b41221e1a1ceffb4ee65d4"><td class="memItemLeft" align="right" valign="top">Vec *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6cdcc7ba0b41221e1a1ceffb4ee65d4">getempty</a> () const</td></tr>
 <tr class="separator:ad6cdcc7ba0b41221e1a1ceffb4ee65d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43402717b6b0a1a668d9eea15ab36c6c" id="r_a43402717b6b0a1a668d9eea15ab36c6c"><td class="memItemLeft" align="right" valign="top"><a id="a43402717b6b0a1a668d9eea15ab36c6c" name="a43402717b6b0a1a668d9eea15ab36c6c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> () const</td></tr>
+<tr class="memitem:a43402717b6b0a1a668d9eea15ab36c6c" id="r_a43402717b6b0a1a668d9eea15ab36c6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43402717b6b0a1a668d9eea15ab36c6c">print</a> () const</td></tr>
 <tr class="separator:a43402717b6b0a1a668d9eea15ab36c6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11f6f6c0c2dd8ad7d9756a75fcaed14c" id="r_a11f6f6c0c2dd8ad7d9756a75fcaed14c"><td class="memItemLeft" align="right" valign="top"><a id="a11f6f6c0c2dd8ad7d9756a75fcaed14c" name="a11f6f6c0c2dd8ad7d9756a75fcaed14c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_size</b> ()</td></tr>
+<tr class="memitem:a11f6f6c0c2dd8ad7d9756a75fcaed14c" id="r_a11f6f6c0c2dd8ad7d9756a75fcaed14c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11f6f6c0c2dd8ad7d9756a75fcaed14c">set_size</a> ()</td></tr>
 <tr class="separator:a11f6f6c0c2dd8ad7d9756a75fcaed14c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa52e929ee8904118b3f38f4363e79028" id="r_aa52e929ee8904118b3f38f4363e79028"><td class="memItemLeft" align="right" valign="top"><a id="aa52e929ee8904118b3f38f4363e79028" name="aa52e929ee8904118b3f38f4363e79028"></a>
-std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> ()</td></tr>
+<tr class="memitem:aa52e929ee8904118b3f38f4363e79028" id="r_aa52e929ee8904118b3f38f4363e79028"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa52e929ee8904118b3f38f4363e79028">size</a> ()</td></tr>
 <tr class="separator:aa52e929ee8904118b3f38f4363e79028"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76d996975905e1fc8bc5614264a8439d" id="r_a76d996975905e1fc8bc5614264a8439d"><td class="memItemLeft" align="right" valign="top"><a id="a76d996975905e1fc8bc5614264a8439d" name="a76d996975905e1fc8bc5614264a8439d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>swap_data_position</b> ()</td></tr>
+<tr class="memitem:a76d996975905e1fc8bc5614264a8439d" id="r_a76d996975905e1fc8bc5614264a8439d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76d996975905e1fc8bc5614264a8439d">swap_data_position</a> ()</td></tr>
 <tr class="separator:a76d996975905e1fc8bc5614264a8439d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44cce2f0c21f67b2f93c8dd079db1a8d" id="r_a44cce2f0c21f67b2f93c8dd079db1a8d"><td class="memTemplParams" colspan="2"><a id="a44cce2f0c21f67b2f93c8dd079db1a8d" name="a44cce2f0c21f67b2f93c8dd079db1a8d"></a>
-template&lt;typename... Params&gt; </td></tr>
-<tr class="memitem:a44cce2f0c21f67b2f93c8dd079db1a8d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>mul</b> (RMatrix&lt; Vec, Params... &gt; r, Params... params)</td></tr>
+<tr class="memitem:a44cce2f0c21f67b2f93c8dd079db1a8d" id="r_a44cce2f0c21f67b2f93c8dd079db1a8d"><td class="memTemplParams" colspan="2">template&lt;typename... Params&gt; </td></tr>
+<tr class="memitem:a44cce2f0c21f67b2f93c8dd079db1a8d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a44cce2f0c21f67b2f93c8dd079db1a8d">mul</a> (RMatrix&lt; Vec, Params... &gt; r, Params... params)</td></tr>
 <tr class="separator:a44cce2f0c21f67b2f93c8dd079db1a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e05a481aeee22c46f7f1bc90a5c610c" id="r_a2e05a481aeee22c46f7f1bc90a5c610c"><td class="memItemLeft" align="right" valign="top"><a id="a2e05a481aeee22c46f7f1bc90a5c610c" name="a2e05a481aeee22c46f7f1bc90a5c610c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>transfer</b> ()</td></tr>
 <tr class="separator:a2e05a481aeee22c46f7f1bc90a5c610c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8a5da5b752357b0a8d9d36efa7ffe01" id="r_ae8a5da5b752357b0a8d9d36efa7ffe01"><td class="memItemLeft" align="right" valign="top"><a id="ae8a5da5b752357b0a8d9d36efa7ffe01" name="ae8a5da5b752357b0a8d9d36efa7ffe01"></a>
-Value&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (Key k) const</td></tr>
+<tr class="memitem:ae8a5da5b752357b0a8d9d36efa7ffe01" id="r_ae8a5da5b752357b0a8d9d36efa7ffe01"><td class="memItemLeft" align="right" valign="top">Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8a5da5b752357b0a8d9d36efa7ffe01">operator[]</a> (Key k) const</td></tr>
 <tr class="separator:ae8a5da5b752357b0a8d9d36efa7ffe01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abadd56bc24c32a808090894ae61e4827" id="r_abadd56bc24c32a808090894ae61e4827"><td class="memItemLeft" align="right" valign="top"><a id="abadd56bc24c32a808090894ae61e4827" name="abadd56bc24c32a808090894ae61e4827"></a>
-<a class="el" href="class_vector_pair.html">VectorPair</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+=</b> (const std::pair&lt; Key, Value &gt; &amp;p)</td></tr>
+<tr class="memitem:abadd56bc24c32a808090894ae61e4827" id="r_abadd56bc24c32a808090894ae61e4827"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector_pair.html">VectorPair</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abadd56bc24c32a808090894ae61e4827">operator+=</a> (const std::pair&lt; Key, Value &gt; &amp;p)</td></tr>
 <tr class="separator:abadd56bc24c32a808090894ae61e4827"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab64788b036e5f2c920c9f4d1f47e2354" id="r_ab64788b036e5f2c920c9f4d1f47e2354"><td class="memItemLeft" align="right" valign="top"><a id="ab64788b036e5f2c920c9f4d1f47e2354" name="ab64788b036e5f2c920c9f4d1f47e2354"></a>
-<a class="el" href="class_vector_pair.html">VectorPair</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+=</b> (const <a class="el" href="class_basis_vector.html">BasisVector</a> &amp;b)</td></tr>
+<tr class="memitem:ab64788b036e5f2c920c9f4d1f47e2354" id="r_ab64788b036e5f2c920c9f4d1f47e2354"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector_pair.html">VectorPair</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab64788b036e5f2c920c9f4d1f47e2354">operator+=</a> (const <a class="el" href="class_basis_vector.html">BasisVector</a> &amp;b)</td></tr>
 <tr class="separator:ab64788b036e5f2c920c9f4d1f47e2354"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cd8e7aa7ac346b56bb83e4c564c6bbd" id="r_a4cd8e7aa7ac346b56bb83e4c564c6bbd"><td class="memItemLeft" align="right" valign="top"><a id="a4cd8e7aa7ac346b56bb83e4c564c6bbd" name="a4cd8e7aa7ac346b56bb83e4c564c6bbd"></a>
-<a class="el" href="class_vector_pair.html">VectorPair</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+=</b> (const Vec &amp;v)</td></tr>
+<tr class="memitem:a4cd8e7aa7ac346b56bb83e4c564c6bbd" id="r_a4cd8e7aa7ac346b56bb83e4c564c6bbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector_pair.html">VectorPair</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cd8e7aa7ac346b56bb83e4c564c6bbd">operator+=</a> (const Vec &amp;v)</td></tr>
 <tr class="separator:a4cd8e7aa7ac346b56bb83e4c564c6bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46cc1e4e70495c2522cfc0d48235a834" id="r_a46cc1e4e70495c2522cfc0d48235a834"><td class="memItemLeft" align="right" valign="top"><a id="a46cc1e4e70495c2522cfc0d48235a834" name="a46cc1e4e70495c2522cfc0d48235a834"></a>
-<a class="el" href="class_vector_pair.html">VectorPair</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator/=</b> (const double d)</td></tr>
+<tr class="memitem:a46cc1e4e70495c2522cfc0d48235a834" id="r_a46cc1e4e70495c2522cfc0d48235a834"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector_pair.html">VectorPair</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46cc1e4e70495c2522cfc0d48235a834">operator/=</a> (const double d)</td></tr>
 <tr class="separator:a46cc1e4e70495c2522cfc0d48235a834"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dbd2d505feb24c5d6f7b0db6e6387c7" id="r_a5dbd2d505feb24c5d6f7b0db6e6387c7"><td class="memItemLeft" align="right" valign="top"><a id="a5dbd2d505feb24c5d6f7b0db6e6387c7" name="a5dbd2d505feb24c5d6f7b0db6e6387c7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>add_if</b> (<a class="el" href="class_basis_vector.html">BasisVector</a> b, bool cond)</td></tr>
+<tr class="memitem:a5dbd2d505feb24c5d6f7b0db6e6387c7" id="r_a5dbd2d505feb24c5d6f7b0db6e6387c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5dbd2d505feb24c5d6f7b0db6e6387c7">add_if</a> (<a class="el" href="class_basis_vector.html">BasisVector</a> b, bool cond)</td></tr>
 <tr class="separator:a5dbd2d505feb24c5d6f7b0db6e6387c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f95ac6a140fc65fa6824f97ceeb2bcc" id="r_a6f95ac6a140fc65fa6824f97ceeb2bcc"><td class="memItemLeft" align="right" valign="top"><a id="a6f95ac6a140fc65fa6824f97ceeb2bcc" name="a6f95ac6a140fc65fa6824f97ceeb2bcc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>generate_space</b> ()</td></tr>
+<tr class="memitem:a6f95ac6a140fc65fa6824f97ceeb2bcc" id="r_a6f95ac6a140fc65fa6824f97ceeb2bcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f95ac6a140fc65fa6824f97ceeb2bcc">generate_space</a> ()</td></tr>
 <tr class="separator:a6f95ac6a140fc65fa6824f97ceeb2bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa403c390fcce22fd88cbc4fa2f763421" id="r_aa403c390fcce22fd88cbc4fa2f763421"><td class="memItemLeft" align="right" valign="top"><a id="aa403c390fcce22fd88cbc4fa2f763421" name="aa403c390fcce22fd88cbc4fa2f763421"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
+<tr class="memitem:aa403c390fcce22fd88cbc4fa2f763421" id="r_aa403c390fcce22fd88cbc4fa2f763421"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa403c390fcce22fd88cbc4fa2f763421">clear</a> ()</td></tr>
 <tr class="separator:aa403c390fcce22fd88cbc4fa2f763421"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a79cbbe30d11cd489c29291d687ba86" id="r_a8a79cbbe30d11cd489c29291d687ba86"><td class="memItemLeft" align="right" valign="top"><a id="a8a79cbbe30d11cd489c29291d687ba86" name="a8a79cbbe30d11cd489c29291d687ba86"></a>
-LargeFloat&#160;</td><td class="memItemRight" valign="bottom"><b>inner_product</b> (Vec &amp;v)</td></tr>
+<tr class="memitem:a8a79cbbe30d11cd489c29291d687ba86" id="r_a8a79cbbe30d11cd489c29291d687ba86"><td class="memItemLeft" align="right" valign="top">LargeFloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a79cbbe30d11cd489c29291d687ba86">inner_product</a> (Vec &amp;v)</td></tr>
 <tr class="separator:a8a79cbbe30d11cd489c29291d687ba86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac841edbe6c9d48aa775d4631c7892905" id="r_ac841edbe6c9d48aa775d4631c7892905"><td class="memItemLeft" align="right" valign="top"><a id="ac841edbe6c9d48aa775d4631c7892905" name="ac841edbe6c9d48aa775d4631c7892905"></a>
-LargeFloat&#160;</td><td class="memItemRight" valign="bottom"><b>inner_product</b> (<a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt; &amp;v)</td></tr>
+<tr class="memitem:ac841edbe6c9d48aa775d4631c7892905" id="r_ac841edbe6c9d48aa775d4631c7892905"><td class="memItemLeft" align="right" valign="top">LargeFloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac841edbe6c9d48aa775d4631c7892905">inner_product</a> (<a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt; &amp;v)</td></tr>
 <tr class="separator:ac841edbe6c9d48aa775d4631c7892905"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9afe356f2d772c30786a82cc76910996" id="r_a9afe356f2d772c30786a82cc76910996"><td class="memItemLeft" align="right" valign="top"><a id="a9afe356f2d772c30786a82cc76910996" name="a9afe356f2d772c30786a82cc76910996"></a>
-LargeFloat&#160;</td><td class="memItemRight" valign="bottom"><b>get_norm</b> ()</td></tr>
+<tr class="memitem:a9afe356f2d772c30786a82cc76910996" id="r_a9afe356f2d772c30786a82cc76910996"><td class="memItemLeft" align="right" valign="top">LargeFloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9afe356f2d772c30786a82cc76910996">get_norm</a> ()</td></tr>
 <tr class="separator:a9afe356f2d772c30786a82cc76910996"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a148ba9f3774ee2690a5859a436aba4fd" id="r_a148ba9f3774ee2690a5859a436aba4fd"><td class="memItemLeft" align="right" valign="top"><a id="a148ba9f3774ee2690a5859a436aba4fd" name="a148ba9f3774ee2690a5859a436aba4fd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>factorise_norm</b> ()</td></tr>
+<tr class="memitem:a148ba9f3774ee2690a5859a436aba4fd" id="r_a148ba9f3774ee2690a5859a436aba4fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a148ba9f3774ee2690a5859a436aba4fd">factorise_norm</a> ()</td></tr>
 <tr class="separator:a148ba9f3774ee2690a5859a436aba4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ed76c1e816e88c542a8ab5bd7272e1c" id="r_a9ed76c1e816e88c542a8ab5bd7272e1c"><td class="memItemLeft" align="right" valign="top"><a id="a9ed76c1e816e88c542a8ab5bd7272e1c" name="a9ed76c1e816e88c542a8ab5bd7272e1c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>normalise</b> ()</td></tr>
+<tr class="memitem:a9ed76c1e816e88c542a8ab5bd7272e1c" id="r_a9ed76c1e816e88c542a8ab5bd7272e1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ed76c1e816e88c542a8ab5bd7272e1c">normalise</a> ()</td></tr>
 <tr class="separator:a9ed76c1e816e88c542a8ab5bd7272e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a122197ade6315abd9b728e13d424c929" id="r_a122197ade6315abd9b728e13d424c929"><td class="memItemLeft" align="right" valign="top"><a id="a122197ade6315abd9b728e13d424c929" name="a122197ade6315abd9b728e13d424c929"></a>
-iterator&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> ()</td></tr>
+<tr class="memitem:a122197ade6315abd9b728e13d424c929" id="r_a122197ade6315abd9b728e13d424c929"><td class="memItemLeft" align="right" valign="top">iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a122197ade6315abd9b728e13d424c929">begin</a> ()</td></tr>
 <tr class="separator:a122197ade6315abd9b728e13d424c929"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68cdbe0b945bbdff65cd3fd94c3abd64" id="r_a68cdbe0b945bbdff65cd3fd94c3abd64"><td class="memItemLeft" align="right" valign="top"><a id="a68cdbe0b945bbdff65cd3fd94c3abd64" name="a68cdbe0b945bbdff65cd3fd94c3abd64"></a>
-iterator&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> ()</td></tr>
+<tr class="memitem:a68cdbe0b945bbdff65cd3fd94c3abd64" id="r_a68cdbe0b945bbdff65cd3fd94c3abd64"><td class="memItemLeft" align="right" valign="top">iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68cdbe0b945bbdff65cd3fd94c3abd64">end</a> ()</td></tr>
 <tr class="separator:a68cdbe0b945bbdff65cd3fd94c3abd64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Vec&gt;<br />
+class VectorPair&lt; Vec &gt;</div>
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00004">4</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a8db31694aaecc5dd75d894842fcc96db" name="a8db31694aaecc5dd75d894842fcc96db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8db31694aaecc5dd75d894842fcc96db">&#9670;&#160;</a></span>BasisVector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;<a class="el" href="class_basis_vector.html">::BasisVector</a> = typename Vec::BasisVector</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00008">8</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aaff83ae49b75ff368c02a360031c58ea" name="aaff83ae49b75ff368c02a360031c58ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaff83ae49b75ff368c02a360031c58ea">&#9670;&#160;</a></span>iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::iterator = typename Vec::iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00009">9</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6ca88cc644d650805159d1775b5df21b" name="a6ca88cc644d650805159d1775b5df21b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ca88cc644d650805159d1775b5df21b">&#9670;&#160;</a></span>Key</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::Key = typename Vec::Key</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00006">6</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2f32261ceb502f92592a08db7197b260" name="a2f32261ceb502f92592a08db7197b260"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f32261ceb502f92592a08db7197b260">&#9670;&#160;</a></span>Value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::Value = typename Vec::Value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00007">7</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a64d0a7347cd2b9171e62ad7c34579792" name="a64d0a7347cd2b9171e62ad7c34579792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64d0a7347cd2b9171e62ad7c34579792">&#9670;&#160;</a></span>VectorPair()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;<a class="el" href="class_vector_pair.html">::VectorPair</a> </td>
+          <td>(</td>
+          <td class="paramtype">Vec *</td>          <td class="paramname"><span class="paramname"><em>v1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vec *</td>          <td class="paramname"><span class="paramname"><em>v2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00017">17</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5dbd2d505feb24c5d6f7b0db6e6387c7" name="a5dbd2d505feb24c5d6f7b0db6e6387c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dbd2d505feb24c5d6f7b0db6e6387c7">&#9670;&#160;</a></span>add_if()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::add_if </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_basis_vector.html">BasisVector</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>cond</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00058">58</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a122197ade6315abd9b728e13d424c929" name="a122197ade6315abd9b728e13d424c929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a122197ade6315abd9b728e13d424c929">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">iterator <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00094">94</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa403c390fcce22fd88cbc4fa2f763421" name="aa403c390fcce22fd88cbc4fa2f763421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa403c390fcce22fd88cbc4fa2f763421">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00072">72</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a68cdbe0b945bbdff65cd3fd94c3abd64" name="a68cdbe0b945bbdff65cd3fd94c3abd64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68cdbe0b945bbdff65cd3fd94c3abd64">&#9670;&#160;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">iterator <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00099">99</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a148ba9f3774ee2690a5859a436aba4fd" name="a148ba9f3774ee2690a5859a436aba4fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a148ba9f3774ee2690a5859a436aba4fd">&#9670;&#160;</a></span>factorise_norm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::factorise_norm </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00086">86</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6f95ac6a140fc65fa6824f97ceeb2bcc" name="a6f95ac6a140fc65fa6824f97ceeb2bcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f95ac6a140fc65fa6824f97ceeb2bcc">&#9670;&#160;</a></span>generate_space()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::generate_space </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00062">62</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae8b581e4f5043f29f4968be5bcf2ce16" name="ae8b581e4f5043f29f4968be5bcf2ce16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8b581e4f5043f29f4968be5bcf2ce16">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vec * <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::get </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00019">19</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9afe356f2d772c30786a82cc76910996" name="a9afe356f2d772c30786a82cc76910996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9afe356f2d772c30786a82cc76910996">&#9670;&#160;</a></span>get_norm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LargeFloat <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::get_norm </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00082">82</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad6cdcc7ba0b41221e1a1ceffb4ee65d4" name="ad6cdcc7ba0b41221e1a1ceffb4ee65d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6cdcc7ba0b41221e1a1ceffb4ee65d4">&#9670;&#160;</a></span>getempty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vec * <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::getempty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00020">20</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8a79cbbe30d11cd489c29291d687ba86" name="a8a79cbbe30d11cd489c29291d687ba86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a79cbbe30d11cd489c29291d687ba86">&#9670;&#160;</a></span>inner_product() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LargeFloat <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::inner_product </td>
+          <td>(</td>
+          <td class="paramtype">Vec &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00074">74</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac841edbe6c9d48aa775d4631c7892905" name="ac841edbe6c9d48aa775d4631c7892905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac841edbe6c9d48aa775d4631c7892905">&#9670;&#160;</a></span>inner_product() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LargeFloat <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::inner_product </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00078">78</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a44cce2f0c21f67b2f93c8dd079db1a8d" name="a44cce2f0c21f67b2f93c8dd079db1a8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44cce2f0c21f67b2f93c8dd079db1a8d">&#9670;&#160;</a></span>mul()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<div class="memtemplate">
+template&lt;typename... Params&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::mul </td>
+          <td>(</td>
+          <td class="paramtype">RMatrix&lt; Vec, Params... &gt;</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Params...</td>          <td class="paramname"><span class="paramname"><em>params</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00027">27</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9ed76c1e816e88c542a8ab5bd7272e1c" name="a9ed76c1e816e88c542a8ab5bd7272e1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ed76c1e816e88c542a8ab5bd7272e1c">&#9670;&#160;</a></span>normalise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::normalise </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00090">90</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab64788b036e5f2c920c9f4d1f47e2354" name="ab64788b036e5f2c920c9f4d1f47e2354"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab64788b036e5f2c920c9f4d1f47e2354">&#9670;&#160;</a></span>operator+=() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector_pair.html">VectorPair</a> &amp; <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_basis_vector.html">BasisVector</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>b</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00043">43</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abadd56bc24c32a808090894ae61e4827" name="abadd56bc24c32a808090894ae61e4827"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abadd56bc24c32a808090894ae61e4827">&#9670;&#160;</a></span>operator+=() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector_pair.html">VectorPair</a> &amp; <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const std::pair&lt; Key, Value &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00038">38</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4cd8e7aa7ac346b56bb83e4c564c6bbd" name="a4cd8e7aa7ac346b56bb83e4c564c6bbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cd8e7aa7ac346b56bb83e4c564c6bbd">&#9670;&#160;</a></span>operator+=() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector_pair.html">VectorPair</a> &amp; <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const Vec &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00048">48</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a46cc1e4e70495c2522cfc0d48235a834" name="a46cc1e4e70495c2522cfc0d48235a834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46cc1e4e70495c2522cfc0d48235a834">&#9670;&#160;</a></span>operator/=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector_pair.html">VectorPair</a> &amp; <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::operator/= </td>
+          <td>(</td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>d</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00053">53</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae8a5da5b752357b0a8d9d36efa7ffe01" name="ae8a5da5b752357b0a8d9d36efa7ffe01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8a5da5b752357b0a8d9d36efa7ffe01">&#9670;&#160;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Value <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">Key</td>          <td class="paramname"><span class="paramname"><em>k</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00034">34</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a43402717b6b0a1a668d9eea15ab36c6c" name="a43402717b6b0a1a668d9eea15ab36c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43402717b6b0a1a668d9eea15ab36c6c">&#9670;&#160;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::print </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00021">21</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a11f6f6c0c2dd8ad7d9756a75fcaed14c" name="a11f6f6c0c2dd8ad7d9756a75fcaed14c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11f6f6c0c2dd8ad7d9756a75fcaed14c">&#9670;&#160;</a></span>set_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::set_size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00022">22</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa52e929ee8904118b3f38f4363e79028" name="aa52e929ee8904118b3f38f4363e79028"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa52e929ee8904118b3f38f4363e79028">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00023">23</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a76d996975905e1fc8bc5614264a8439d" name="a76d996975905e1fc8bc5614264a8439d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76d996975905e1fc8bc5614264a8439d">&#9670;&#160;</a></span>swap_data_position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_vector_pair.html">VectorPair</a>&lt; Vec &gt;::swap_data_position </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector__pairs_8hpp_source.html#l00024">24</a> of file <a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/paulroux/Documents/Recherche/projet_these/code/transfer_matrices/TransferMatricesCpp/cpp_libs/libtransfermatrices/src/<a class="el" href="src_2vector__pairs_8hpp_source.html">vector_pairs.hpp</a></li>
+<li><a class="el" href="vector__pairs_8hpp_source.html">vector_pairs.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -9,6 +9,7 @@ var class_vector =
     [ "get_norm_sq", "class_vector.html#afe68b3d520c9b67b296822cd6209394d", null ],
     [ "get_size", "class_vector.html#aeb66df91301154c98540481e3a0f4c2f", null ],
     [ "normalise", "class_vector.html#afd1eda033d5a0324949ee991ecc862f9", null ],
+    [ "operator*=", "class_vector.html#a4b68f8005281a02764696c969eb31a54", null ],
     [ "operator+=", "class_vector.html#a8e26a662fa4ee7e2a564e7dfed305862", null ],
     [ "operator+=", "class_vector.html#a076976e16cf9eecd151c91ccd0089647", null ],
     [ "operator+=", "class_vector.html#ab0f0ede3b30b39b94c2bc63f95b1c779", null ],

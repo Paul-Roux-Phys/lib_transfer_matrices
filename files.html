@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Transfer Matrices
+   <div id="projectname">Transfer Matrices<span id="projectnumber">&#160;0.0.0DEV</span>
    </div>
    <div id="projectbrief">C++ library for transfer matrix computations</div>
   </td>
@@ -109,24 +116,14 @@ $(function(){initNavTree('files.html',''); initResizable(true); });
 <tr id="row_0_0_0_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="include_2_transfer_matrices_2eigensolver_8hpp_source.html"><span class="icondoc"></span></a><b>eigensolver.hpp</b></td><td class="desc"></td></tr>
 <tr id="row_0_0_1_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="include_2_transfer_matrices_2keys_8hpp_source.html"><span class="icondoc"></span></a><b>keys.hpp</b></td><td class="desc"></td></tr>
 <tr id="row_0_0_2_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="include_2_transfer_matrices_2matrices_8hpp_source.html"><span class="icondoc"></span></a><b>matrices.hpp</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_3_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="include_2_transfer_matrices_2r__matrices_8hpp_source.html"><span class="icondoc"></span></a><b>r_matrices.hpp</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_4_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="include_2_transfer_matrices_2vector__pairs_8hpp_source.html"><span class="icondoc"></span></a><b>vector_pairs.hpp</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_5_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="include_2_transfer_matrices_2vectors_8hpp_source.html"><span class="icondoc"></span></a><b>vectors.hpp</b></td><td class="desc"></td></tr>
+<tr id="row_0_0_3_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="include_2_transfer_matrices_2vectors_8hpp_source.html"><span class="icondoc"></span></a><b>vectors.hpp</b></td><td class="desc"></td></tr>
 <tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="_transfer_matrices_8hpp_source.html"><span class="icondoc"></span></a><b>TransferMatrices.hpp</b></td><td class="desc"></td></tr>
 <tr id="row_1_" class="odd"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_1_" class="arrow" onclick="dynsection.toggleFolder('1_')">&#9660;</span><span id="img_1_" class="iconfopen" onclick="dynsection.toggleFolder('1_')">&#160;</span><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" target="_self">src</a></td><td class="desc"></td></tr>
-<tr id="row_1_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_1_0_" class="arrow" onclick="dynsection.toggleFolder('1_0_')">&#9660;</span><span id="img_1_0_" class="iconfopen" onclick="dynsection.toggleFolder('1_0_')">&#160;</span><a class="el" href="dir_2ef24a2d5ce302aa0b9cab1ada127e69.html" target="_self">key_types</a></td><td class="desc"></td></tr>
-<tr id="row_1_0_0_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="64bit_8hpp_source.html"><span class="icondoc"></span></a><b>64bit.hpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_0_1_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="int8array_8hpp_source.html"><span class="icondoc"></span></a><b>int8array.hpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_1_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_1_1_" class="arrow" onclick="dynsection.toggleFolder('1_1_')">&#9660;</span><span id="img_1_1_" class="iconfopen" onclick="dynsection.toggleFolder('1_1_')">&#160;</span><a class="el" href="dir_5b8e8e638c2738772b4c8736d53cf5aa.html" target="_self">vectors</a></td><td class="desc"></td></tr>
-<tr id="row_1_1_0_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_basis_vector_8hpp_source.html"><span class="icondoc"></span></a><b>BasisVector.hpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_1_1_" class="odd"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="draining__iterator_8hpp_source.html"><span class="icondoc"></span></a><b>draining_iterator.hpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_1_2_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_vector_8hpp_source.html"><span class="icondoc"></span></a><b>Vector.hpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_2_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="src_2eigensolver_8hpp_source.html"><span class="icondoc"></span></a><b>eigensolver.hpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_3_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="src_2keys_8hpp_source.html"><span class="icondoc"></span></a><b>keys.hpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_4_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="src_2matrices_8hpp_source.html"><span class="icondoc"></span></a><b>matrices.hpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_5_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="src_2r__matrices_8hpp_source.html"><span class="icondoc"></span></a><b>r_matrices.hpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_6_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="src_2vector__pairs_8hpp_source.html"><span class="icondoc"></span></a><b>vector_pairs.hpp</b></td><td class="desc"></td></tr>
-<tr id="row_1_7_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="src_2vectors_8hpp_source.html"><span class="icondoc"></span></a><b>vectors.hpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_0_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="src_2eigensolver_8hpp_source.html"><span class="icondoc"></span></a><b>eigensolver.hpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_1_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="src_2keys_8hpp_source.html"><span class="icondoc"></span></a><b>keys.hpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_2_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="src_2matrices_8hpp_source.html"><span class="icondoc"></span></a><b>matrices.hpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_3_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="vector__pairs_8hpp_source.html"><span class="icondoc"></span></a><b>vector_pairs.hpp</b></td><td class="desc"></td></tr>
+<tr id="row_1_4_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="src_2vectors_8hpp_source.html"><span class="icondoc"></span></a><b>vectors.hpp</b></td><td class="desc"></td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->

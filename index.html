@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Transfer Matrices
+   <div id="projectname">Transfer Matrices<span id="projectnumber">&#160;0.0.0DEV</span>
    </div>
    <div id="projectbrief">C++ library for transfer matrix computations</div>
   </td>
@@ -104,70 +111,45 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="mainpage"></a></p>
 <h1><a class="anchor" id="autotoc_md0"></a>
-Dependencies</h1>
-<p>To use this library, the user should download and install the <a href="https://www.mpfr.org/">mpfr</a>, <a href="https://www.multiprecision.org/mpc/">mpc</a>, and <a href="https://github.com/opencollab/arpack-ng">arpack</a> libraries.</p>
+Purpose of this library</h1>
+<p>This small template library offers a few convenient data types and methods designed to simplify writing efficient transfer matrix programs.</p>
+<p>Specifically, the program is designed to perform computations on transfer matrices written in the form</p>
+<p>$$T = \prod R_i,$$</p>
+<p>where the \(R_i\) are sparse matrices, in the sense that there exists a basis \(|e_i \rangle\) such that \(R |e_i \rangle\) has only a few non-zero components in the basis \(|e_i\rangle\).</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Getting started</h1>
-<p>This library is a template library, meaning it requires no compilation. Simply put the directory to <code>some/path/libtransftermatrices</code> and include <code><a class="el" href="_transfer_matrices_8hpp_source.html">TransferMatrices.hpp</a></code> in your project:</p>
+Installation</h1>
+<p>This library is a template library, meaning the library itself requires no compilation. Simply clone or download the <a href="https://github.com/Paul-Roux-Phys/lib_transfer_matrices/">git repo</a> to <code>some/path/lib_transfter_matrices</code> and include <code><a class="el" href="_transfer_matrices_8hpp_source.html">TransferMatrices.hpp</a></code> in your project:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;TransferMatrices.hpp&quot;</span></div>
-</div><!-- fragment --><p>Make sure to compile with the option <code>-I/path/to/libtransfermatrices/include</code> so that the compiler sees the file <code><a class="el" href="_transfer_matrices_8hpp_source.html">TransferMatrices.hpp</a></code>.</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Usage</h1>
-<p>The library provides some convenient template classes to cover common needs in transfer matrix computations.</p>
-<h2><a class="anchor" id="autotoc_md3"></a>
-Basis Vectors</h2>
-<p>The class <a class="el" href="class_basis_vector.html">BasisVector&lt;K, V&gt;</a> holds a <code>(key, value)</code> pair of arbitrary types.</p>
-<p>A good practice is to derive from this class in order to define a particular basis of a space of states:</p>
-<div class="fragment"><div class="line"><span class="keyword">using </span>BV = <a class="code hl_class" href="class_basis_vector.html">BasisVector&lt;bool *, double&gt;</a>;</div>
-<div class="line"><span class="keyword">class </span>IsingPM : <span class="keyword">public</span> BV {</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">using </span>BV::BV;</div>
-<div class="line">};</div>
-<div class="ttc" id="aclass_basis_vector_html"><div class="ttname"><a href="class_basis_vector.html">BasisVector</a></div><div class="ttdef"><b>Definition</b> BasisVector.hpp:5</div></div>
-</div><!-- fragment --><p>In this example, we create a class <code>IsingPM</code> which holds <code>(key, value)</code> pairs, with</p>
+</div><!-- fragment --><p>Make sure to compile with the option <code>-I/path/to/lib_transfer_matrices/include</code> so that the compiler finds the file <code><a class="el" href="_transfer_matrices_8hpp_source.html">TransferMatrices.hpp</a></code>.</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Dependencies</h2>
+<p>The library depends on a few external libraries:</p>
 <ul>
-<li>keys of type <code>char *</code>, (C-style strings): sequences of 0s and 1s.</li>
-<li>values of type <code>double</code>.</li>
+<li><a href="https://www.mpfr.org/">mpfr</a></li>
+<li><a href="https://www.multiprecision.org/mpc/">mpc</a></li>
+<li><a href="https://github.com/opencollab/arpack-ng">arpack</a></li>
+<li><a href="http://www.openmathlib.org/OpenBLAS/docs/user_manual/">blas</a></li>
+<li><a href="https://www.boost.org/">boost/multiprecision</a></li>
 </ul>
-<p>The last <code>using</code> statement lets <code>IsingPM</code> inherit from the <code><a class="el" href="class_basis_vector.html">BasisVector</a></code> constructor.</p>
-<p>Inheriting gives us some flexibility to integrate more data into the <a class="el" href="class_basis_vector.html">BasisVector</a> if we want, e.g. we could add</p>
-<div class="fragment"><div class="line"><span class="keyword">class </span>IsingPMBasis : <span class="keyword">public</span> BV {</div>
-<div class="line"><span class="comment">// ...</span></div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line">    uint nb_domain_walls;</div>
-<div class="line">}</div>
-</div><!-- fragment --><p>to store some more information about the state, in this case the number of Ising domain walls. Or we could define additional methods on the state:</p>
-<div class="fragment"><div class="line"><span class="keyword">public</span>:</div>
-<div class="line">    <span class="keywordtype">int</span> nb_domain_walls() {</div>
-<div class="line">        <span class="keywordtype">int</span> res = 0;</div>
-<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <span class="keyword">sizeof</span>(*this) - 1; i++)</div>
-<div class="line">            <span class="keywordflow">if</span> ((*<span class="keyword">this</span>)[i] != (*<span class="keyword">this</span>)[i+1])</div>
-<div class="line">                res += 1;</div>
-<div class="line">        <span class="keywordflow">return</span> res;</div>
-<div class="line">    }</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
-Vectors</h2>
-<p>To represent a general vector, which is a linear combination of basis vectors, the library exposes a class <a class="el" href="class_vector.html">Vector&lt;BasisVector&gt;</a> which stores several <code>(key, value)</code> pairs in a hash table (or dictionary), using the hash table implementation of the C++ standard library <code>std::unordered_map</code>. This data structure allows for fast insertion, lookup, and deletion.</p>
-<p>Like for <code><a class="el" href="class_basis_vector.html">BasisVector</a></code>s, it is a good practice to inherit from the <code><a class="el" href="class_vector.html">Vector</a></code> class:</p>
-<div class="fragment"><div class="line"><span class="keyword">class </span>IsingState : <span class="keyword">public</span> <a class="code hl_class" href="class_vector.html">Vector</a>&lt;BasisVector&gt; {</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">using </span><a class="code hl_class" href="class_vector.html">Vector</a>&lt;<a class="code hl_class" href="class_basis_vector.html">BasisVector</a>&gt;<a class="code hl_class" href="class_vector.html">::Vector&lt;BasisVector&gt;</a>;</div>
-<div class="line">};</div>
-<div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector</a></div><div class="ttdef"><b>Definition</b> Vector.hpp:16</div></div>
-</div><!-- fragment --><p>This again gives some flexibility to add methods and data to the state.</p>
-<p>One can multiply a vector by a scalar, add a basis vector to a vector, or add vectors together. Vectors can be looped through, or looped through and drained at the same time, which is useful to limit memory usage. To prevent overflowing of vector components, one can factorize the norm of the vector:</p>
-<div class="fragment"><div class="line">IsingState v = IsingState(10); # initialises a vector with a hash table of size 10</div>
-<div class="line">v *= 100.0;</div>
-<div class="line">v.factorise_norm();</div>
-</div><!-- fragment --><p>The norm of the vector is stored as an arbitrary precision number, which cannot overflow.</p>
-<p>One can easily iterate over all components of a vector <code>v</code>: iterate over the vector and cast the iterator to a <code><a class="el" href="class_basis_vector.html">BasisVector</a></code>, in our example of type <code>IsingPMbasis</code>.</p>
-<div class="fragment"><div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> it = v.begin(); it = v.end(); it++) {</div>
-<div class="line">    IsingPMBasis p(*it);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;key = &quot;</span>); p.print(); printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
-R-matrices</h2>
-</div></div><!-- PageDoc -->
+<p>These libraries need to be installed on your system in order to use <code>lib_transfer_matrices</code>. The easiest way to achieve this is in your console, via your system's package manager; here are a few examples for popular packages managers:</p>
+<div class="fragment"><div class="line"># on macOS</div>
+<div class="line">brew install arpack mpfr libmpc openblas boost</div>
+<div class="line"> </div>
+<div class="line"># on windows: via vcpkg (https://vcpkg.io/en/index.html)</div>
+<div class="line">vcpkg install arpack-ng mpfr mpc openblas boost</div>
+<div class="line"> </div>
+<div class="line"># on linux; depending on your distribution: </div>
+<div class="line"># ubuntu/debian based</div>
+<div class="line">sudo apt install libarpack2-dev libmpfr-dev libmpc-dev libopenblas-dev libboost-all-dev</div>
+<div class="line"># Fedora, CentOS, or RHEL-based Systems</div>
+<div class="line">sudo dnf install arpack-devel mpfr-devel libmpc-devel openblas-devel boost-devel</div>
+<div class="line"># for older versions</div>
+<div class="line">sudo yum install arpack-devel mpfr-devel libmpc-devel openblas-devel boost-devel</div>
+<div class="line"># on arch / Manjaro</div>
+<div class="line">sudo pacman -S arpack mpfr libmpc openblas boost</div>
+<div class="line"># on openSUSE</div>
+<div class="line">sudo zypper install arpack-devel mpfr-devel libmpc-devel openblas-devel boost-devel</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->

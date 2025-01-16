@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Transfer Matrices
+   <div id="projectname">Transfer Matrices<span id="projectnumber">&#160;0.0.0DEV</span>
    </div>
    <div id="projectbrief">C++ library for transfer matrix computations</div>
   </td>
@@ -105,18 +112,18 @@ $(function(){initNavTree('hierarchy.html',''); initResizable(true); });
 <div class="textblock">This inheritance list is sorted roughly, but not completely, alphabetically:</div><div class="directory">
 <div class="levels">[detail level <span onclick="javascript:dynsection.toggleLevel(1);">1</span><span onclick="javascript:dynsection.toggleLevel(2);">2</span>]</div><table class="directory">
 <tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="dynsection.toggleFolder('0_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><b>std::array</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classint8__key__t.html" target="_self">int8_key_t&lt; size &gt;</a></td><td class="desc"></td></tr>
-<tr id="row_1_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_basis_vector.html" target="_self">BasisVector&lt; K, V &gt;</a></td><td class="desc"></td></tr>
-<tr id="row_2_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_draining_iterator.html" target="_self">DrainingIterator&lt; Vector &gt;</a></td><td class="desc"></td></tr>
-<tr id="row_3_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structint8__key__hash__t.html" target="_self">int8_key_hash_t&lt; size &gt;</a></td><td class="desc"></td></tr>
-<tr id="row_4_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classkey__64__bit__t.html" target="_self">key_64_bit_t&lt; bits_per_site &gt;</a></td><td class="desc"></td></tr>
-<tr id="row_5_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_key_hash.html" target="_self">KeyHash&lt; Key &gt;</a></td><td class="desc"></td></tr>
-<tr id="row_6_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_matrix.html" target="_self">Matrix&lt; VectorPair &gt;</a></td><td class="desc"></td></tr>
-<tr id="row_7_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_matrix_mul.html" target="_self">MatrixMul&lt; Vector, Real &gt;</a></td><td class="desc"></td></tr>
-<tr id="row_8_" class="odd"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_8_" class="arrow" onclick="dynsection.toggleFolder('8_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><b>std::unordered_map</b></td><td class="desc"></td></tr>
-<tr id="row_8_0_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_vector.html" target="_self">Vector&lt; B, KeyHash &gt;</a></td><td class="desc"></td></tr>
-<tr id="row_9_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_vector_3_01_basis_vector_00_01_key_hash_01_4.html" target="_self">Vector&lt; BasisVector, KeyHash &gt;</a></td><td class="desc">A class for storing large vectors </td></tr>
-<tr id="row_10_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_vector_pair.html" target="_self">VectorPair&lt; Vec &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_0_0_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classkey__int8__t.html" target="_self">key_int8_t&lt; size &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classkey__int8__t.html" target="_self">key_int8_t&lt; size &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_1_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_basis_vector.html" target="_self">BasisVector&lt; K, V &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_draining_iterator.html" target="_self">DrainingIterator&lt; Vector &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_3_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classkey__64__bit__t.html" target="_self">key_64_bit_t&lt; bits_per_site &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structkey__int8__hash__t.html" target="_self">key_int8_hash_t&lt; size &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_5_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_key_hash.html" target="_self">KeyHash&lt; Key &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_matrix.html" target="_self">Matrix&lt; VectorPair &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_7_" class="odd"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_7_" class="arrow" onclick="dynsection.toggleFolder('7_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><b>std::unordered_map</b></td><td class="desc"></td></tr>
+<tr id="row_7_0_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_vector.html" target="_self">Vector&lt; B, KeyHash &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_8_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_vector_3_01_basis_vector_00_01_key_hash_01_4.html" target="_self">Vector&lt; BasisVector, KeyHash &gt;</a></td><td class="desc">A class for storing large vectors </td></tr>
+<tr id="row_9_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_vector_pair.html" target="_self">VectorPair&lt; Vec &gt;</a></td><td class="desc"></td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->

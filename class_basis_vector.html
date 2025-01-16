@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Transfer Matrices
+   <div id="projectname">Transfer Matrices<span id="projectnumber">&#160;0.0.0DEV</span>
    </div>
    <div id="projectbrief">C++ library for transfer matrix computations</div>
   </td>
@@ -108,47 +115,266 @@ $(function(){initNavTree('class_basis_vector.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="_basis_vector_8hpp_source.html">BasisVector.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">vectors.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a89d0c6c318703491fe5a6fb699e1f436" id="r_a89d0c6c318703491fe5a6fb699e1f436"><td class="memItemLeft" align="right" valign="top"><a id="a89d0c6c318703491fe5a6fb699e1f436" name="a89d0c6c318703491fe5a6fb699e1f436"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Key</b> = K</td></tr>
+<tr class="memitem:a89d0c6c318703491fe5a6fb699e1f436" id="r_a89d0c6c318703491fe5a6fb699e1f436"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89d0c6c318703491fe5a6fb699e1f436">Key</a> = K</td></tr>
 <tr class="separator:a89d0c6c318703491fe5a6fb699e1f436"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab98e59b27cc93f2a1ed58b9e8c8f5243" id="r_ab98e59b27cc93f2a1ed58b9e8c8f5243"><td class="memItemLeft" align="right" valign="top"><a id="ab98e59b27cc93f2a1ed58b9e8c8f5243" name="ab98e59b27cc93f2a1ed58b9e8c8f5243"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>Value</b> = V</td></tr>
+<tr class="memitem:ab98e59b27cc93f2a1ed58b9e8c8f5243" id="r_ab98e59b27cc93f2a1ed58b9e8c8f5243"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab98e59b27cc93f2a1ed58b9e8c8f5243">Value</a> = V</td></tr>
 <tr class="separator:ab98e59b27cc93f2a1ed58b9e8c8f5243"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae81bed2dd99103a39cd88d9e3c4250f7" id="r_ae81bed2dd99103a39cd88d9e3c4250f7"><td class="memItemLeft" align="right" valign="top"><a id="ae81bed2dd99103a39cd88d9e3c4250f7" name="ae81bed2dd99103a39cd88d9e3c4250f7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>BasisVector</b> (Key k, Value v)</td></tr>
+<tr class="memitem:ae81bed2dd99103a39cd88d9e3c4250f7" id="r_ae81bed2dd99103a39cd88d9e3c4250f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae81bed2dd99103a39cd88d9e3c4250f7">BasisVector</a> (Key k, Value v)</td></tr>
 <tr class="separator:ae81bed2dd99103a39cd88d9e3c4250f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4de24e745a3d40f8c0ea9de7d72cd835" id="r_a4de24e745a3d40f8c0ea9de7d72cd835"><td class="memItemLeft" align="right" valign="top"><a id="a4de24e745a3d40f8c0ea9de7d72cd835" name="a4de24e745a3d40f8c0ea9de7d72cd835"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>BasisVector</b> (const <a class="el" href="class_basis_vector.html">BasisVector</a> &amp;other)</td></tr>
+<tr class="memitem:a4de24e745a3d40f8c0ea9de7d72cd835" id="r_a4de24e745a3d40f8c0ea9de7d72cd835"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4de24e745a3d40f8c0ea9de7d72cd835">BasisVector</a> (const <a class="el" href="class_basis_vector.html">BasisVector</a> &amp;other)</td></tr>
 <tr class="separator:a4de24e745a3d40f8c0ea9de7d72cd835"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0d548e4b6318fd83f52e669535996cf" id="r_af0d548e4b6318fd83f52e669535996cf"><td class="memItemLeft" align="right" valign="top"><a id="af0d548e4b6318fd83f52e669535996cf" name="af0d548e4b6318fd83f52e669535996cf"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>BasisVector</b> (std::pair&lt; Key, Value &gt; v)</td></tr>
+<tr class="memitem:af0d548e4b6318fd83f52e669535996cf" id="r_af0d548e4b6318fd83f52e669535996cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0d548e4b6318fd83f52e669535996cf">BasisVector</a> (std::pair&lt; Key, Value &gt; v)</td></tr>
 <tr class="separator:af0d548e4b6318fd83f52e669535996cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a953af005c4683dee9e19a1c6837deba4" id="r_a953af005c4683dee9e19a1c6837deba4"><td class="memItemLeft" align="right" valign="top"><a id="a953af005c4683dee9e19a1c6837deba4" name="a953af005c4683dee9e19a1c6837deba4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> () const</td></tr>
+<tr class="memitem:a953af005c4683dee9e19a1c6837deba4" id="r_a953af005c4683dee9e19a1c6837deba4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a953af005c4683dee9e19a1c6837deba4">print</a> () const</td></tr>
 <tr class="separator:a953af005c4683dee9e19a1c6837deba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a45c4c39f4691f622e105f7607825ee72" id="r_a45c4c39f4691f622e105f7607825ee72"><td class="memItemLeft" align="right" valign="top"><a id="a45c4c39f4691f622e105f7607825ee72" name="a45c4c39f4691f622e105f7607825ee72"></a>
-Key&#160;</td><td class="memItemRight" valign="bottom"><b>key</b></td></tr>
+<tr class="memitem:a45c4c39f4691f622e105f7607825ee72" id="r_a45c4c39f4691f622e105f7607825ee72"><td class="memItemLeft" align="right" valign="top">Key&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45c4c39f4691f622e105f7607825ee72">key</a></td></tr>
 <tr class="separator:a45c4c39f4691f622e105f7607825ee72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e14b17a441b9ec344b54c5b7f0153f7" id="r_a1e14b17a441b9ec344b54c5b7f0153f7"><td class="memItemLeft" align="right" valign="top"><a id="a1e14b17a441b9ec344b54c5b7f0153f7" name="a1e14b17a441b9ec344b54c5b7f0153f7"></a>
-Value&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
+<tr class="memitem:a1e14b17a441b9ec344b54c5b7f0153f7" id="r_a1e14b17a441b9ec344b54c5b7f0153f7"><td class="memItemLeft" align="right" valign="top">Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e14b17a441b9ec344b54c5b7f0153f7">value</a></td></tr>
 <tr class="separator:a1e14b17a441b9ec344b54c5b7f0153f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename K, typename V&gt;<br />
 class BasisVector&lt; K, V &gt;</div><p>class representing a vector of the chosen basis. A basis vector is nothing but a (key, value) pair, which can be printed with .print() </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/paulroux/Documents/Recherche/projet_these/code/transfer_matrices/TransferMatricesCpp/cpp_libs/libtransfermatrices/src/<a class="el" href="src_2vectors_8hpp_source.html">vectors.hpp</a></li>
-<li>/Users/paulroux/Documents/Recherche/projet_these/code/transfer_matrices/TransferMatricesCpp/cpp_libs/libtransfermatrices/src/vectors/<a class="el" href="_basis_vector_8hpp_source.html">BasisVector.hpp</a></li>
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00024">24</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a89d0c6c318703491fe5a6fb699e1f436" name="a89d0c6c318703491fe5a6fb699e1f436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89d0c6c318703491fe5a6fb699e1f436">&#9670;&#160;</a></span>Key</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename V &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_basis_vector.html">BasisVector</a>&lt; K, V &gt;::Key = K</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00026">26</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab98e59b27cc93f2a1ed58b9e8c8f5243" name="ab98e59b27cc93f2a1ed58b9e8c8f5243"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab98e59b27cc93f2a1ed58b9e8c8f5243">&#9670;&#160;</a></span>Value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename V &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_basis_vector.html">BasisVector</a>&lt; K, V &gt;::Value = V</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00027">27</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6e78f4c4e6ef9a60a7fb3b4f69bba09f" name="a6e78f4c4e6ef9a60a7fb3b4f69bba09f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e78f4c4e6ef9a60a7fb3b4f69bba09f">&#9670;&#160;</a></span>BasisVector() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename V &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_basis_vector.html">BasisVector</a>&lt; K, V &gt;<a class="el" href="class_basis_vector.html">::BasisVector</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00031">31</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ae81bed2dd99103a39cd88d9e3c4250f7" name="ae81bed2dd99103a39cd88d9e3c4250f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae81bed2dd99103a39cd88d9e3c4250f7">&#9670;&#160;</a></span>BasisVector() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename V &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_basis_vector.html">BasisVector</a>&lt; K, V &gt;<a class="el" href="class_basis_vector.html">::BasisVector</a> </td>
+          <td>(</td>
+          <td class="paramtype">Key</td>          <td class="paramname"><span class="paramname"><em>k</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Value</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00032">32</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4de24e745a3d40f8c0ea9de7d72cd835" name="a4de24e745a3d40f8c0ea9de7d72cd835"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4de24e745a3d40f8c0ea9de7d72cd835">&#9670;&#160;</a></span>BasisVector() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename V &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_basis_vector.html">BasisVector</a>&lt; K, V &gt;<a class="el" href="class_basis_vector.html">::BasisVector</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_basis_vector.html">BasisVector</a>&lt; K, V &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00033">33</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af0d548e4b6318fd83f52e669535996cf" name="af0d548e4b6318fd83f52e669535996cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0d548e4b6318fd83f52e669535996cf">&#9670;&#160;</a></span>BasisVector() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename V &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_basis_vector.html">BasisVector</a>&lt; K, V &gt;<a class="el" href="class_basis_vector.html">::BasisVector</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::pair&lt; Key, Value &gt;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00034">34</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a953af005c4683dee9e19a1c6837deba4" name="a953af005c4683dee9e19a1c6837deba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a953af005c4683dee9e19a1c6837deba4">&#9670;&#160;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename V &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_basis_vector.html">BasisVector</a>&lt; K, V &gt;::print </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00036">36</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a45c4c39f4691f622e105f7607825ee72" name="a45c4c39f4691f622e105f7607825ee72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45c4c39f4691f622e105f7607825ee72">&#9670;&#160;</a></span>key</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename V &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Key <a class="el" href="class_basis_vector.html">BasisVector</a>&lt; K, V &gt;::key</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00028">28</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1e14b17a441b9ec344b54c5b7f0153f7" name="a1e14b17a441b9ec344b54c5b7f0153f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e14b17a441b9ec344b54c5b7f0153f7">&#9670;&#160;</a></span>value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename V &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Value <a class="el" href="class_basis_vector.html">BasisVector</a>&lt; K, V &gt;::value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html#l00029">29</a> of file <a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="src_2vectors_8hpp_source.html">src/vectors.hpp</a></li>
+<li><a class="el" href="include_2_transfer_matrices_2vectors_8hpp_source.html">include/TransferMatrices/vectors.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

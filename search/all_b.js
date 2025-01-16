@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['page_0',['Home page',['../index.html',1,'']]],
-  ['print_1',['print',['../class_vector.html#a8fe7c81eb0e3c128bb455e3b1730a06e',1,'Vector']]]
+  ['matrix_0',['Matrix',['../class_matrix.html',1,'']]],
+  ['matrix_1',['Transfer matrix',['../tutorial.html#autotoc_md7',1,'']]],
+  ['multiplication_2',['Multiplication',['../tutorial.html#autotoc_md8',1,'']]]
 ];

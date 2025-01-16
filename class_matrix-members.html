@@ -18,6 +18,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Transfer Matrices
+   <div id="projectname">Transfer Matrices<span id="projectnumber">&#160;0.0.0DEV</span>
    </div>
    <div id="projectbrief">C++ library for transfer matrix computations</div>
   </td>
@@ -107,19 +114,32 @@ $(function(){initNavTree('class_matrix.html',''); initResizable(true); });
 <table class="directory">
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_state_table</b> (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>find_eigenvalues</b>(bool no_mult=false, Value eps=1e-10) (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>get_eigenvalues</b>() (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>generate_space</b>() (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>get_eigenvalues</b>() (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>get_size</b>() (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>isapprox</b>(Value a, Value b, Value eps) (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Key</b> typedef (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>make_state_table</b>() (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>make_state_table</b>() (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Matrix</b>(VP *v, int nev=2, const char *which=&quot;LM&quot;) (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Matrix</b>(Vector *v, Vector *tmp, void(Vector::*M)(Vector &amp;)) (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>multiply</b>() (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>MultMx</b>(Value *x, Value *y) (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>MultMx</b>(Value *x, Value *y) (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator()</b>(int i, int j) (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>operator()</b>(int i, int j) (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>print</b>(int column_width=10) (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>print</b>(int column_width=10) (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>print_state_table</b>() (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>print_state_table</b>() (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>remove_duplicate_eigvals</b>(Value eps=1e-10) (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>size</b>() (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>sprint_eigenvalues</b>(int nev=0, int width_real_part=20, int width_imag_part=10) (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>set_size</b>() (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>size</b>() (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>sprint_eigenvalues</b>(int nev=0, int width_real_part=20, int width_imag_part=10) (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Value</b> typedef (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Value</b> typedef (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~Matrix</b>() (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~Matrix</b>() (defined in <a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a>)</td><td class="entry"><a class="el" href="class_matrix.html">Matrix&lt; VectorPair &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
