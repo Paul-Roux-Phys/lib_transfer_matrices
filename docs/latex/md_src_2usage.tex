@@ -1,0 +1,244 @@
+\chapter{Usage}
+\hypertarget{md_src_2usage}{}\label{md_src_2usage}\index{Usage@{Usage}}
+\label{md_src_2usage_autotoc_md4}%
+\Hypertarget{md_src_2usage_autotoc_md4}%
+
+
+The library provides some convenient template classes to cover common needs in transfer matrix computations. This page describes, thanks to an example, how the library is intended to be used.\hypertarget{md_src_2usage_autotoc_md5}{}\doxysection{\texorpdfstring{Data types}{Data types}}\label{md_src_2usage_autotoc_md5}
+\hypertarget{md_src_2usage_autotoc_md6}{}\doxysubsection{\texorpdfstring{Built-\/in key types}{Built-\/in key types}}\label{md_src_2usage_autotoc_md6}
+The library provides a few common key types. It is a good practice to define your own key type inheriting from these\+:
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ bits\_per\_site\ 3}}
+\DoxyCodeLine{\textcolor{keyword}{class\ }Key\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classkey__64__bit__t}{key\_64\_bit\_t}}<bits\_per\_site>\ \{}
+\DoxyCodeLine{\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classkey__64__bit__t}{key\_64\_bit\_t}}<bits\_per\_site>\mbox{\hyperlink{classkey__64__bit__t}{::key\_64\_bit\_t}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ we\ must\ specify\ how\ our\ keys\ should\ be\ printed}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ print\ ()\textcolor{keyword}{\ const\ }\{\ \mbox{\hyperlink{classkey__64__bit__t}{key\_64\_bit\_t<bits\_per\_site>::print}}\ (SIZE);\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ shift\_right\ ()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordtype}{int}\ last\ =\ (*this)[SIZE-\/1];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ SIZE-\/2;\ i\ >=\ 0;\ i-\/-\/)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ set\ (i\ +\ 1,\ (*\textcolor{keyword}{this})[i]);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ set\ (0,\ last);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCodeInclude}
+\hypertarget{md_src_2usage_autotoc_md7}{}\doxysubsection{\texorpdfstring{Basis Vectors}{Basis Vectors}}\label{md_src_2usage_autotoc_md7}
+The class \doxylink{class_basis_vector}{Basis\+Vector\texorpdfstring{$<$}{<}K, V\texorpdfstring{$>$}{>}} holds a {\ttfamily (key, value)} pair of arbitrary types.
+
+A good practice is to derive from this class in order to define a particular basis of a space of states\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{using\ }BV\ =\ \mbox{\hyperlink{class_basis_vector}{BasisVector<bool\ *,\ double>}};}
+\DoxyCodeLine{\textcolor{keyword}{class\ }IsingPM\ :\ \textcolor{keyword}{public}\ BV\ \{}
+\DoxyCodeLine{\textcolor{keyword}{private}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{using\ }BV::BV;}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+In this example, we create a class {\ttfamily Ising\+PM} which holds {\ttfamily (key, value)} pairs, with
+
+
+\begin{DoxyItemize}
+\item keys of type {\ttfamily char \texorpdfstring{$\ast$}{*}}, (C-\/style strings)\+: sequences of 0s and 1s.
+\item values of type {\ttfamily double}.
+\end{DoxyItemize}
+
+The last {\ttfamily using} statement lets {\ttfamily Ising\+PM} inherit from the {\ttfamily \doxylink{class_basis_vector}{Basis\+Vector}} constructor.
+
+Inheriting gives us some flexibility to integrate more data into the \doxylink{class_basis_vector}{Basis\+Vector} if we want, e.\+g. we could add
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }IsingPM\ :\ \textcolor{keyword}{public}\ BV\ \{}
+\DoxyCodeLine{\textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\textcolor{keyword}{private}:}
+\DoxyCodeLine{\ \ \ \ uint\ nb\_domain\_walls;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+to store some more information about the state, in this case the number of Ising domain walls. Or we could define additional methods on the state\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ nb\_domain\_walls()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ res\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \textcolor{keyword}{sizeof}(*this)\ -\/\ 1;\ i++)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*\textcolor{keyword}{this})[i]\ !=\ (*\textcolor{keyword}{this})[i+1])}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res\ +=\ 1;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+For the complete documentation of this class click \doxylink{class_basis_vector}{here}.\hypertarget{md_src_2usage_autotoc_md8}{}\doxysubsection{\texorpdfstring{Vectors}{Vectors}}\label{md_src_2usage_autotoc_md8}
+To represent a general vector, which is a linear combination of basis vectors, the library exposes a class \doxylink{class_vector}{Vector\texorpdfstring{$<$}{<}Basis\+Vector\texorpdfstring{$>$}{>}} which stores several {\ttfamily (key, value)} pairs in a hash table (or dictionary), using the hash table implementation of the C++ standard library {\ttfamily std\+::unordered\+\_\+map}. This data structure allows for fast insertion, lookup, and deletion.
+
+Like for {\ttfamily \doxylink{class_basis_vector}{Basis\+Vector}}s, it is a good practice to inherit from the {\ttfamily \doxylink{class_vector}{Vector}} class\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }IsingState\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_vector}{Vector}}<BasisVector>\ \{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_vector}{Vector}}<\mbox{\hyperlink{class_basis_vector}{BasisVector}}>\mbox{\hyperlink{class_vector}{::Vector<BasisVector>}};}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+This again gives some flexibility to add methods and data to the state.
+
+One can multiply a vector by a scalar, add a basis vector to a vector, or add vectors together. Vectors can be looped through, or looped through and drained at the same time, which is useful to limit memory usage. To prevent overflowing of vector components, one can factorize the norm of the vector\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{IsingState\ v\ =\ IsingState(10);\ \#\ initialises\ a\ vector\ with\ a\ hash\ table\ with\ 10\ slots}
+\DoxyCodeLine{v\ *=\ 100.0;}
+\DoxyCodeLine{v.factorise\_norm();}
+
+\end{DoxyCode}
+
+
+The norm of the vector is stored as an arbitrary precision number, which cannot overflow.
+
+One can easily iterate over all components of a vector {\ttfamily v}\+: iterate over the vector and cast the iterator to a {\ttfamily \doxylink{class_basis_vector}{Basis\+Vector}}, in our example of type {\ttfamily Ising\+PM}. The iterator has the type {\ttfamily std\+::pair\texorpdfstring{$<$}{<}Key, Value\texorpdfstring{$>$}{>}}, so it needs to be cast to a {\ttfamily \doxylink{class_basis_vector}{Basis\+Vector}} before using it\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ v.begin();\ it\ =\ v.end();\ it++)\ \{}
+\DoxyCodeLine{\ \ \ \ IsingPM\ p(*it);}
+\DoxyCodeLine{\ \ \ \ printf(\textcolor{stringliteral}{"{}key\ =\ "{}});\ p.print();\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+For the complete documentation of this class click \doxylink{class_vector}{here}. Alternatively it is possible to use a draining iterator, i.\+e. one that empties the vector as it goes\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ it\ =\ v.draining\_begin();\ it\ =\ v.draining\_end();\ it++)\ \{}
+\DoxyCodeLine{\ \ \ \ IsingPM\ p(*it);}
+\DoxyCodeLine{\ \ \ \ printf(\textcolor{stringliteral}{"{}key\ =\ "{}});\ p.print();\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{comment}{//\ at\ this\ point\ v\ is\ empty}}
+
+\end{DoxyCode}
+\hypertarget{md_src_2usage_autotoc_md9}{}\doxysection{\texorpdfstring{R-\/matrices}{R-\/matrices}}\label{md_src_2usage_autotoc_md9}
+To define the action of a $R$-\/matrix on a state, it is advisable to do as in the following example\+:
+
+
+\begin{DoxyItemize}
+\item Create a method for multiplying a basis state by a $R$-\/matrix, storing the result in some pre-\/allocated vector\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }IsingPM\ :\ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ add\_vertical\_edge(IsingState\&\ v,\ \textcolor{keywordtype}{int}\ pos)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ BV\ b2\ =\ *\textcolor{keyword}{this};\ \textcolor{comment}{//\ make\ a\ copy}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ value\ *=\ expJ;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ b2.key[pos]\ *=\ -\/1;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ b2.value\ *=\ expmJ;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ v\ +=\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ v\ +=\ b2;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ add\_horizontal\_edge(IsingState\&\ v,\ \textcolor{keywordtype}{int}\ pos1,\ \textcolor{keywordtype}{int}\ pos2)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (key[pos1]\ ==\ key[pos2])}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ value\ *=\ expJ;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ value\ *=\ expmJ;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ v\ +=\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ multiply\ by\ R\_i}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ r\_matrix(IsingState\&\ v,\ \textcolor{keywordtype}{int}\ i)\ \{\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\%2\ ==\ 0)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ add\_vertical\_edge(v,\ pos/2);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ add\_horizontal\_edge(v,\ pos/2,\ (pos/2+1)\%size);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item Create a method that acts on a vector and applies the $R$-\/matrix to each of its components\+:
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }IsingState\ :\ \textcolor{comment}{//\ ...\ }}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ r\_matrix(IsingState\&\ v,\ \textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ draining\_begin();\ it\ =\ draining\_end();\ it++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ IsingPMState(*it).r\_matrix(v,\ i);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ swap\ (v);\ \textcolor{comment}{//\ put\ the\ result\ back\ in\ *this\ (no\ copying)}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+If several $R$-\/matrices need to be defined, this can be wrapped in a small macro\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ APPLY\_TO\_EACH(METHOD)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ for\ (auto\ it\ =\ draining\_begin\ ();\ it\ !=\ draining\_end\ ();\ it++)\ \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\ \ \ \ \ \ \ \ LinkPattern\ (*it).METHOD}}
+
+\end{DoxyCode}
+
+
+and then
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ r\_matrix(IsingState\&\ v,\ \textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{\ \ \ \ APPLY\_TO\_EACH\ (r\_matrix)\ (v,\ i);}
+
+\end{DoxyCode}
+
+
+Now {\ttfamily v.\+r\+\_\+matrix(2)} will multiply v by $R_2$.\hypertarget{md_src_2usage_autotoc_md10}{}\doxysection{\texorpdfstring{Transfer matrix}{Transfer matrix}}\label{md_src_2usage_autotoc_md10}
+Once the $R$-\/matrices are defined, it is easy to define a transfer matrix\+: it requires to have two vectors, an input and an output. Below we define the matrix
+
+\$\$T=\textbackslash{}prod\+\_\+\{i=0\}\texorpdfstring{$^\wedge$}{\string^}\{\textbackslash{}frac\{L\}\{2\}\} R\+\_\+\{2i\} \textbackslash{}prod\+\_\+\{i=0\}\texorpdfstring{$^\wedge$}{\string^}\{\textbackslash{}frac\{L\}\{2\}\} R\+\_\+\{2i+1\}\$\$
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ L\ =\ 8;\ \textcolor{comment}{//\ lattice\ of\ width\ 8}}
+\DoxyCodeLine{\textcolor{keyword}{class\ }IsingState\ :\ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ transfer(IsingState\&\ other)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ L/2;\ i++)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ r\_matrix(other,\ 2*i);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ L/2;\ i++)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ r\_matrix(other,\ 2*i+1);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_src_2usage_autotoc_md11}{}\doxysection{\texorpdfstring{Diagonalisation}{Diagonalisation}}\label{md_src_2usage_autotoc_md11}
+TODO 

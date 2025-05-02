@@ -1,0 +1,53 @@
+\chapter{examples.\+md}
+\hypertarget{examples_8md}{}\label{examples_8md}\index{examples.md@{examples.md}}
+\hypertarget{examples_8md_autotoc_md1}{}\doxysection{\texorpdfstring{Purpose of this library}{Purpose of this library}}\label{examples_8md_autotoc_md1}
+This small template library offers a few convenient data types and methods designed to simplify writing efficient transfer matrix programs.
+
+Specifically, the program is designed to perform computations on transfer matrices written in the form
+
+\$\$T = \textbackslash{}prod R\+\_\+i,\$\$
+
+where the $R_i$ are sparse matrices, in the sense that there exists a basis $|e_i \rangle$ such that $R |e_i \rangle$ has only a few non-\/zero components in the basis $|e_i\rangle$.\hypertarget{examples_8md_autotoc_md2}{}\doxysection{\texorpdfstring{Installation}{Installation}}\label{examples_8md_autotoc_md2}
+This library is a template library, meaning the library itself requires no compilation. Simply put the directory to {\ttfamily some/path/libtransftermatrices} and include {\ttfamily \doxylink{_transfer_matrices_8hpp_source}{Transfer\+Matrices.\+hpp}} in your project\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}TransferMatrices.hpp"{}}}
+
+\end{DoxyCode}
+
+
+Make sure to compile with the option {\ttfamily -\/I/path/to/libtransfermatrices/include} so that the compiler sees the file {\ttfamily \doxylink{_transfer_matrices_8hpp_source}{Transfer\+Matrices.\+hpp}}.\hypertarget{examples_8md_autotoc_md3}{}\doxysubsection{\texorpdfstring{Dependencies}{Dependencies}}\label{examples_8md_autotoc_md3}
+The library has a few dependencies\+:
+\begin{DoxyItemize}
+\item \href{https://www.mpfr.org/}{\texttt{ mpfr}}
+\item \href{https://www.multiprecision.org/mpc/}{\texttt{ mpc}}
+\item \href{https://github.com/opencollab/arpack-ng}{\texttt{ arpack}}
+\item \href{http://www.openmathlib.org/OpenBLAS/docs/user_manual/}{\texttt{ blas}}
+\item \href{https://www.boost.org/}{\texttt{ boost/multiprecision}}
+\end{DoxyItemize}
+
+These libraries need to be installed on your system in order to use the library. The easiest way to achieve this is in your console, via your system\textquotesingle{}s package manager; here are a few examples for popular packages managers
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#\ on\ macOS}
+\DoxyCodeLine{brew\ install\ arpack\ mpfr\ libmpc\ openblas\ boost}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ on\ windows:\ via\ vcpkg\ (https://vcpkg.io/en/index.html)}
+\DoxyCodeLine{vcpkg\ install\ arpack-\/ng\ mpfr\ mpc\ openblas\ boost}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ on\ linux;\ depending\ on\ your\ distribution:\ }
+\DoxyCodeLine{\#\ ubuntu/debian\ based}
+\DoxyCodeLine{sudo\ apt\ install\ libarpack2-\/dev\ libmpfr-\/dev\ libmpc-\/dev\ libopenblas-\/dev\ libboost-\/all-\/dev}
+\DoxyCodeLine{\#\ Fedora,\ CentOS,\ or\ RHEL-\/based\ Systems}
+\DoxyCodeLine{sudo\ dnf\ install\ arpack-\/devel\ mpfr-\/devel\ libmpc-\/devel\ openblas-\/devel\ boost-\/devel}
+\DoxyCodeLine{\#\ for\ older\ versions}
+\DoxyCodeLine{sudo\ yum\ install\ arpack-\/devel\ mpfr-\/devel\ libmpc-\/devel\ openblas-\/devel\ boost-\/devel}
+\DoxyCodeLine{\#\ on\ arch\ /\ Manjaro}
+\DoxyCodeLine{sudo\ pacman\ -\/S\ arpack\ mpfr\ libmpc\ openblas\ boost}
+\DoxyCodeLine{\#\ on\ openSUSE}
+\DoxyCodeLine{sudo\ zypper\ install\ arpack-\/devel\ mpfr-\/devel\ libmpc-\/devel\ openblas-\/devel\ boost-\/devel}
+
+\end{DoxyCode}
+ 
