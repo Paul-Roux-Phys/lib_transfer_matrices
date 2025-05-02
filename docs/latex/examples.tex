@@ -1,6 +1,6 @@
 \chapter{Examples}
 \hypertarget{examples}{}\label{examples}\index{Examples@{Examples}}
-Full examples can be found in the folder \href{../examples/ising/}{\texttt{ examples/ising}}. The code below is taken from these files\+:
+Full examples can be found in the folder \href{../examples/ising/}{\texttt{ examples/ising}}. The three files are visible below. The program can be compiled by navigating to the \href{../examples/ising}{\texttt{ examples/ising}} directory and typing {\ttfamily make} in a terminal. To run it, type {\ttfamily ./bin/ising}.
 
 
 \begin{DoxyItemize}
@@ -13,6 +13,7 @@ Full examples can be found in the folder \href{../examples/ising/}{\texttt{ exam
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ in\ your\ own\ system.}
 \DoxyCodeLine{}
 \DoxyCodeLine{all:}
+\DoxyCodeLine{\ \ \ \ mkdir\ -\/p\ bin/}
 \DoxyCodeLine{\ \ \ \ g++\ -\/std=c++20\ -\/o\ bin/ising\ ising.cpp\ \$(INCLUDES)}
 
 \end{DoxyCodeInclude}

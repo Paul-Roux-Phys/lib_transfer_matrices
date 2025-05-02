@@ -109,7 +109,7 @@ $(function(){initNavTree('examples.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Examples</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Full examples can be found in the folder <a href="../examples/ising/">examples/ising</a>. The code below is taken from these files:</p>
+<div class="textblock"><p>Full examples can be found in the folder <a href="../examples/ising/">examples/ising</a>. The three files are visible below. The program can be compiled by navigating to the <a href="../examples/ising">examples/ising</a> directory and typing <code>make</code> in a terminal. To run it, type <code>./bin/ising</code>.</p>
 <ul>
 <li>Makefile</li>
 </ul>
@@ -117,6 +117,7 @@ $(function(){initNavTree('examples.html',''); initResizable(true); });
 <div class="line">                               # in your own system.</div>
 <div class="line"> </div>
 <div class="line">all:</div>
+<div class="line">    mkdir -p bin/</div>
 <div class="line">    g++ -std=c++20 -o bin/ising ising.cpp $(INCLUDES)</div>
 </div><!-- fragment --><ul>
 <li>ising.hpp</li>

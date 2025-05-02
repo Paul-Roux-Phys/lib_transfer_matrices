@@ -1,6 +1,3 @@
-#ifndef KEY_HPP
-#define KEY_HPP
-
 #include <array>
 #include <cstddef>
 #include <cstdint>
@@ -88,5 +85,3 @@ struct KeyHash {
         return hash;
     }
 };
-
-#endif // KEY_HPP

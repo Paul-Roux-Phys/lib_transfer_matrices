@@ -116,6 +116,8 @@ Purpose of this library</h1>
 <p>Specifically, the program is designed to perform computations on transfer matrices written in the form</p>
 <p>$$T = \prod R_i,$$</p>
 <p>where the \(R_i\) are sparse matrices, in the sense that there exists a basis \(|e_i \rangle\) such that \(R |e_i \rangle\) has only a few non-zero components in the basis \(|e_i\rangle\).</p>
+<p>In transfer-matrix computations, the limiting computational resource is usually memory. This means tha tgarbage-collected programming languages like python or julia are poorly suited, and forces the use of a language allowing fine control over memory.</p>
+<p>The purpose of this library is to allow its user to write memory-optimized programs without having to worry about allocating and freeing memory, which is error prone and time consuming. It does so by providing easy-to-use data types which handle memory allocation and deallocation automatically, as well as convenient methods for manipulating these data types. See the <a class="el" href="tutorial.html">tutorial</a> for a walk-through of how to use these types.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Installation</h1>
 <p>This library is a template library, meaning the library itself requires no compilation. Simply clone or download the <a href="https://github.com/Paul-Roux-Phys/lib_transfer_matrices/">git repo</a> to <code>some/path/lib_transfter_matrices</code> and include <code><a class="el" href="_transfer_matrices_8hpp_source.html">TransferMatrices.hpp</a></code> in your project:</p>

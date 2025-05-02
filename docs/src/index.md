@@ -10,6 +10,11 @@ $$T = \prod R_i,$$
 
 where the \f$R_i\f$ are sparse matrices, in the sense that there exists a basis \f$|e_i \rangle\f$ such that \f$R |e_i \rangle\f$ has only a few non-zero components in the basis \f$|e_i\rangle\f$.
 
+In transfer-matrix computations, the limiting computational resource is usually memory. This means tha tgarbage-collected programming languages like python or julia are poorly suited, and forces the use of a language allowing fine control over memory.
+
+The purpose of this library is to allow its user to write memory-optimized programs without having to worry about allocating and freeing memory, which is error prone and time consuming.
+It does so by providing easy-to-use data types which handle memory allocation and deallocation automatically, as well as convenient methods for manipulating these data types. See the [tutorial](@ref tutorial) for a walk-through of how to use these types.
+
 ## Installation
 
 This library is a template library, meaning the library itself requires no compilation. Simply clone or download the 
