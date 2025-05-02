@@ -19,4 +19,4 @@ jobs:
           working-directory: .
           doxyfile-path: docs/Doxyfile
           html-output-folder: docs/html
-          branch: gh-pages
+          branch: main
