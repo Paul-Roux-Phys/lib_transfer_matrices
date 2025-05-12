@@ -1,0 +1,16 @@
+PROJECT_NAME           = Transfer Matrices
+PROJECT_NUMBER         = 0.0.0DEV
+PROJECT_BRIEF          = C++ library for transfer matrix computations
+OUTPUT_LANGUAGE        = English
+USE_MDFILE_AS_MAINPAGE = ./src/index.md
+INPUT                  = ../src ../include ./src/index.md ./src/tutorial.md ./src/examples.md
+RECURSIVE              = YES
+EXAMPLE_PATH           = examples
+SOURCE_BROWSER         = YES
+HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \
+                        doxygen-awesome-css/doxygen-awesome-sidebar-only.css
+HTML_COLORSTYLE        = LIGHT
+USE_MATHJAX            = YES
+MATHJAX_VERSION        = MathJax_2
+GENERATE_TREEVIEW      = YES
+FULL_PATH_NAMES        = NO
